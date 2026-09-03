@@ -1,0 +1,106 @@
+{
+  "status": "POST-HOC DIAGNOSTIC, NOT A PREREGISTERED ESTIMAND",
+  "purpose": "explain the zero-width primary interval; prevent it being read as precision",
+  "per_radius": {
+    "1.0": {
+      "clean_V_distribution": {
+        "5": 55,
+        "4": 40,
+        "6": 5
+      },
+      "clean_E_distribution": {
+        "5": 55,
+        "4": 35,
+        "3": 5,
+        "6": 5
+      },
+      "clean_reference_eligible_under_frozen_rule": true,
+      "n_nonzero_noise_rows": 80,
+      "n_exactly_zero_response": 61,
+      "fraction_exactly_zero_response": 0.7625,
+      "distinct_response_values": 7,
+      "response_variance": 0.009637131519274375,
+      "response_max": 0.4
+    },
+    "1.5": {
+      "clean_V_distribution": {
+        "3": 90,
+        "4": 10
+      },
+      "clean_E_distribution": {
+        "3": 90,
+        "4": 10
+      },
+      "clean_reference_eligible_under_frozen_rule": true,
+      "n_nonzero_noise_rows": 80,
+      "n_exactly_zero_response": 72,
+      "fraction_exactly_zero_response": 0.9,
+      "distinct_response_values": 3,
+      "response_variance": 0.009219444444444445,
+      "response_max": 0.33333333333333337
+    },
+    "2.0": {
+      "clean_V_distribution": {
+        "2": 100
+      },
+      "clean_E_distribution": {
+        "1": 100
+      },
+      "clean_reference_eligible_under_frozen_rule": true,
+      "n_nonzero_noise_rows": 80,
+      "n_exactly_zero_response": 80,
+      "fraction_exactly_zero_response": 1.0,
+      "distinct_response_values": 1,
+      "response_variance": 0.0,
+      "response_max": 0.0
+    }
+  },
+  "did_values": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -0.25,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -0.16666666666666663,
+    0.0,
+    0.0,
+    -0.1071428571428571
+  ],
+  "did_distinct_values": 4,
+  "did_value_counts": {
+    "0.0": 17,
+    "-0.25": 1,
+    "-0.16666666666666663": 1,
+    "-0.1071428571428571": 1
+  },
+  "did_fraction_exactly_zero": 0.85,
+  "structural_finding": {
+    "k_2.0_is_structurally_inert": true,
+    "statement": "At k=2.0 the clean Ball graph is V=2, E=1 in all 100 rows, and the edge-Jaccard response is exactly 0.0 in all 100 rows at every noise level up to alpha=0.30. The single edge could in principle disappear, but it survived in every executed row. The arm is therefore empirically inert in this design and carries no information about the interaction.",
+    "consequence": "The primary contrast reduces to the negation of the k=1.0 term. Because that term is itself exactly zero in most replicates, the median difference-in-differences is exactly 0.0 and the paired bootstrap of that median has zero width. The zero-width interval is a property of a discrete, overwhelmingly-zero response, NOT evidence that the interaction has been precisely estimated at zero."
+  },
+  "frozen_eligibility_rule_assessment": {
+    "rule": "a radius k is eligible if its clean reference has V >= 2 and E >= 1",
+    "k_2.0_passes_the_rule": true,
+    "finding": "k=2.0 satisfies the frozen eligibility rule at exactly its boundary (V=2, E=1) while being scientifically inert. The rule was inherited verbatim from C6-b, where Swiss Roll graphs are large (V=543) and this marginal case does not arise. The rule is therefore necessary but not sufficient on small-graph domains.",
+    "recommendation_for_future_work": "A response-variation criterion should accompany the V/E floor before any further small-graph Ball interaction campaign: for example, requiring that the response take at least two distinct values within each primary radius arm. This is recorded as a design lesson. It is NOT applied retroactively to C9's terminal state, which was frozen before execution and is reported as the frozen rules produced it."
+  },
+  "permitted_wording": "On unit_circle_S1 the frozen-landmark Ball edge structure is almost entirely unresponsive to coordinate noise across the frozen radius ladder, and at k=2.0 it is completely unresponsive. The preregistered noise x radius interaction contrast is consequently vacuous on this domain.",
+  "prohibited_wording": [
+    "the interaction is precisely zero",
+    "the interaction was estimated with high precision",
+    "Ball Mapper is robust to coordinate noise on the Circle",
+    "the null interaction is confirmed"
+  ]
+}

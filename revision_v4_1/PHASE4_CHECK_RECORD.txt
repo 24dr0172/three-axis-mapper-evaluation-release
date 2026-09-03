@@ -1,0 +1,50 @@
+Phase 4 check record — bounded robustness computation
+====================================================
+
+Status
+    Phase 4 complete. No new Mapper constructions. C3/C8 ledgers, plans,
+    sealed FCM source, and SHA256SUMS.txt are unchanged. verify_phase4.py
+    prints PHASE4_CHECKS_PASSED (includes Phase 3).
+
+Phase 3 re-audit
+    PHASE3_CHECKS_PASSED. C1/M6-A2/C8/taxonomy JSON hashes unchanged.
+    Fig07 PDF hash had drifted because the Phase 3 verifier rewrote
+    matplotlib output; the generator now skips existing figures and the
+    verifier sets PHASE3_WRITE_FIGURES=never. Scientific numbers unchanged.
+
+6.1 FCM_SOLVER_SENSITIVITY_AUDIT_V4_1
+    New robustness arm on frozen C3/C8 lens values. Same datasets,
+    linspace init, fuzzifier 2.0; only the stopping rule varies.
+    Unique FCM jobs 1035; unit rows 1055. Audit 1e-7/300 matches the
+    ledger fcm_converged flag on every unit (vectorized FCM matches
+    sealed run_fcm_1d on a six-job smoke set).
+    Frozen non-convergence: 292.
+    Remaining non-convergence at max_iter=300:
+        1e-4: 50 (242 reclassified)
+        1e-5: 118 (174 reclassified)
+        1e-6: 205 (87 reclassified)
+        1e-7: 292 (0 reclassified)
+    Optional diagnostic: 266 of 292 frozen failures converge at
+    1e-7/max_iter=1000; 26 ledger units remain, including all five Digits
+    c=15 threshold rows. Those five rows represent one fixed Digits
+    realization and one unique dataset-seed-c FCM job.
+    C8 primary cell (c=10, tau=0.10): frozen FCM-converged 14/20 Circle
+    and 21/30 Tripod. At 1e-4/300 those FCM-converged counts would be
+    20/20 and 29/30. These are not new eligible constructions and do
+    not replace the frozen attempt-level frequencies.
+    Downstream quality/fidelity: not recomputed.
+    Label: robustness/sensitivity, not confirmatory.
+    Stop rule: non-convergence counts change, downstream conclusions
+    are not replaced. Report both solver regimes. No new Mapper-construction
+    campaign; the only new campaign here is the authorized FCM solver-
+    sensitivity audit itself.
+
+6.2 ENV_EQUIVALENCE_CHECK_V4_1
+    skipped_interpreter_unavailable. Host has CPython 3.12.3 only.
+    Not blocking (plan 6.2). Provenance table retained.
+
+Outputs
+    revision_v4_1/derived/FCM_SOLVER_SENSITIVITY_AUDIT_V4_1.jsonl
+    revision_v4_1/derived/FCM_SOLVER_SENSITIVITY_AUDIT_V4_1_SUMMARY.json
+    revision_v4_1/derived/ENV_EQUIVALENCE_CHECK_V4_1_SKIP.json
+    manuscript/tables/fcm_solver_sensitivity.tex (tab:fcmsolv)

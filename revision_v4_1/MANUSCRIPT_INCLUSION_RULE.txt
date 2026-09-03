@@ -1,0 +1,105 @@
+Phase 0.3 — Manuscript inclusion rule
+=====================================
+
+Acceptance criterion
+    No primary evidence can be omitted without an explicit scope reason.
+
+Governing rule
+    A retained claim is either (i) in the main text, (ii) in an appendix
+    or the evidence map, or (iii) explicitly scoped out of adjudication.
+    Silence is not a permitted status for any CLAIM_EVIDENCE_INDEX row.
+
+Why a claim enters the main text
+    It is needed to state a confirmatory terminal state, to exhibit a
+    distinct axis-level failure mode, or to prevent a reader from inferring
+    that a clean primary result was withheld.
+
+Why a claim is appendix or evidence-map only
+    It is supporting accounting, a finite-case diagnostic superseded by a
+    larger replication, a descriptive sweep, or a calibrated analysis that
+    the frozen contract already labelled exploratory.
+
+Why a claim is scoped out of adjudication
+    The endpoint was not replayed under the release convention, the rows
+    are reconstructed rather than original persisted output, the numerical
+    interval is vacuous, or the quantity is algebraic rather than empirical.
+
+Location codes used in CLAIM_TIER_TABLE.csv
+    main_text                 reported in Sections 4--8 of mapper_manuscript.tex
+    appendix                  reported in an appendix subsection (v4.1 target)
+    evidence_map              named in the evidence-map appendix only
+    results_ledger            presently in RESULTS.txt / CLAIMS.txt only
+    scope_excluded_adjudication  retained for provenance, not used to certify
+                                 a scientific hypothesis
+
+Current-state gaps this freeze records (must be closed in later phases)
+    M6A2_STABILITY is indexed as primary and verified (302-run ordering) but
+    is absent from mapper_manuscript.tex. v4.1 must place a compact summary
+    in the main text or an appendix. Omission is not allowed.
+
+    R10_STRUCTURAL is indexed as primary (282-construction accounting) but
+    is absent from mapper_manuscript.tex. v4.1 must place it in the
+    reliability discussion or an appendix.
+
+    N1_MATCHED is indexed as descriptive. v4.1 may keep it in the evidence
+    map or an appendix; it must not be promoted to a confirmatory claim.
+    Explicit evidence-map naming satisfies inclusion.
+
+    IB1_III4_CIRCLE and IB1_III4_TRIPOD are indexed as primary. The
+    manuscript currently reports a related 32-row cross-axis analysis
+    (IV-3) without naming IB1/III-4. v4.1 must name these campaigns in
+    the evidence map and keep the 34/34 eligibility and Tripod signature
+    statements with their controlling ledger.
+
+    E2M_III3 is a finite-case diagnostic in RESULTS.txt only. v4.1 places
+    it in the appendix or evidence map, labelled as not a Reeb theorem.
+
+    QS_CIRCLE remains in the claim index as non-adjudicating provenance.
+    v4.1 keeps it scoped out of adjudication because the Mapper-distance
+    component was not replayed on the exact joint endpoint.
+
+Main-text set (v4.1 target)
+    C4_FMAPPER, CIA2_CONVENTIONAL, C4_BALL
+    C7_TRACK_C_INTERACTION, TRACK_C_FACTORIAL, C6A_CONVENTIONAL,
+    C6B_BALL, C9_BALL_CIRCLE
+    C3_FMAPPER, C1_SWISS, C8_FMAPPER_AXIS3, C2_SELECTION
+    C4_ENSEMBLE, E2M_ENSEMBLE
+    AXIS3_III1_CIRCLE, AXIS3_III1_TRIPOD, AXIS3_III2
+    C5_CIRCLE, C5_TRIPOD (finite-case context; frequency from C8)
+    IV1_COVER, IV2, IV3_STABILITY_FIDELITY
+    BALL_PARAMETER (including the single ineligible row)
+    M6A2_STABILITY (compact; currently missing)
+
+Appendix or evidence-map set (v4.1 target)
+    R10_STRUCTURAL
+    N1_MATCHED
+    IB1_III4_CIRCLE, IB1_III4_TRIPOD (named; numbers remain ledger-bound)
+    IB2_II2_COVER, IB3_II3_PARAMETER, IB4F_FMAPPER
+    E2M_II1, E2M_III3
+    IV5 (descriptive cover-arm companion to IV-1)
+    algebraic identities listed in NONINDEX_BOUNDARIES.txt
+
+Scoped out of adjudication (explicit reason)
+    QS_CIRCLE — historical composite not replayed with the corrected
+    common-cover endpoint.
+    C2 reconstructed unit/arm rows — usable only for the uniform
+    selection-failure conclusion; not original persisted output.
+    C9 numerical zero-width interval — saturated k=2.0 arm, not a
+    precise-null confirmation.
+    FCM fcm_seed sensitivity — unmeasurable under deterministic
+    linspace initialization (see NONINDEX_BOUNDARIES.txt).
+
+Already excluded from the release boundary (LIMITATIONS.txt; do not re-open)
+    Adaptive-cover subsampling as common-cover stability.
+    Independently matched per-bin Mapper-function values as Axis-I claims.
+    Mixed Track families with defective Swiss/Digits noise scales.
+    Historical IV-4 and partial IV-6.
+
+C1 special rule
+    The original confirmatory C1 pattern is a failed confirmatory claim
+    and must be stated as not observed. The Swiss alpha=0.05 pair may
+    remain in the main text only as a descriptive example of axis
+    disagreement, and only together with the full four-dose series.
+    Language such as "most direct counterexample" is not permitted unless
+    it is clearly labelled descriptive and supported by the complete dose
+    series.

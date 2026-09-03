@@ -1,0 +1,120 @@
+# SPEC-BM: Ball Mapper Specification
+
+**Document Version**: 1.0.0  
+**Phase**: Phase 0 (Mathematical Specification and Validation)  
+**Milestone**: M2 (Ball Mapper Core)  
+**Status**: FROZEN FOR RELEASE — EXECUTED IMPLEMENTATION BASIS  
+**Primary Mathematical Authority**: Dłotko, P. (2019). *Ball mapper: a shape summary for topological data analysis*. arXiv:1901.07410 / SDIR.
+
+---
+
+## 1. Scope and Objective
+
+This specification formalizes the mathematical definition, finite-sample algorithm, and execution contracts for **Standard Ball Mapper**. It defines the greedy $\epsilon$-net centre selection (Dłotko Algorithm 1), observed-point common-coverage graph construction (Dłotko Algorithm 3), full metric ball memberships, deterministic `point_order` reproducibility controls, and integration with the locked M0 dual-homology framework.
+
+Every implementation of Ball Mapper within this project must conform strictly to this specification.
+
+---
+
+## 2. SOURCE-DEFINED REQUIREMENTS (Dłotko, 2019)
+
+### 2.1 Lens-Free Metric Cover Formulation (Dłotko, §3)
+1. **Direct Metric Space Cover**:
+   Given a finite metric dataset $X = \{x_0, x_1, \dots, x_{N-1}\} \subset \mathbb{R}^d$ equipped with a metric $d_X$ (or a finite precomputed metric distance matrix $D \in \mathbb{R}^{N \times N}$) and a scale parameter $\epsilon > 0$, Ball Mapper constructs an overlapping cover directly on $X$ using closed metric balls:
+   $$B(p, \epsilon) = \{x \in X \mid d_X(x, p) \le \epsilon\}$$
+2. **Lens-Free Nature**:
+   Ball Mapper operates directly in the data space metric $(X, d_X)$. It accepts **NO lens function** $f: X \to \mathbb{R}$, constructs **NO codomain intervals**, and performs **NO pullback clustering** (e.g., no DBSCAN, Single-linkage, etc.).
+
+### 2.2 Centre Selection: Greedy $\epsilon$-Net (Dłotko Algorithm 1)
+- The principal centre-selection method for Standard Ball Mapper is the **Greedy $\epsilon$-Net** (Dłotko Algorithm 1):
+  1. Initially, all observations $x \in X$ are marked as *uncovered*.
+  2. Create an initially empty cover vector $B(X, \epsilon)$.
+  3. **Repeat**:
+     - Pick a first currently uncovered observation $p \in X$.
+     - Select $p$ as a new ball centre $c$.
+     - For every observed point $x \in B(p, \epsilon) \cap X$, add $p$ to the cover list $B(X, \epsilon)[x]$ and mark $x$ as covered.
+  4. **Until**: All observations in $X$ are covered.
+- The resulting selected centre set is $C = \{c_0, c_1, \dots, c_{m-1}\} \subseteq X$.
+- **Mandatory $\epsilon$-Net Mathematical Invariants**:
+  1. **Coverage**: $\forall x \in X, \quad \min_{c \in C} d_X(x, c) \le \epsilon$.
+  2. **Separation**: $\forall c_i, c_j \in C \text{ with } i \neq j, \quad d_X(c_i, c_j) > \epsilon$.
+
+### 2.3 Full Ball Membership Contract (Dłotko §3)
+- For every selected centre $c \in C$, its Ball Mapper support set $S(c)$ contains **all observed sample points** lying within distance $\epsilon$ of $c$:
+  $$S(c) = \{i \in \{0, \dots, N-1\} \mid d_X(x_i, c) \le \epsilon\}$$
+- **Critical Overlap Preservation**:
+  - $S(c)$ is **NOT** restricted to observations that were uncovered at the moment $c$ was selected.
+  - An observation that was already covered by an earlier selected ball $c_a$ must also be included in $S(c_b)$ if $d_X(x_i, c_b) \le \epsilon$.
+  - Assigning points only to their "first covering ball" is strictly prohibited.
+
+### 2.4 Standard Ball Mapper Graph (Dłotko Algorithm 3)
+- Vertices $V = \{0, 1, \dots, m-1\}$ correspond one-to-one with selected centres $C = \{c_0, \dots, c_{m-1}\}$.
+- For distinct centres $c_i, c_j \in C$:
+  $$\text{Edge}(i, j) \in E \iff S(c_i) \cap S(c_j) \neq \emptyset$$
+  Equivalently, there exists at least one observed point $x \in X$ such that $d_X(x, c_i) \le \epsilon$ and $d_X(x, c_j) \le \epsilon$.
+- **Prohibition of Ambient Geometric Substitution**:
+  - The continuous geometric ball intersection condition $d_X(c_i, c_j) \le 2\epsilon$ does **NOT** by itself create a Standard Ball Mapper edge. An observed sample point $x \in X$ must witness the common coverage.
+- **Edge Weight**:
+  $$\text{weight}(i, j) = |S(c_i) \cap S(c_j)|$$
+  representing the number of observed sample points jointly covered by balls $B(c_i, \epsilon)$ and $B(c_j, \epsilon)$.
+
+### 2.5 Finite-Sample Membership Nerve (Dłotko §3)
+- A $k$-simplex $[c_{i_0}, c_{i_1}, \dots, c_{i_k}]$ exists in the finite-sample Ball Mapper nerve if and only if:
+  $$\bigcap_{j=0}^k S(c_{i_j}) \neq \emptyset$$
+  i.e., there exists an observed sample $x \in X$ covered simultaneously by all $k+1$ balls.
+
+---
+
+## 3. FROZEN PROJECT-CONTRACT CHOICES
+
+### 3.1 Deterministic `point_order` Reproducibility Control
+> **Source Attribution Note**:  
+> Dłotko Algorithm 1 requires choosing a "first currently uncovered point". In an unordered point cloud, this choice is order-dependent. The project exposes `point_order` as an explicit permutation of $(0, 1, \dots, N-1)$ to serve as a **deterministic reproducibility and execution control**, not as a second scientific scale parameter.
+
+- **Validation Contract**:
+  - `point_order` must have length $N$.
+  - `point_order` must be a valid permutation of $\{0, 1, \dots, N-1\}$ (no duplicates, no omissions, no out-of-bounds indices).
+  - Default policy if omitted: natural sequential order $[0, 1, \dots, N-1]$.
+
+### 3.2 Dual Homology Reporting (Locked M0 Reuse)
+- The Ball Mapper implementation passes the collection of node supports $\{S(c_0), \dots, S(c_{m-1})\}$ directly to the frozen M0 `build_membership_nerve_2d` and `compute_dual_homology` modules.
+- **Dual Invariants**:
+  $$\beta_1^{\rm graph} = E - V + C \quad \text{(1-Skeleton Standard BM Graph Cycle Rank)}$$
+  $$\beta_1^{\rm nerve} = \dim H_1(\mathcal{N}^{(2)}; \mathbb{F}_2) \quad \text{(2-Skeleton Finite-Sample Nerve Homology)}$$
+- Always report both $\beta_1^{\rm graph}$ and $\beta_1^{\rm nerve}$ separately.
+
+### 3.3 Scientific Role & Qualified Metadata
+- Standard Ball Mapper metadata must explicitly declare:
+  - `reference_role = "metric_cover_only"`
+  - `method = "standard_ball_mapper_algorithm1"`
+  - `lens_used = False`
+  - `pullback_clustering_used = False`
+  - `ambient_geometric_overlap_used = False`
+  - Description: *"Lens-free metric-cover / geometric-connectivity summary; not a general Reeb-graph or manifold-topology recovery method."*
+
+---
+
+## 4. Forbidden Substitutions
+
+1. **NO LENS**: Never accept or apply a scalar lens function.
+2. **NO CODOMAIN COVER**: Never construct regular or fuzzy intervals on filter values.
+3. **NO PULLBACK CLUSTERING / DBSCAN**: Never cluster subsets of $X$ within balls.
+4. **NO K-MEANS / GMM CENTRES**: Centres must be observed data points selected via Algorithm 1.
+5. **NO MAX-MIN ALGORITHM-2 SUBSTITUTION**: Do not substitute max-min centre selection under the name Algorithm-1 Ball Mapper.
+6. **NO AMBIENT $d(c_i, c_j) \le 2\epsilon$ EDGE SUBSTITUTION**: Edges require observed sample witnesses.
+7. **NO CLIQUE COMPLETION**: Higher simplices require genuine multiway sample intersections.
+8. **NO FIRST-BALL-ONLY ASSIGNMENT**: Points must belong to all balls within distance $\epsilon$.
+9. **NO GRAPH $\beta_1$ SUBSTITUTION FOR NERVE $\beta_1$**: Never equate graph cycle rank with nerve homology.
+
+---
+
+## 5. Failure Semantics & Status Matrix
+
+| Execution Case | `status` | `scientific_evidence_eligible` | Graph Invariants | Nerve Invariants | Action |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Empty dataset ($N=0$) | `configuration_invalid` | `False` | `None` | `None` | Return status / raise `ValueError` |
+| $\epsilon \le 0$ | `configuration_invalid` | `False` | `None` | `None` | Return status / raise `ValueError` |
+| Invalid `point_order` (malformed/duplicate) | `configuration_invalid` | `False` | `None` | `None` | Return status / raise `ValueError` |
+| Invalid distance matrix (non-square/negative) | `configuration_invalid` | `False` | `None` | `None` | Return status / raise `ValueError` |
+| Resource limit tripped during nerve construction | `resource_failure` | `False` | Valid ($V, E, C, \beta_1^{\rm graph}$) | `None` | Return status with valid graph |
+| Full success | `success` | `True` | Valid ($V, E, C, \beta_1^{\rm graph}$) | Valid ($\beta_0^{\rm nerve}, \beta_1^{\rm nerve}$) | Verified complete output |

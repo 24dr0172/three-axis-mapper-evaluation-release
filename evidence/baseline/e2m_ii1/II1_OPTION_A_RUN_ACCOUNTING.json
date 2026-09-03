@@ -1,0 +1,27 @@
+{
+  "planned": 12,
+  "attempted": 12,
+  "eligible": 9,
+  "success_ineligible_retained": 3,
+  "execution_failed": 0,
+  "unclassified": 0,
+  "n_plan_ids": 12,
+  "n_started_ids": 12,
+  "n_appended_ids": 12,
+  "n_ledger_ids": 12,
+  "ids_exact_match": true,
+  "reconciliation_derived_from_disk_sets": true,
+  "reconciliation": true,
+  "no_pooling": true,
+  "runner_version": "ii1_option_a_runner_v1.4.1",
+  "ia2_core_module_sha256_verified": true,
+  "digits_pca_artifact_sha256": "f74fb09f00f11a3420dfffd0d5292cfe59b5df8e38eedb9dc688e27217622e34",
+  "output_inventory_conforms": true,
+  "output_inventory_report": {
+    "conforms": true,
+    "missing": [],
+    "extra": [],
+    "malformed": [],
+    "duplicate": []
+  }
+}

@@ -1,0 +1,127 @@
+Phase 0.4 — New-analysis boundary
+=================================
+
+Acceptance criterion
+    No unlisted new campaign can enter the revision.
+
+This freeze classifies every authorized v4.1 task. Anything not listed
+here is out of scope until a later written protocol names a new campaign
+identifier. Frozen ledgers, raw records, source hashes, contracts, and
+campaign terminal states remain immutable.
+
+Class A — text-only (no new files that change scientific numbers)
+    A1  C1 disclosure: original primary pattern not observed; Swiss result
+        retained only as descriptive axis disagreement; report all four
+        positive doses and eligibility denominators.
+    A2  C7 / Track C: state the actual factorial (alpha in {0.05,0.10,0.20,0.30},
+        n in {6,10,15,20}, eps in {0.08,0.15,0.25}, 10 streams; 4x4x3=48
+        perturbed cells; alpha=0 is the clean reference). Report the fitted
+        model, the preregistered n-by-eps interaction as the focal coefficient,
+        both intervals, and that no new Mapper constructions were generated
+        for the endpoint correction.
+    A3  Rebuild the master experimental-design table from controlling
+        ledgers/contracts (not by manual cell edits). Known corrections:
+        CIA2 Digits DBSCAN eps=0.15; C3 Digits eps=1.455055840852852;
+        C1 has 30 reference plus 30 paired realizations at each positive
+        dose; Swiss starts from 2500 draws with hole excision and variable
+        realized N; Track C analyzed cells use the four positive doses.
+    A4  CIA2 Digits 0/20: the clean reference construction is
+        degenerate/all_points_unassigned, so subsample comparisons are
+        reference-ineligible. Not a universal Conventional-on-Digits law.
+    A5  Every FCM non-convergence count names the frozen solver criterion
+        tol=1e-7, max_iter=300, deterministic linspace initialization.
+    A6  Ensemble identity: Kang-Lim RCESCC Ensemble Mapper with
+        project-specified metric-medoid Silhouette assignment.
+    A7  Ball ineligible row: BALL_IB4_III5_CONS_CIRCLE_M10_K04,
+        unit_circle_S1, ORDER_04, radius_multiplier=1.0,
+        scientific_ineligibility_reason=selected_center_count<5 (n_centers=4).
+    A8  Preserve D_M versus D_M^NA; define the permutation vector before use.
+    A9  Axis-III: exact invariant recovery and nonzero typed bottleneck
+        distance are not contradictory; no new post-hoc bottleneck threshold.
+    A10 Requalification: name the metadata defect and forensic proof;
+        scientific numeric fields unchanged; CPython 3.12 vs legacy 3.13.5
+        provenance retained.
+    A11 Statistics language (Phase 5): confirmatory vs exploratory vs
+        failure-accounting vs algebraic; CIs and declared rules; no blanket
+        p-value requirement; multiplicity statement; small-n (10 streams)
+        stated beside the C7 interval.
+    A12 Writing hygiene (Phase 7): abstract qualification, terminology,
+        equations, publisher-verified references, no invented DOI, AI
+        disclosure per target-journal policy, LaTeX overflow fixes.
+
+Class B — derived analysis from frozen evidence (new hashed objects only)
+    No new Mapper constructions. Each output gets a stable path and a
+    source-hash record in the derived-evidence registry.
+
+    B1  C1 full dose-response for all 120 pairs (required). Dose-wise D_M^NA,
+        paired Silhouette change, eligibility attrition.
+    B2  M6-A2 method x noise-level baseline-relative bottleneck/Wasserstein
+        displacement with uncertainty from per-run metrics (required).
+    B3  C8 quality-fidelity discordance on 500 Circle runs: rank discordance
+        and a predeclared descriptive rate. No arbitrary universal threshold
+        (strongly recommended).
+    B4  C8 72-versus-315 dispersion: bootstrap intervals for Silhouette and
+        Davies-Bouldin mean differences (strongly recommended).
+    B5  Failure taxonomy: run-level where run-level outcomes exist (C8);
+        cell-level for III-2B. Do not reconstruct absent III-2B construction
+        journals (recommended).
+    B6  Master experimental-design table generated from authorities (required;
+        pairs with A3).
+    B7  This Phase 0 claim-tier table, inclusion rule, and analysis boundary
+        (required; created now).
+
+Class C — targeted robustness compute (new campaign IDs only)
+    C-FCM  FCM solver-sensitivity audit. New arm/campaign; do not edit C3/C8
+           or their source hashes. Same frozen datasets, deterministic
+           initialization, fuzzifier, and Mapper parameters. Vary only the
+           FCM stopping rule. Primary grid: tol in {1e-4, 1e-5, 1e-6, 1e-7}
+           at max_iter=300. Optional second diagnostic: rows failing at
+           1e-7/300 rerun at max_iter=1000. Label as robustness/sensitivity,
+           not a replacement for the frozen confirmatory campaign.
+           Authorized identifier: FCM_SOLVER_SENSITIVITY_AUDIT_V4_1
+
+    C-ENV  Tiny cross-environment equivalence check if both interpreters
+           exist: one Circle baseline, one Tripod baseline, one Axis-III
+           surface cell, CPython 3.12 vs 3.13.5. Not blocking if 3.12
+           cannot be provisioned.
+           Authorized identifier: ENV_EQUIVALENCE_CHECK_V4_1
+
+Class D — optional / referee-triggered (not authorized now)
+    D1  Random FCM initialization arm.
+    D2  Kang-Lim original crisp-assignment sensitivity (requires regenerating
+        candidate pools).
+    D3  Refitted-cover control for C6-a (different estimand).
+
+    These enter only if a referee requests them or the Class C FCM audit
+    changes a headline comparative conclusion. In the latter case a dedicated
+    new campaign protocol must be written before execution.
+
+Class E — forbidden in this revision
+    E1  Arbitrary bottleneck-distance threshold tau.
+    E2  Blanket requirement of p-values for valid inference.
+    E3  Reconstruction of missing III-2B run-level construction journals.
+    E4  Silent algorithm renaming, including dropping the Ensemble
+        qualification.
+    E5  Bibliographic change solely because an external attack asserted one.
+        Publisher/DOI authority is required. Do not change Zhou 2022 to JACT
+        on that basis.
+    E6  Overwrite, delete, or silently replace sealed scientific evidence.
+    E7  Convert undefined or ineligible outcomes into favourable numbers.
+    E8  Promote N1 from descriptive to confirmatory.
+    E9  Any campaign identifier other than the two Class C identifiers above.
+
+Stop rules (from the revision plan; frozen here)
+    If mandatory factual repairs, derived analyses, and the FCM solver
+    audit leave the central conclusions intact, stop. Do not add experiments
+    because a reviewer could imagine additional controls.
+
+    FCM sensitivity changes non-convergence counts but not downstream
+    conclusions: report both solver regimes; do not replace frozen evidence.
+    FCM sensitivity changes a headline comparative conclusion: open a
+    dedicated new campaign with a written protocol; do not patch the old claim.
+    C1 full-dose evidence contradicts the current descriptive narrative:
+    rewrite the narrative to the full dose series; do not subset doses.
+    C7 exact-endpoint correction changes sign or interpretation: report the
+    corrected result and the historical discrepancy; do not revert.
+    Environment cross-check disagrees numerically: escalate to an environment
+    forensic audit before release.

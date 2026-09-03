@@ -1,0 +1,60 @@
+Phase 2 check record — evidence completeness and attribution
+============================================================
+
+Status
+    Phase 2 complete. Frozen evidence/contracts/code hashes unchanged.
+    Phase 1 verifier still passes. verify_phase2.py prints PHASE2_CHECKS_PASSED.
+
+Phase 1 re-check
+    C1/C7/CIA2/FCM/design-table statements remain in the manuscript.
+    One Phase 2-relevant leftover from Phase 1 was the undefined pi in
+    eq:dm; that is repaired here rather than being treated as a Phase 1
+    regression. Wasserstein displacement on M6-A2 does not share the
+    bottleneck ordering; it is not claimed to.
+
+4.1 M6-A2
+    Main-text subsection "Filtered structural stability on Swiss" with
+    generated tab:m6a2. Both methods, five nonzero noise levels, mean and
+    bootstrap 95% CI for bottleneck displacement. Conventional mean below
+    F-Mapper at each level. Conditional method-realization comparison.
+    One F-Mapper non-convergence at sigma=0.10 named with the frozen solver
+    criterion.
+
+4.2 R10
+    Appendix section with generated tab:r10account: 282 attempted, 205
+    eligible, 30 successful-ineligible, 47 typed degenerate
+    (all_points_unassigned on the noisy arm).
+
+4.3 N1
+    Evidence map: descriptive 906-unit matched-status compilation; not
+    confirmatory.
+
+4.4 Ensemble identity
+    Abstract, methods, and results use Kang-Lim RCESCC Ensemble Mapper with
+    project-specified metric-medoid Silhouette assignment. Results state
+    that they are not for an unmodified source implementation.
+
+4.5 Ball ineligible row
+    BALL_IB4_III5_CONS_CIRCLE_M10_K04, Circle ORDER_04, k=1.0,
+    selected_center_count<5 (four centres).
+
+4.1 notation
+    pi=(pi_1,...,pi_m) defined; componentwise action stated; D_M versus
+    D_M^NA distinguished; ledger field d_common_id labelled schema continuity.
+
+4.2 Axis-III language
+    Exact invariant recovery and nonzero typed bottleneck are not
+    contradictory. No new binary bottleneck threshold. Circle/Tripod
+    proof-of-principle scope retained.
+
+4.3 Requalification
+    Positional argument swap in resolve_canonical_filter; forensic proof
+    SAME_FILTER_FORENSIC_PROOF_III2_V5; 2208/2208 before/after audit in
+    RUN_LEVEL_REQUALIFIED.csv; metadata repair, not new science.
+    Environment families distinguished in tab:envprov.
+
+Inclusion
+    IB1/III-4 named in the evidence map (34/34 eligible). E2M III-3 named
+    as a finite diagnostic, not a Reeb theorem. QS remains non-adjudicating.
+
+PDF compile remains a Phase 6 gate (pdflatex not available here).

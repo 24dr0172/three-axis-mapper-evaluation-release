@@ -1,0 +1,31 @@
+{
+  "manifest": {
+    "campaign_id": "C6A_CONVENTIONAL_SWISS_NOISE_X_COVER_2026-08-28",
+    "run_id": "C6A_CONF_001",
+    "plan_units": 200,
+    "result_rows": 200,
+    "frozen_cover_constructions": 200,
+    "clean_reference_fit_transform_calls": 40,
+    "total_mapper_operations": 240,
+    "accounting_note": "Each result row is one frozen-cover construction. In addition the SEALED ConventionalMapper.fit_transform is called once per (replicate, cover level) purely to realize and freeze the clean interval endpoints; those clean-reference calls are counted separately and are NOT result rows.",
+    "attempted": 200,
+    "successful_constructions": 40,
+    "coverage_gap_rows": 160,
+    "eligible_distances": 40,
+    "primary_alpha_rows": 40,
+    "runner_sha256": "716b63a8017ff61f006316d85c3a7b06a16721fbfac0b31bc709b3d50c67e1d4"
+  },
+  "primary_estimand": {
+    "primary_alpha": 0.05,
+    "contrast_definition": "D_COMMON_ID(n=15,p=.30) - D_COMMON_ID(n=10,p=.30), paired within replicate",
+    "n_complete_pairs": 0,
+    "n_incomplete_pairs": 20,
+    "median_paired_contrast": null,
+    "ci95_low": null,
+    "ci95_high": null,
+    "bootstrap_B": 20000,
+    "bootstrap_seed": 20260828,
+    "preferred_direction": null,
+    "terminal_state": "PRIMARY_ESTIMAND_NOT_MEASURABLE"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "authoritative_replay_environment": "CPython 3.12.x with environment/requirements.txt; ENVIRONMENT_LOCK_MANIFEST.json is the production lock digest.",
+  "env_equivalence_check": "skipped_interpreter_unavailable",
+  "fail_closed_entrypoint": "code/verification/verify_environment.py",
+  "found_versions": {
+    "matplotlib": "3.6.3",
+    "numpy": "1.26.4",
+    "scipy": "1.11.4"
+  },
+  "latexmk": false,
+  "legacy_axis3_available": false,
+  "legacy_axis3_python": "3.13.5",
+  "legacy_evidence_environment": "Conventional III-1 and III-2: CPython 3.13.5 with environment/requirements_axis3_legacy.txt.",
+  "missing_packages": [
+    "scikit-learn",
+    "joblib",
+    "threadpoolctl",
+    "narwhals",
+    "gudhi"
+  ],
+  "note": "This host's default interpreter is CPython 3.12.3. The portable preflight remains fail-closed: verify_environment.py must see every pinned distribution. Missing pins here do not rewrite sealed environment/ files.",
+  "pdf_compile": "skipped_toolchain_unavailable",
+  "pdflatex": false,
+  "portable_requirements": {
+    "gudhi": "3.13.0",
+    "joblib": "1.5.3",
+    "matplotlib": "3.8.4",
+    "narwhals": "2.25.0",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.11.4",
+    "threadpoolctl": "3.6.0"
+  },
+  "python_implementation": "CPython",
+  "python_ok": true,
+  "python_required": "CPython 3.12.x",
+  "python_version": "3.12.3",
+  "record_id": "ENVIRONMENT_PREFLIGHT_V4_1",
+  "version_mismatches": [
+    {
+      "found": "3.6.3",
+      "name": "matplotlib",
+      "required": "3.8.4"
+    }
+  ]
+}

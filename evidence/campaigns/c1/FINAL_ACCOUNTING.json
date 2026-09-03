@@ -1,0 +1,15 @@
+{
+  "all_clean_references_full_coverage": true,
+  "campaign": "C1 Swiss fixed-realized-cover correction",
+  "complete_primary_pairs": 30,
+  "constructions": 150,
+  "cover_policy": "clean realized pullback memberships frozen within replicate",
+  "exact_metric_sha256": "5ddeac40a45bd2e32b670b51359d95ad8bcf1c4ebbf96a55cb24be062a4ab864",
+  "median_clean_silhouette": 0.1388346101917387,
+  "median_d_common_id": 0.626862735985964,
+  "median_perturbed_silhouette": 0.24117587961086367,
+  "perturbed_rows": 120,
+  "primary_alpha": 0.05,
+  "reference_rows": 30,
+  "terminal_state": "PRIMARY_PATTERN_NOT_OBSERVED"
+}

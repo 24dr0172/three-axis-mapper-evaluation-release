@@ -1,0 +1,11 @@
+{
+  "campaign": "C2 three-arm fair comparison",
+  "planned_units": 260,
+  "unit_rows": 260,
+  "arm_rows": 780,
+  "selection_failed_units": 260,
+  "eligible_three_arm_units": 0,
+  "terminal_scientific_result": "SELECTION_FAILED_IN_ALL_UNITS",
+  "record_origin": "deterministic_reconstruction_checked_against_append_only_journal",
+  "qualification": "The production process reached all units and failed in post-loop aggregation before production ledgers were written. The released rows are deterministic reconstructed records matching every journaled unit outcome; they are not represented as original persisted production rows."
+}

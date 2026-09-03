@@ -1,0 +1,45 @@
+# Final endpoint and interpretation contract
+
+## Axis I
+
+The Axis-I endpoint is the exact joint observation-mismatch optimizer
+corresponding to Belchi et al. Definition 9 when every point has an ordinary
+cluster label. The release also applies an explicit noise-aware extension,
+denoted `D_M^NA`, in which DBSCAN noise and outside-cover states are immutable
+states rather than permutable ordinary labels. The historical ledger field
+name `d_common_id` and machine tag `exact_joint_definition_9` are retained for
+schema continuity; they do not remove this noise-policy qualification.
+
+The optimizer minimizes one observation-level mismatch indicator jointly across
+all cover elements; independently minimizing each bin is only an upper estimate
+and is not released as the joint endpoint. When no special noise state occurs,
+`D_M^NA` coincides with the ordinary Definition-9 objective.
+
+`D_M^NA` is reportable only when the compared Mapper functions use the same
+indexed realized cover of the compared domain and retain point identities.
+Every successful evaluation must bind SHA-256 digests of both realized covers
+and both filter definitions. Missing, malformed, or unequal digests fail
+closed. A cover recomputed after subsampling or perturbation is not the same
+cover. For Ball Mapper with frozen landmarks and no within-ball clustering,
+label distance is algebraically zero; retained-edge and graph-change
+diagnostics are used instead.
+
+## Axis II
+
+Construction status, coverage, non-convergence, and selection failure are
+scientific outcomes. Undefined quality values remain null. Silhouette and
+Davies–Bouldin values are aggregated only over eligible pullbacks.
+
+## Axis III
+
+Only same-domain, same-filter comparisons to an explicitly typed Reeb reference
+are permitted. Conventional III-1 and III-2 support finite-sample recovery and
+fidelity statements at their frozen designs. C5 F-Mapper and E2M III-3 support
+only their stated finite cases. None is a convergence, isomorphism, or universal
+recovery theorem.
+
+## Cross-axis synthesis
+
+Descriptive associations are not causal or inferential tests. Failures and null
+estimands are not replaced by zeros. No universal winner or Pareto-optimal
+configuration is claimed.

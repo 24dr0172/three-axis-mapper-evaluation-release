@@ -1,0 +1,109 @@
+{
+  "contract_id": "C9_BALL_CIRCLE_NOISE_X_RADIUS_V1",
+  "campaign_id": "C9_BALL_CIRCLE_NOISE_X_RADIUS_2026-08-29",
+  "run_id": "C9_CONF_001",
+  "status": "FINAL_EXECUTED",
+  "date": "2026-08-29",
+  "method_id": "ball_mapper",
+
+  "purpose": "Close the Ball Mapper Circle radius x noise cell of I-B5. The C6-b campaign executed the same design on swiss_roll_with_hole only. The design here is C6-b's, unchanged except for the dataset and the frozen scale that the dataset determines.",
+
+  "source_obligation": {
+    "I-B5": "run only predeclared interactions needed to understand confounding, such as noise x cover or Ball radius x noise. This stage is not a parameter search and does not choose a winner.",
+    "III-5": "Ball Mapper metric-cover preservation: vary Ball radius, coordinate noise, and point order. Explicitly NOT a Reeb experiment."
+  },
+
+  "design_provenance": "Byte-identical to C6B_BALL_SWISS_NOISE_X_RADIUS_2026-08-28 in every structural respect: the alpha ladder, the radius multipliers, the replicate count, the frozen-landmark rule, the primary response, the primary contrast, the primary cells, the bootstrap size, the eligibility rule, and the terminal-state vocabulary. Only the dataset and the dataset-determined frozen scale differ. Nothing was re-chosen.",
+
+  "dataset": {
+    "dataset_id": "unit_circle_S1",
+    "generator": "generate_clean_circle(N=1000, radius=1.0, data_seed=<derived>, sampling='uniform')",
+    "N": 1000,
+    "lens_id": "circle_height_y"
+  },
+
+  "frozen_scales": {
+    "ball_epsilon0": 0.9092268858543847,
+    "ball_epsilon0_hex": "0x1.d1862fb6c6ea7p-1",
+    "ball_epsilon0_source": "Frozen pre-C9 programme Ball radius for unit_circle_S1, carried forward without re-derivation or selection. The exact binary64 value and hexadecimal representation are bound in this contract.",
+    "noise_epsilon0": 0.9092268858543847,
+    "noise_epsilon0_source": "R3-WITNESS-AVAIL frozen Circle noise scale. Reproduced from first principles against the canonical array; the four sigma = alpha * epsilon0 values match the executed R10 ledger bit-for-bit. It coincides numerically with the Ball radius base because both derive from the same geometric scale rule on the same canonical Circle array; this coincidence is recorded so it is not mistaken for a conflation of two different freezes.",
+    "note_on_swiss": "For swiss_roll_with_hole these two scales are NOT equal (C6-b used noise 11.634735480276268 and ball radius 0.8143977317769947). The equality is a Circle-specific fact, not a general identification."
+  },
+
+  "factors": {
+    "radius_multipliers": [1.0, 1.5, 2.0],
+    "radii": [0.9092268858543847, 1.3638403287815771, 1.8184537717087694],
+    "alphas": [0.0, 0.05, 0.10, 0.20, 0.30],
+    "noise_sigma_rule": "sigma = alpha * noise_epsilon0",
+    "replicates": 20
+  },
+
+  "planned_constructions": 300,
+  "planned_clean_landmark_selections": 60,
+  "accounting_note": "Each of the 300 result rows is one frozen-landmark construction. Additionally 60 clean BallMapper calls (20 replicates x 3 radii) SELECT the clean landmarks; those are the only landmark-selection calls in the campaign.",
+
+  "stream_block": [18000, 18099],
+  "stream_index_rule": "stream_index = 18000 + replicate_index * len(alphas) + alpha_index",
+  "data_seed_base": 900000,
+  "data_seed_rule": "data_seed = 900000 + replicate_index",
+
+  "frozen_metric_cover_rule": {
+    "reuse_clean_landmark_coordinates": true,
+    "independent_noisy_landmark_refit": false,
+    "statement": "For each clean realization and radius, landmarks are selected ONCE from the clean realization. Every noise arm reuses those frozen landmark COORDINATES. No landmark movement and no independent noisy refit ever occurs. Node identity is preserved across noise arms by construction."
+  },
+
+  "primary_response": "edge_jaccard_distance",
+  "prohibited_endpoint": "fixed-cover D_COMMON_ID. Under frozen landmarks and a fixed radius it is a degenerate identity and carries no information; it is recorded as null and flagged nonscientific, exactly as in C6-b.",
+
+  "primary_interaction_contrast": "(J[alpha=0.10, k=2.0] - J[alpha=0.05, k=2.0]) - (J[alpha=0.10, k=1.0] - J[alpha=0.05, k=1.0]), paired within replicate",
+  "primary_alphas": [0.05, 0.10],
+  "primary_radii_multipliers": [1.0, 2.0],
+  "estimator": "median of the paired per-replicate difference-in-differences",
+  "interval": "paired nonparametric bootstrap over replicates, B=20000, seed=20260829, percentile 95%",
+  "bootstrap_seed_disjointness": "C6-b used seed 20260828; C9 uses 20260829. Distinct.",
+
+  "clean_reference_eligibility_rule": "A radius k is eligible only if its CLEAN reference graph satisfies V >= 2 and E >= 1. This is the C6-b rule verbatim.",
+
+  "terminal_states": [
+    {"id": "FACTOR_COLLAPSES_TO_ONE_LEVEL", "when": "a primary radius has an ineligible clean reference (V < 2 or E < 1), so the radius factor does not have two usable levels"},
+    {"id": "PRIMARY_ESTIMAND_NOT_MEASURABLE", "when": "no replicate yields all four primary cells with a defined edge-Jaccard distance"},
+    {"id": "RESPONSE_SATURATED", "when": "every primary-cell edge-Jaccard value is identical across all replicates and all four primary cells, i.e. the response has exactly zero variance and the contrast is identically zero by construction rather than by evidence"},
+    {"id": "INTERACTION_ESTIMABLE", "when": "none of the above; the interval is reported and interpreted"}
+  ],
+
+  "degeneracy_risk_and_interpretation": {
+    "statement": "The design permits RESPONSE_SATURATED as a distinct terminal state. Saturation of the Circle Ball response is treated as a possible outcome of the frozen design, not as a defect of the campaign.",
+    "evidence_for_the_risk": "The released C4V2 Ball evidence already indicates strong domain-dependent saturation. On unit_circle_S1, all 40 successful subsample rows retained the same three-node, three-edge, one-component structure, whereas the Swiss Roll rows exhibited substantial variation in connectivity and component count. C9 therefore treats response saturation on the Circle as an explicit possible terminal outcome. Source: evidence/campaigns/c4_ball_ensemble/C4V2_BALL_LEDGER.jsonl.",
+    "why_run_it": "The C4V2 saturation evidence is from one radius (k=1.5) and from node counts, not from the frozen-landmark edge-Jaccard response at k=1.0 and k=2.0. Whether the primary contrast is measurable at those cells is an empirical question. Either an estimable interval or a typed saturation closes the cell.",
+    "prohibited_response_to_a_null": "If the result is RESPONSE_SATURATED or an interval spanning zero, the campaign must NOT be re-run at other radii, other alphas, other N, or another noise ladder in search of a measurable effect. That would be a parameter search, which I-B5 forbids."
+  },
+
+  "failure_retention": {
+    "policy": "Typed failures and undefined Jaccard values are retained with null metrics and remain in every denominator. Zero imputation. No retries. No seed substitution.",
+    "abort_rule": "Unexpected infrastructure or programming exceptions abort the run fail-closed and are never recorded as scientific observations."
+  },
+
+  "identity_check": "Every alpha = 0.0 row is an identity check: with zero noise the perturbed graph must equal the clean graph, so edge_jaccard_distance must be exactly 0.0. Any nonzero value is a contract violation and aborts the run.",
+
+  "claim_language": "finite-sample empirical behaviour of the frozen-landmark Ball Mapper edge structure on unit_circle_S1 under a coordinate-noise ladder at three frozen radii",
+
+  "prohibited_claims": [
+    "Ball graph cycles are Reeb or manifold topology",
+    "comparison of Ball graph-cycle count to a Reeb graph as topological error",
+    "Ball Mapper is more or less stable than any other method",
+    "extension of any C9 result to swiss_roll_with_hole or digits",
+    "selection of a preferred radius",
+    "a monotone noise law from five sparse dose levels"
+  ],
+
+  "sealed_module_digests": {
+    "ball_mapper.py": "89687a7c9a71fa309d8cf09a82143c488fcf0692476a72b68b10688fb43408c7",
+    "dataset_generators.py": "9e6132ddd176132e2101041e4b1c233fcdf7a42219a1f4404d32e040a26c629a",
+    "types.py": "39a8424f354b86b6193697874154e59f9215ca2e5bedec2a3dddc36f854aba67",
+    "homology_gf2.py": "99f5ab756421dcc6f1c746a8765c0b231b98755144cd196b52617cca10f5d57f",
+    "exceptions.py": "44dc555a91f053d5daaa106cd6b206aceea167c1ae1486d87df7cad4ac4af734",
+    "environment_lock_manifest": "46c58532e16925920e54a363e9727f7fa0afa908e2f5f1317d9f057be8ed11d9"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "planned": 34,
+  "attempted": 34,
+  "unattempted": 0,
+  "terminal": 34,
+  "eligible": 34,
+  "ineligible": 0,
+  "terminal_disposition_status_counts": {
+    "success": 34
+  },
+  "unattempted_disposition_status_counts": {},
+  "scientific_status_counts": {
+    "success": 34
+  },
+  "per_estimand_counts": {
+    "D_R": {
+      "attempted": 32,
+      "successful": 32,
+      "failed": 0,
+      "undefined": 0,
+      "inapplicable": 2
+    },
+    "D_M": {
+      "attempted": 32,
+      "successful": 32,
+      "failed": 0,
+      "undefined": 0,
+      "inapplicable": 2
+    },
+    "E_M": {
+      "attempted": 34,
+      "successful": 34,
+      "failed": 0,
+      "undefined": 0,
+      "inapplicable": 0
+    }
+  },
+  "operations": {
+    "mapper_construction_attempted": 34,
+    "mapper_construction_returned": 34,
+    "mapper_construction_successful": 34,
+    "mapper_graph_available": 34,
+    "D_R_attempted": 32,
+    "D_R_successful": 32,
+    "D_R_failed": 0,
+    "D_R_undefined": 0,
+    "D_M_attempted": 32,
+    "D_M_successful": 32,
+    "D_M_failed": 0,
+    "D_M_undefined": 0,
+    "E_M_attempted": 34,
+    "E_M_successful": 34,
+    "E_M_failed": 0,
+    "E_M_undefined": 0
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "categorical_factor_interaction_contrasts": {
+    "definition": "[mean D(n,eps)-mean D(n,0.08)]-[mean D(6,eps)-mean D(6,0.08)], averaged over balanced alpha levels; stream bootstrap resamples the 10 replicate streams",
+    "reference_eps": 0.08,
+    "reference_n_intervals": 6,
+    "role": "post-hoc robustness check of the numeric bilinear parameterization; not a replacement estimand",
+    "rows": [
+      {
+        "eps": 0.15,
+        "excludes_zero": false,
+        "n_intervals": 10,
+        "point_estimate": 0.0016499999999999959,
+        "stream_bootstrap_95": {
+          "B": 10000,
+          "hi": 0.00882562499999999,
+          "lo": -0.00510000000000001,
+          "seed": 20260829
+        }
+      },
+      {
+        "eps": 0.25,
+        "excludes_zero": true,
+        "n_intervals": 10,
+        "point_estimate": -0.025924999999999993,
+        "stream_bootstrap_95": {
+          "B": 10000,
+          "hi": -0.019799999999999984,
+          "lo": -0.032125,
+          "seed": 20260829
+        }
+      },
+      {
+        "eps": 0.15,
+        "excludes_zero": true,
+        "n_intervals": 15,
+        "point_estimate": 0.015624999999999995,
+        "stream_bootstrap_95": {
+          "B": 10000,
+          "hi": 0.026000624999999975,
+          "lo": 0.005700000000000011,
+          "seed": 20260829
+        }
+      },
+      {
+        "eps": 0.25,
+        "excludes_zero": true,
+        "n_intervals": 15,
+        "point_estimate": -0.043774999999999994,
+        "stream_bootstrap_95": {
+          "B": 10000,
+          "hi": -0.034400000000000014,
+          "lo": -0.05189999999999997,
+          "seed": 20260829
+        }
+      },
+      {
+        "eps": 0.15,
+        "excludes_zero": true,
+        "n_intervals": 20,
+        "point_estimate": 0.023524999999999997,
+        "stream_bootstrap_95": {
+          "B": 10000,
+          "hi": 0.03357500000000001,
+          "lo": 0.01312437500000001,
+          "seed": 20260829
+        }
+      },
+      {
+        "eps": 0.25,
+        "excludes_zero": true,
+        "n_intervals": 20,
+        "point_estimate": -0.05097499999999999,
+        "stream_bootstrap_95": {
+          "B": 10000,
+          "hi": -0.04217499999999998,
+          "lo": -0.05904999999999998,
+          "seed": 20260829
+        }
+      }
+    ]
+  },
+  "cell_means_d_common_id": {
+    "n=10": {
+      "eps=0.08": 0.37465000000000004,
+      "eps=0.15": 0.08919999999999999,
+      "eps=0.25": 0.018275
+    },
+    "n=15": {
+      "eps=0.08": 0.40627500000000005,
+      "eps=0.15": 0.13479999999999998,
+      "eps=0.25": 0.03205
+    },
+    "n=20": {
+      "eps=0.08": 0.43509999999999993,
+      "eps=0.15": 0.171525,
+      "eps=0.25": 0.05367500000000001
+    },
+    "n=6": {
+      "eps=0.08": 0.338675,
+      "eps=0.15": 0.051575,
+      "eps=0.25": 0.008225
+    }
+  },
+  "eps_slope_at_each_n": {
+    "n=10": -0.35637500000000005,
+    "n=15": -0.37422500000000003,
+    "n=20": -0.3814249999999999,
+    "n=6": -0.33045
+  },
+  "model_free_corner_did": {
+    "excludes_zero": true,
+    "point_estimate": -0.05097499999999988,
+    "stream_bootstrap_95": {
+      "B": 10000,
+      "hi": -0.04217499999999996,
+      "lo": -0.059049999999999936,
+      "seed": 20260829
+    }
+  },
+  "n_main_effect_profile": {
+    "n=10": 0.16070833333333331,
+    "n=15": 0.1910416666666667,
+    "n=20": 0.22009999999999996,
+    "n=6": 0.132825
+  },
+  "n_main_effect_successive_increments": {
+    "10->15": 0.03033333333333338,
+    "15->20": 0.02905833333333327,
+    "6->10": 0.027883333333333316
+  },
+  "status": "POST-HOC ROBUSTNESS DIAGNOSTICS"
+}

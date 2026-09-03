@@ -1,0 +1,42 @@
+{
+  "contract_id": "C7_TRACKC_INTERACTION_ANALYSIS_V3_CORRECTED_ENDPOINT",
+  "campaign_id": "C7_TRACKC_FIXED_COVER_EXACT_REFIT_V3",
+  "analysis_type": "specified_estimand_refit_after_endpoint_correction",
+  "mapper_constructions_generated": 0,
+  "endpoint_correction_note": {
+    "estimand": "beta_12 for n_intervals x eps",
+    "correction": "The earlier response used an independently optimized per-bin upper estimate and adaptive realized covers. The released analysis reconstructs every Track C pair on the clean reference's fixed realized pullback memberships and evaluates the exact joint Definition-9 objective."
+  },
+  "input": {
+    "ledger": "evidence/baseline/track_c/IB5_INTERACTIONS_COMPARISON_LEDGER.jsonl",
+    "ledger_sha256": "947f0e83f32812571e4d0a619760a99c66596ae7406eb46a8a535bafd58e9994",
+    "accounting": "evidence/baseline/track_c/IB5_INTERACTIONS_RUN_ACCOUNTING.json",
+    "accounting_sha256": "91ee8ef6d759dcbcb590c141e12cd935960155bac06acdaee9757ac82e4ea9f1",
+    "metric_implementation": "src/mapper_framework/support/d_common_id.py",
+    "metric_sha256": "5ddeac40a45bd2e32b670b51359d95ad8bcf1c4ebbf96a55cb24be062a4ab864"
+  },
+  "model": "D_M_exact = beta0 + beta_n*(n-10) + beta_e*(eps-0.15) + beta_12*(n-10)*(eps-0.15) + categorical alpha effects (0.05 reference) + replicate-stream effect + error",
+  "primary_estimand": "beta_12",
+  "estimator": "ordinary least squares after within-stream demeaning",
+  "primary_interval": {
+    "method": "stream-level nonparametric percentile bootstrap",
+    "B": 10000,
+    "seed": 20260829,
+    "level": 0.95,
+    "rank_deficient_failure_tolerance": 0.05
+  },
+  "secondary_interval": "CR1 cluster-by-stream sandwich with t_9 critical value",
+  "terminal_states": {
+    "T1": "primary interval entirely above zero",
+    "T2": "primary interval entirely below zero",
+    "T3": "primary interval contains zero",
+    "T4": "full fit rank deficient or bootstrap failure rate exceeds 5 percent"
+  },
+  "scope_limits": [
+    "unit_circle_S1 only",
+    "executed n_intervals and eps grid only",
+    "bilinear summary is not a global surface law",
+    "alpha is a categorical nuisance adjustment",
+    "no Reeb, manifold-topology, or method-superiority claim"
+  ]
+}

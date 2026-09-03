@@ -1,0 +1,31 @@
+Phase 0 — Claims and boundaries not given their own CLAIM_EVIDENCE_INDEX row
+============================================================================
+
+These items appear in CLAIMS.txt or LIMITATIONS.txt. They are frozen here
+so they cannot enter the revision as unlisted science. They are not extra
+CLAIM_EVIDENCE_INDEX rows; the 35-row index remains the 1:1 mapping basis.
+
+Algebraic identities (hand-checkable; not empirical stability)
+    Ball fixed-landmark common-cover label distance is zero by restriction.
+    Alpha-zero identity checks are zero because compared data are identical.
+    Ball restriction to frozen landmarks yields edge-set nesting.
+
+Structurally unmeasurable under the frozen implementation
+    F-Mapper fcm_seed sensitivity: centroids are initialized by numpy.linspace
+    over the observed lens range. Changing the retained interface parameter
+    does not vary the algorithm. Initialization-seed sensitivity requires a
+    different method realization and is Class D (not authorized now).
+
+Prohibited claims (do not introduce)
+    Universal winner; Pareto optimum; adaptive-cover same-cover stability;
+    F-Mapper Reeb theorem; universal recovery probability; monotonic law from
+    two dose levels; precise-null interpretation of C9; seed sensitivity for
+    the deterministic F-Mapper implementation; null-to-zero imputation;
+    treatment of reconstructed C2 rows as original persisted output;
+    naming the historical per-bin upper estimate as exact Definition-9 D_M.
+
+Notation freeze
+    Literal D_M is Belchi et al. Definition 9 when every point has an ordinary
+    cluster label. D_M^NA is the release noise-aware extension with immutable
+    DBSCAN-noise and outside-cover states. Ledger field d_common_id and
+    machine tag exact_joint_definition_9 are schema continuity only.

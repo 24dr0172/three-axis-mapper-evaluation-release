@@ -1,0 +1,18 @@
+{
+  "campaign_id": "IB3_II3_CLUSTERING_EVALUATION",
+  "mode": "production",
+  "runner_version": "4.6.0",
+  "precommitted_plan_sha256": "4df64645d16174c30d09521cad8738e08dab154e22a80f5cae1c104346358595",
+  "canonical_mapping_ledger_sha256": "0ac2a0828919e765d44e9d5f2a80c87997504c6098cc9031866dc4bb03ee2c11",
+  "n_unique_constructions_planned": 42,
+  "n_unique_constructions_completed": 42,
+  "n_logical_arm_rows_planned": 60,
+  "n_logical_arm_rows_completed": 60,
+  "n_adjacency_edges_planned": 60,
+  "n_adjacency_edges_completed": 60,
+  "n_zero_imputed": 0,
+  "n_unit_audit_pass1_passes": 42,
+  "n_unit_audit_pass2_passes": 42,
+  "n_unit_audit_failures": 0,
+  "status": "production_completed"
+}

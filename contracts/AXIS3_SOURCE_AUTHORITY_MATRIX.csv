@@ -1,0 +1,11 @@
+component,implementation_path,mathematical_rule,authority_type,authority_reference,project_decision,spec_version,scientific_status
+Circle exact reference,src/mapper_framework/reeb_references.py,"R_f(S^1) 1-skeleton cycle, V=4, E=4, critical values [-1, 1]",PRIMARY_SOURCE,"Carrière, Michel, Oudot (2018)",N/A,1.1.0,FROZEN
+Tripod exact PL reference,src/mapper_framework/reeb_references.py,"R_f(Y) exact PL simplicial tree, V=4, E=3, critical values [-1, 0, 1]",PRIMARY_SOURCE,"Biasotti et al. (2008)",N/A,1.1.0,FROZEN
+Mapper node filtration,src/mapper_framework/conventional.py,"filt(v) = (1 / |S(v)|) * sum_{x in S(v)} f(x)",PROJECT_CONTRACT,"Carrière et al. (2018) precedent; empirical sample mean",DECISION-AXIS3-01,1.1.0,FROZEN
+Mapper edge filtration,src/mapper_framework/extended_persistence.py,"filt({u, v}) = max(filt(u), filt(v))",STANDARD_MATHEMATICS,"Edelsbrunner & Harer (2010); simplicial lower-star filtration",DECISION-AXIS3-01,1.1.0,FROZEN
+extended persistence,src/mapper_framework/extended_persistence.py,"Dgm_ext = (Ord_0, Rel_1, Ext_0+, Ext_1-)",PRIMARY_SOURCE,"Carrière, Michel, Oudot (2018); GUDHI C++ solver",N/A,1.1.0,FROZEN
+typed bottleneck,src/mapper_framework/extended_persistence.py,"d_B(D1, D2) = max_k d_B(D1[k], D2[k]) with diag cost |d - b| / 2",PRIMARY_SOURCE,"Carrière, Michel, Oudot (2018); GUDHI bottleneck",N/A,1.1.0,FROZEN
+typed Wasserstein,src/mapper_framework/extended_persistence.py,"W_1(D1, D2) = sum_k W_1(D1[k], D2[k]) with L_inf and diag cost |d - b| / 2",STANDARD_MATHEMATICS,"Hungarian linear assignment on L_inf augmented metric",N/A,1.1.0,FROZEN
+same-filter enforcement,src/mapper_framework/stability_metrics.py,"reference_filter_id == mapper_filter_id AND reference_filter_definition_hash == mapper_filter_definition_hash",PROJECT_CONTRACT,"Same-Filter Reeb Evaluation Contract",DECISION-AXIS3-01,1.1.0,FROZEN
+membership nerve,src/mapper_framework/nerve.py,"N^(2)(M) genuine 3-way sample intersections",PRIMARY_SOURCE,"Singh, Mémoli, Carlsson (2007)",DECISION-M0-NERV-01,1.2.0,FROZEN
+dual homology,src/mapper_framework/homology_gf2.py,"dim H_1(N^(2); F_2) via exact boundary matrix reduction",STANDARD_MATHEMATICS,"Gaussian elimination over GF(2)",N/A,1.2.0,FROZEN

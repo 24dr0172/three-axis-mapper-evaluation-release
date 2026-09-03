@@ -1,0 +1,43 @@
+{
+  "contract_id": "C6A_CONVENTIONAL_SWISS_NOISE_X_COVER_V1",
+  "status": "FINAL_EXECUTED",
+  "dataset_id": "swiss_roll_with_hole",
+  "method_id": "conventional",
+  "replicates": 20,
+  "alphas": [0.0, 0.05, 0.10, 0.20, 0.30],
+  "cover_levels": [
+    {"n_intervals": 10, "overlap_frac": 0.30},
+    {"n_intervals": 15, "overlap_frac": 0.30}
+  ],
+  "noise_and_lens": {
+    "coordinate_noise_rule": "Campaign_1_rule_conforming_Swiss_coordinate_noise",
+    "lens_id": "radial_xz",
+    "lens_formula": "sqrt(x^2+z^2)",
+    "dbscan_eps": 1.015739105123552,
+    "dbscan_min_samples": 3
+  },
+  "shared_cover_rule": {
+    "freeze_source": "clean_realization_lens_min_max",
+    "freeze_scope": "within_replicate_and_cover_level",
+    "reuse_exact_interval_endpoints_across_all_alpha_arms": true,
+    "recompute_endpoints_from_perturbed_data": false,
+    "noisy_values_outside_finite_cover": "coverage_gap_ineligible",
+    "require_cover_endpoint_hash_equality_for_each_comparison": true
+  },
+  "pairing": {
+    "same_data_realization_across_cover_levels": true,
+    "same_coordinate_noise_draw_across_cover_levels": true,
+    "same_observation_ids_and_order": true
+  },
+  "metric": "D_COMMON_ID",
+  "primary_alpha": 0.05,
+  "primary_unit_contrast": "D_COMMON_ID_n15_p030_minus_D_COMMON_ID_n10_p030",
+  "primary_estimand": "median_paired_contrast",
+  "uncertainty": "paired_percentile_bootstrap_95CI_fixed_resampling_seed",
+  "preferred_direction": null,
+  "secondary": "descriptive_dose_profiles_only_no_monotonic_law",
+  "planned_constructions": 200,
+  "stream_range": [16100, 16199],
+  "failure_policy": "retain_typed_nulls_no_imputation",
+  "terminal_states": ["INTERACTION_ESTIMABLE", "PRIMARY_CONTRAST_NOT_OBSERVED", "PRIMARY_ESTIMAND_NOT_MEASURABLE", "RUN_FAILED"]
+}

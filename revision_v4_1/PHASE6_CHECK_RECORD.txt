@@ -1,0 +1,59 @@
+Phase 6 check record — reproducibility and release engineering
+==============================================================
+
+Status
+    Phase 6 complete. verify_phase6.py prints PHASE6_CHECKS_PASSED.
+    Sealed evidence/contracts/src/code hashes match PRE_V4_1_SHA256SUMS.txt.
+    SHA256SUMS.txt is regenerated as the v4.1 tree manifest.
+
+8.1 Derived-evidence registry
+    All Phase 0--7 additive artifacts have stable paths and SHA-256 records.
+
+8.2 Claim / number map
+    CLAIM_EVIDENCE_INDEX.csv remains 35 unique retained claims so the frozen
+    scientific verifier's 35-row check still holds. New v4.1 manuscript
+    numbers map through manuscript/V4_1_NUMBER_EVIDENCE_MAP.csv.
+
+8.3 Figure data
+    manuscript/figures/FIGURE_DATA.json is unchanged (fig01--fig06; quick
+    release cmp). FIGURE_DATA_V4_1.json binds fig07 to
+    C1_FULL_DOSE_RESPONSE_V4_1.json and the frozen C1 ledgers.
+
+8.4 Manuscript parameter verifier
+    revision_v4_1/verify_manuscript_parameters.py checks FCM tol/max_iter,
+    CIA2/C3 Digits eps, Swiss N=2500, C7 48 cells, overlap, and frozen
+    confirmatory denominators against ledgers.
+
+8.5 Versioning
+    CITATION.cff version 4.1.0. CHANGELOG_V4_1.txt splits disclosure vs
+    derived vs robustness. Prior releases remain immutable.
+
+8.6 Environment preflight
+    ENVIRONMENT_PREFLIGHT_V4_1.json records CPython 3.12.3, portable pins,
+    missing distributions on this host, and the fail-closed entrypoint
+    code/verification/verify_environment.py. Legacy Axis-III 3.13.5 is
+    unavailable; ENV_EQUIVALENCE_CHECK_V4_1 remains skipped.
+
+8.7 Final integrity
+    SHA256SUMS.txt regenerated. Scientific checks from verify_release.py
+    are run by verify_release_v4_1.py. The frozen verify_clean_boundary
+    still forbids confirmatory/preregister language in CLAIMS.txt,
+    RESULTS.txt, and manuscript/figures/README.md; that hygiene rule is
+    superseded by the v4.1 claim-tier and historical-status policy and is not
+    treated as a scientific failure. PDF compile is
+    skipped_toolchain_unavailable (no pdflatex/latexmk on this host).
+
+Release-gate repair (8.7, 30 August 2026, independent self-check)
+    verify_release_v4_1.py previously failed its own manifest path-set
+    check on every plain run: load_legacy() writes
+    code/verification/__pycache__/verify_release.cpython-312.pyc in-process
+    after the cache sweep (PYTHONDONTWRITEBYTECODE cannot affect a running
+    interpreter), so the fresh pyc was absent from the manifest. Fix: set
+    sys.dont_write_bytecode before load_legacy() and sweep __pycache__ once
+    more after it. SHA256SUMS.txt regenerated afterwards; the gate now
+    prints V4_1_RELEASE_CHECKS_PASSED.
+
+Replay provenance
+    tab:replayprov / CAMPAIGN_REPLAY_PROVENANCE_V4_1.csv. C2 is a
+    deterministic reconstruction. III-2 is evidence-ledger recomputation
+    plus metadata re-audit (scientific numbers unchanged).

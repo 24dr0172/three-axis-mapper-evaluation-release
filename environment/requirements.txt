@@ -1,0 +1,11 @@
+# Portable final-release reproduction environment.
+# Interpreter: CPython 3.12. Conventional III-1/III-2 evidence used the
+# separately recorded environment in requirements_axis3_legacy.txt.
+numpy==1.26.4
+scipy==1.11.4
+scikit-learn==1.9.0
+joblib==1.5.3
+threadpoolctl==3.6.0
+narwhals==2.25.0
+matplotlib==3.8.4
+gudhi==3.13.0

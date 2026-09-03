@@ -1,0 +1,17 @@
+{
+  "d_common_id.py": {
+    "executed_sha256": "44723fab5216bf31cead2f13125f4a1f3ed1716bb72bc3c5d14eefeda0d1c37b",
+    "release_sha256": "5ddeac40a45bd2e32b670b51359d95ad8bcf1c4ebbf96a55cb24be062a4ab864",
+    "portability_change": "The release uses the exact joint observation-mismatch MILP, with its explicit immutable noise/outside-cover convention, and requires realized-cover and filter-definition hashes."
+  },
+  "ia2_core.py": {
+    "executed_sha256": "e2b6df143ec4fa42e335949620c869249bdb47a7631f37e30ab86a9eff0fa484",
+    "release_sha256": "06dab819039c1543660071f15d92da44228842f4016822cd2de8d08ff4ccd401",
+    "portability_change": "The portable I-A2 helper binds the exact metric and passes realized-cover and filter-definition hashes."
+  },
+  "local_quality.py": {
+    "executed_sha256": "3c2e7e1dffe6195959f15d06835708e492c8b2257ff5bdb5ac482e44ca94d089",
+    "release_sha256": "452c12ec41da46e03c962d3094f2afa76b739eff054bd1d6622671520861e325",
+    "portability_change": "One model-specific process name was removed from a docstring reference. Executable code and scientific behavior are unchanged."
+  }
+}

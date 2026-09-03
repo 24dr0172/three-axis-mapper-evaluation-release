@@ -1,0 +1,29 @@
+{
+  "campaign_id": "R10_STRUCTURAL_ROBUSTNESS_V4_2026-08-25",
+  "run_id": "R10_STRUCTURAL_ROBUSTNESS_V4_UNIT_001",
+  "runner_version": "r10_v4_production_runner_v4.0.0",
+  "planned": 282,
+  "attempted": 282,
+  "clean": {
+    "eligible": 42,
+    "ineligible": 0,
+    "failed": 0,
+    "attempted": 42
+  },
+  "noisy": {
+    "eligible": 163,
+    "ineligible": 30,
+    "failed": 47,
+    "attempted": 240
+  },
+  "eligible": 205,
+  "success_ineligible_retained": 30,
+  "execution_failed": 47,
+  "reconciliation": true,
+  "journal": {
+    "n_started": 282,
+    "n_appended": 282,
+    "n_accounting_written": 1,
+    "n_run_completed": 1
+  }
+}

@@ -1,0 +1,20 @@
+campaign_id,replay_class,note
+C4_FMAPPER,representative construction replay,Corrected Axis-I F-Mapper fixed-cover campaign; representative replay in run_quick/run_all.
+CIA2_CONVENTIONAL,evidence-ledger recomputation,Released CIA2 construction ledger; Digits 0/20 is reference-ineligible all_points_unassigned.
+C1_SWISS,evidence-ledger recomputation,"Paired comparison and quality ledgers; v4.1 four-level perturbation series is derived, 0 new constructions."
+C2_SELECTION,deterministic reconstruction,260 unit / 780 arm rows reconstructed after a logging-stage crash from journaled unit outcomes; used only for the uniform selection-failure conclusion.
+C3_FMAPPER,evidence-ledger recomputation,C3 construction ledger is the confirmatory status authority (339/181/5).
+C7_TRACK_C,evidence-ledger recomputation,Exact-joint endpoint correction on already-generated Track C evidence; 0 new Mapper constructions.
+C6A_CONVENTIONAL,evidence-ledger recomputation,Frozen-cover Swiss ledger; primary estimand not measurable.
+C6B_BALL,evidence-ledger recomputation,Frozen-landmark Swiss ledger.
+C8_FMAPPER_AXIS3,evidence-ledger recomputation,C8 construction ledger; discordance/taxonomy are derived summaries.
+C5_FMAPPER,evidence-ledger recomputation,Finite-case cells; frequencies taken from C8.
+C9_BALL_CIRCLE,evidence-ledger recomputation,Saturated k=2.0 arm; vacuous DiD.
+M6A2_STABILITY,evidence-ledger recomputation,302-run Swiss extended-persistence comparison; Wasserstein companion is derived.
+R10_STRUCTURAL,evidence-ledger recomputation,282-construction accounting from R10_V4_RUN_ACCOUNTING.json.
+N1_MATCHED,evidence-ledger recomputation,Descriptive matched-status compilation; not confirmatory.
+AXIS3_III1,evidence-ledger recomputation,Conventional III-1 Circle/Tripod finite-case baselines; produced under legacy CPython 3.13.5.
+AXIS3_III2,evidence-ledger recomputation plus metadata re-audit,III-2B cell-level recovery from III2B_RECOVERY_SUMMARY.csv. Same-filter metadata re-audit: SAME_FILTER_FORENSIC_PROOF_III2_V5; scientific numeric fields unchanged. Run-level construction journals are not reconstructed.
+IB1_III4,evidence-ledger recomputation,34/34 eligible Circle/Tripod perturbation rows.
+FCM_SOLVER_SENSITIVITY_AUDIT_V4_1,new robustness arm on frozen lens values,FCM-only reclassification; 0 Mapper constructions; not a replacement for C3/C8.
+ENV_EQUIVALENCE_CHECK_V4_1,skipped_interpreter_unavailable,CPython 3.13.5 not provisioned; provenance table retained.

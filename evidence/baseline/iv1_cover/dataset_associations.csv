@@ -1,0 +1,7 @@
+dataset_id,quality_name,n_planned,n_attempted,n_evaluated_pairs,n_NA_distance,n_NA_quality,n_tie_groups_D,n_tied_observations_D,n_tie_groups_Q,n_tied_observations_Q,spearman_primary_D_vs_Q,spearman_companion_copied_from_primary,rank_vectors_identical,undefined_reason,p_value_reported
+unit_circle_S1,silhouette_macro,11,11,11,0,0,0,0,0,0,-0.3272727272727273,-0.3272727272727273,True,,False
+unit_circle_S1,davies_bouldin_macro,11,11,11,0,0,0,0,0,0,0.3272727272727273,0.3272727272727273,True,,False
+swiss_roll_with_hole,silhouette_macro,11,11,11,0,0,0,0,0,0,0.19090909090909092,0.19090909090909092,True,,False
+swiss_roll_with_hole,davies_bouldin_macro,11,11,11,0,0,0,0,0,0,-0.3272727272727273,-0.3272727272727273,True,,False
+digits_1797x64_scaled16,silhouette_macro,11,11,11,0,0,0,0,0,0,0.6454545454545455,0.6454545454545455,True,,False
+digits_1797x64_scaled16,davies_bouldin_macro,11,11,11,0,0,0,0,0,0,-0.6454545454545455,-0.6454545454545455,True,,False

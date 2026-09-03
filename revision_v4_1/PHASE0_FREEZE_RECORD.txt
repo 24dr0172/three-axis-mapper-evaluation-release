@@ -1,0 +1,121 @@
+Phase 0 freeze record — v4.1 revision scope and claim architecture
+==================================================================
+
+Status
+    Phase 0 complete. No sealed scientific evidence was modified.
+
+Date (UTC)
+    2026-08-30
+
+Working tree
+    three_axis_mapper_final_release_reviewer_ready/
+
+0.1 Authority snapshot
+    Acceptance: a single pre-v4.1 authority hash exists before edits.
+    Snapshot tar SHA256
+        69de1663642f69bffd8db2e1aba09b09fe21b6cb3e5976b79567d47fe5d9beee
+    Source zip SHA256
+        40149b2adb757be4d53c971172436e4da598bbd0b37c174957c4261a3e7b089d
+    Frozen SHA256SUMS.txt SHA256
+        1172ff7b6071c8477cb2a9100ca9c8feddf5fe962dd60081ec02e9aee10928e7
+    Snapshot file count
+        224
+    The tarball was written before any revision_v4_1 file existed.
+    Details: PHASE0_AUTHORITY_SNAPSHOT.txt and
+    archive/pre_v4.1_AUTHORITY_RECORD.txt.
+
+0.2 Claim-tier table
+    Acceptance: every CLAIM_EVIDENCE_INDEX row maps to one manuscript
+    claim record.
+    File: CLAIM_TIER_TABLE.csv
+    Rows: 35
+    Mapping: claim_id order and evidence_authority paths equal the
+    released CLAIM_EVIDENCE_INDEX.csv 1:1. Every evidence_authority
+    path exists in the working tree.
+
+    v4.1 tiers (plan vocabulary)
+        confirmatory        15
+        exploratory         13
+        failure-accounting   7
+        algebraic            0 in the index; see NONINDEX_BOUNDARIES.txt
+
+    Recommended claim-table fields (plan 7.1) are present as:
+        Claim ID              claim_id
+        Tier                  v4_1_tier
+        Estimand              estimand
+        Evidence authority    evidence_authority
+        Resolution rule       resolution_rule
+        Uncertainty           uncertainty
+        Manuscript status     v4_1_manuscript_status
+
+0.3 Manuscript inclusion rule
+    Acceptance: no primary evidence omitted without an explicit scope
+    reason.
+    File: MANUSCRIPT_INCLUSION_RULE.txt
+
+    v4.1 locations in CLAIM_TIER_TABLE.csv
+        main_text                      24
+        appendix                        7
+        evidence_map                    3
+        scope_excluded_adjudication     1 (QS_CIRCLE)
+
+    Primary-index rows that are currently unnamed in mapper_manuscript.tex
+    and the required v4.1 placement:
+        M6A2_STABILITY     confirmatory         -> main_text (required add)
+        R10_STRUCTURAL     failure-accounting   -> appendix (required add)
+        IB1_III4_CIRCLE    confirmatory         -> evidence_map (required name)
+        IB1_III4_TRIPOD    confirmatory         -> evidence_map (required name)
+        E2M_ENSEMBLE       already in main text
+        C7 and Axis I/III primaries already in main text
+
+    Descriptive rows currently unnamed are assigned appendix or
+    evidence_map with reasons (N1, IB2, IB3, IB4F, E2M_II1, IV5).
+    E2M_III3 is a confirmatory finite-case row (n=3), not a descriptive
+    sweep; it is assigned to the appendix with an explicit not-a-theorem
+    label. None is silently omitted.
+
+Phase 0 self-check (2026-08-30)
+    Snapshot tar hash re-verified. All 223 sealed SHA256SUMS entries still
+    match. CLAIM_TIER_TABLE.csv is 1:1 with CLAIM_EVIDENCE_INDEX.csv on
+    claim_id order and evidence paths. C1 four-dose ledgers, CIA2 Digits
+    all_points_unassigned reference, C3 Digits eps=1.455055840852852,
+    CIA2 Digits eps=0.15, and Track C 4 x 4 x 3 positive-dose cells were
+    re-read from frozen evidence. C3/C8 record fcm_tol=1e-7 and
+    max_iter=300 on every row; iteration and objective-change traces are
+    marked not_exposed_by_sealed_run_fcm_1d.
+
+0.4 New-analysis boundary
+    Acceptance: no unlisted new campaign can enter the revision.
+    File: NEW_ANALYSIS_BOUNDARY.txt
+
+    Authorized new campaign identifiers (only)
+        FCM_SOLVER_SENSITIVITY_AUDIT_V4_1
+        ENV_EQUIVALENCE_CHECK_V4_1
+
+    Class A  text-only factual repair
+    Class B  derived analysis from frozen evidence (B1--B7)
+    Class C  the two robustness identifiers above
+    Class D  referee-triggered only (random FCM init; Kang-Lim source-rule;
+             C6-a refit control)
+    Class E  forbidden (threshold tau; blanket p-values; III-2B journal
+             reconstruction; silent renaming; attack-only citation changes;
+             overwrite of sealed evidence; N1 promotion)
+
+What Phase 0 did not do
+    It did not edit manuscript/mapper_manuscript.tex, any evidence ledger,
+    any contract, or SHA256SUMS.txt. Those remain byte-identical to the
+    snapshot. SHA256SUMS.txt will be regenerated only at the Phase 6
+    integrity step after later authorized artifacts exist. Until then the
+    working tree is a snapshot plus additive revision_v4_1 files, and the
+    quick/full release verifiers that require an exact manifest match are
+    expected to fail on the extra paths.
+
+Sealed-evidence rule (still in force)
+    Existing scientific ledgers, raw records, source hashes, frozen
+    contracts, and campaign terminal states are immutable. New objects are
+    additive, separately hashed, and indexed in DERIVED_EVIDENCE_REGISTRY.csv.
+
+Next authorized work
+    Phase 1, Class A text-only factual repair, beginning with C1 disclosure,
+    C7 factorial/model language, the ledger-generated master design table,
+    CIA2 Digits explanation, and FCM solver-criterion wording.

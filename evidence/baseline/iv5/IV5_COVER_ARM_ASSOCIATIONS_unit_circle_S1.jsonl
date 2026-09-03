@@ -1,0 +1,2 @@
+{"dataset_id": "unit_circle_S1", "quality_name": "silhouette_macro", "n_evaluated_pairs": 11, "n_NA_distance": 0, "n_NA_quality": 0, "spearman_primary_D_vs_Q": -0.3272727272727273, "rank_vectors_identical": true, "undefined_reason": null, "p_value_reported": false}
+{"dataset_id": "unit_circle_S1", "quality_name": "davies_bouldin_macro", "n_evaluated_pairs": 11, "n_NA_distance": 0, "n_NA_quality": 0, "spearman_primary_D_vs_Q": 0.3272727272727273, "rank_vectors_identical": true, "undefined_reason": null, "p_value_reported": false}

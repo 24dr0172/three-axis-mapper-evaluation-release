@@ -1,0 +1,41 @@
+{
+  "manifest": {
+    "campaign_id": "C6B_BALL_SWISS_NOISE_X_RADIUS_2026-08-28",
+    "run_id": "C6B_CONF_001",
+    "plan_units": 300,
+    "result_rows": 300,
+    "frozen_landmark_constructions": 300,
+    "clean_reference_fit_transform_calls": 60,
+    "total_mapper_operations": 360,
+    "accounting_note": "Each result row is one frozen-landmark construction. Additionally the SEALED BallMapper.fit_transform is called once per (replicate, radius) to SELECT the clean landmarks; those 60 calls are the only landmark selection performed anywhere and are counted separately from result rows.",
+    "attempted": 300,
+    "defined_jaccard": 300,
+    "null_empty_union": 0,
+    "ineligible_clean_reference": 0,
+    "runner_sha256": "0a6d590eb873c3cb9a1f8e31d6877f74913ccff019ea7a09d08a65a13cae0336"
+  },
+  "primary_estimand": {
+    "contrast_definition": "[dJ(alpha0.10,k2.0)-dJ(alpha0.05,k2.0)]-[dJ(alpha0.10,k1.0)-dJ(alpha0.05,k1.0)]",
+    "primary_alphas": [
+      0.05,
+      0.1
+    ],
+    "primary_radii_multipliers": [
+      1.0,
+      2.0
+    ],
+    "n_complete_replicates": 20,
+    "n_incomplete_replicates": 0,
+    "median_difference_in_differences": 0.012256063045744614,
+    "ci95_low": -0.014962388055083431,
+    "ci95_high": 0.028811373938695928,
+    "bootstrap_B": 20000,
+    "bootstrap_seed": 20260828,
+    "preferred_direction": null,
+    "primary_radii_clean_reference_eligible": {
+      "1.0": true,
+      "2.0": true
+    },
+    "terminal_state": "INTERACTION_ESTIMABLE"
+  }
+}

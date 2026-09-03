@@ -1,0 +1,82 @@
+{
+  "analysis_id": "C1_FULL_DOSE_RESPONSE_V4_1",
+  "doses": {
+    "0.05": {
+      "eligibility_reason_counts": {
+        "success": 30
+      },
+      "median_d_m_na": 0.626862735985964,
+      "median_eligible_silhouette_pullback_fraction_clean": 0.9,
+      "median_eligible_silhouette_pullback_fraction_perturbed": 1.0,
+      "median_noise_fraction_incidence_clean": 0.0556749276920461,
+      "median_noise_fraction_incidence_perturbed": 0.24578906642845988,
+      "median_noise_fraction_macro_clean": 0.055306906950664335,
+      "median_noise_fraction_macro_perturbed": 0.2503346954680561,
+      "median_silhouette_clean": 0.1388346101917387,
+      "median_silhouette_delta": 0.08535122853028472,
+      "median_silhouette_perturbed": 0.24117587961086367,
+      "n_eligible": 30,
+      "n_pairs": 30
+    },
+    "0.10": {
+      "eligibility_reason_counts": {
+        "success": 30
+      },
+      "median_d_m_na": 0.8439448296452363,
+      "median_eligible_silhouette_pullback_fraction_clean": 0.9,
+      "median_eligible_silhouette_pullback_fraction_perturbed": 1.0,
+      "median_noise_fraction_incidence_clean": 0.0556749276920461,
+      "median_noise_fraction_incidence_perturbed": 0.5512815057608134,
+      "median_noise_fraction_macro_clean": 0.055306906950664335,
+      "median_noise_fraction_macro_perturbed": 0.5578188663107546,
+      "median_silhouette_clean": 0.1388346101917387,
+      "median_silhouette_delta": 0.2667600419174847,
+      "median_silhouette_perturbed": 0.42797839946374855,
+      "n_eligible": 30,
+      "n_pairs": 30
+    },
+    "0.20": {
+      "eligibility_reason_counts": {
+        "success": 30
+      },
+      "median_d_m_na": 0.9196860240811646,
+      "median_eligible_silhouette_pullback_fraction_clean": 0.9,
+      "median_eligible_silhouette_pullback_fraction_perturbed": 1.0,
+      "median_noise_fraction_incidence_clean": 0.0556749276920461,
+      "median_noise_fraction_incidence_perturbed": 0.8437073823095302,
+      "median_noise_fraction_macro_clean": 0.055306906950664335,
+      "median_noise_fraction_macro_perturbed": 0.8491631250779191,
+      "median_silhouette_clean": 0.1388346101917387,
+      "median_silhouette_delta": 0.5113516243895855,
+      "median_silhouette_perturbed": 0.6483189197825224,
+      "n_eligible": 30,
+      "n_pairs": 30
+    },
+    "0.30": {
+      "eligibility_reason_counts": {
+        "success": 30
+      },
+      "median_d_m_na": 0.9378968462669526,
+      "median_eligible_silhouette_pullback_fraction_clean": 0.9,
+      "median_eligible_silhouette_pullback_fraction_perturbed": 0.9,
+      "median_noise_fraction_incidence_clean": 0.0556749276920461,
+      "median_noise_fraction_incidence_perturbed": 0.9407872850789649,
+      "median_noise_fraction_macro_clean": 0.055306906950664335,
+      "median_noise_fraction_macro_perturbed": 0.9446321276569616,
+      "median_silhouette_clean": 0.1388346101917387,
+      "median_silhouette_delta": 0.634642773339741,
+      "median_silhouette_perturbed": 0.7679087493673599,
+      "n_eligible": 30,
+      "n_pairs": 30
+    }
+  },
+  "mapper_constructions_generated": 0,
+  "source": {
+    "comparison": "evidence/campaigns/c1/C1_COMPARISON_LEDGER.jsonl",
+    "comparison_sha256": "bc1ec8fbc3a80513fca420a6de9650900c97d24ae351ca3d397ca6b2853edfda",
+    "paired": "evidence/campaigns/c1/C1_PAIRED_QUALITY_LEDGER.jsonl",
+    "paired_sha256": "5cebb390a232d894e1717bce842f1c183efdbc6a1057bdc3654c06e1a4f236f1",
+    "quality": "evidence/campaigns/c1/C1_QUALITY_LEDGER.jsonl",
+    "quality_sha256": "7778d3a864624be2b52003d0abcd9e1f7b375723772904b62d75565b1438af6b"
+  }
+}

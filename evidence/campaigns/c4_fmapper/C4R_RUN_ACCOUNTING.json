@@ -1,0 +1,20 @@
+{
+  "exact_metric_recomputed": true,
+  "exact_metric_sha256": "5ddeac40a45bd2e32b670b51359d95ad8bcf1c4ebbf96a55cb24be062a4ab864",
+  "n_exact_distances": 120,
+  "n_fixed_cover_distances": 120,
+  "n_plan_units": 123,
+  "n_result_rows": 243,
+  "status_by_arm": {
+    "fixed_cover": {
+      "success": 120
+    },
+    "reference": {
+      "success": 3
+    },
+    "refit_cover": {
+      "fcm_non_convergence": 22,
+      "success": 98
+    }
+  }
+}

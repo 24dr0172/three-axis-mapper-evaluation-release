@@ -1,0 +1,37 @@
+Phase 0.1 — Pre-v4.1 authority snapshot
+=======================================
+
+Acceptance criterion
+    A single pre-v4.1 authority hash exists before edits.
+
+Snapshot created (UTC)
+    2026-08-30T05:56:53Z
+
+Source zip
+    three_axis_mapper_final_release_reviewer_ready.zip
+    SHA256  40149b2adb757be4d53c971172436e4da598bbd0b37c174957c4261a3e7b089d
+
+Immutable snapshot archive (do not edit)
+    archive/pre_v4.1_reviewer_ready_authority_2026-08-30.tar.gz
+    SHA256  69de1663642f69bffd8db2e1aba09b09fe21b6cb3e5976b79567d47fe5d9beee
+    sidecar archive/pre_v4.1_reviewer_ready_authority_2026-08-30.SHA256
+    record  archive/pre_v4.1_AUTHORITY_RECORD.txt
+    files   224
+    bytes   4375205
+
+Frozen release-integrity manifest
+    SHA256SUMS.txt
+    SHA256  1172ff7b6071c8477cb2a9100ca9c8feddf5fe962dd60081ec02e9aee10928e7
+
+How this snapshot was made
+    The reviewer-ready zip was extracted to the working tree
+    three_axis_mapper_final_release_reviewer_ready/. Before any
+    revision_v4_1 files were added, that tree was packed with
+    tar --sort=name and gzip -n. The resulting tarball is the
+    immutable pre-revision copy.
+
+Authority rule
+    This snapshot SHA256 is the sole pre-v4.1 authority. v4.1 work
+    may add separately hashed revision artifacts. It must not
+    overwrite, delete, or silently replace sealed scientific
+    evidence present in the snapshot.

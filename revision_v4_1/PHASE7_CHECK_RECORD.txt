@@ -1,0 +1,44 @@
+Phase 7 check record — writing and publication hygiene
+======================================================
+
+Status
+    Phase 7 complete. verify_phase7.py prints PHASE7_CHECKS_PASSED and
+    includes Phase 6.
+
+9.1 Abstract
+    Ensemble identity is fully qualified. Failures are labelled
+    frozen-endpoint and design-specific, not universal method defects.
+
+9.2 Terminology
+    sealed FCM/computational-reference -> frozen, with the ledger token
+    not_exposed_by_sealed_run_fcm_1d preserved.
+    C3 "construction units" -> construction records; FCM audit units ->
+    construction records.
+    IV-1 "11 spokes" -> 11 controlled cells.
+    III-2 "requalified" -> metadata re-audited; RUN_LEVEL_REQUALIFIED.csv
+    filename preserved.
+    The verifier scans the claim index, tier table, generated manuscript
+    tables, design CSV, changelog, CLAIMS, RESULTS, and manuscript body so
+    generated/reviewer-facing metadata cannot retain the superseded jargon.
+
+9.3 Equations
+    FCM objective labelled eq:fcmobj. pi tuple remains defined before eq:dm.
+
+9.4 References
+    Zhou 2022 remains the Springer AWM Research in Computational Topology 2
+    chapter; not changed to JACT.
+    Tao--Ge 2025 papers are distinct and now carry publisher DOIs:
+    BMC Bioinformatics 26:73 doi:10.1186/s12859-025-06085-5
+    J. Comput. Biol. 32(8):781-796 doi:10.1089/cmb.2024.0919
+
+9.5 Release citation
+    No archive DOI invented. Manuscript and README state none has been issued.
+
+9.6 AI disclosure
+    Manuscript unnumbered section and README: drafting, code review,
+    discrepancy detection, audit assistance; authors approved scientific
+    decisions and verified evidence outputs.
+
+9.7 Formatting
+    FCM sensitivity table uses short dataset labels and [H] placement.
+    No scientific numbers were changed to fix wording.

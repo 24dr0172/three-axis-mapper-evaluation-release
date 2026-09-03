@@ -1,0 +1,282 @@
+{
+  "analysis_id": "M6A2_WASSERSTEIN_COMPANION_V4_1",
+  "cell_count_check": 12,
+  "conventional_mean_below_fmapper_by_sigma": [
+    {
+      "conventional_mean_below_fmapper": false,
+      "noise_sigma": "0.01"
+    },
+    {
+      "conventional_mean_below_fmapper": true,
+      "noise_sigma": "0.03"
+    },
+    {
+      "conventional_mean_below_fmapper": false,
+      "noise_sigma": "0.05"
+    },
+    {
+      "conventional_mean_below_fmapper": false,
+      "noise_sigma": "0.08"
+    },
+    {
+      "conventional_mean_below_fmapper": false,
+      "noise_sigma": "0.1"
+    }
+  ],
+  "mapper_constructions_generated": 0,
+  "paired_method_differences": [
+    {
+      "bootstrap": {
+        "B": 5000,
+        "method": "paired percentile bootstrap of replicate-level method differences",
+        "seed": 20260830,
+        "unit": "matched replication_id and perturbation_seed"
+      },
+      "ci95_high": -0.05369112196271618,
+      "ci95_low": -0.20634420220687583,
+      "conventional_mean_on_pairs": 0.3175865692126484,
+      "fmapper_mean_on_pairs": 0.44685735793780285,
+      "mean_conventional_minus_fmapper": -0.12927078872515443,
+      "metric_id": "bottleneck_distance",
+      "n_pairs": 30,
+      "noise_sigma": "0.01"
+    },
+    {
+      "bootstrap": {
+        "B": 5000,
+        "method": "paired percentile bootstrap of replicate-level method differences",
+        "seed": 20260830,
+        "unit": "matched replication_id and perturbation_seed"
+      },
+      "ci95_high": -0.0362678052651712,
+      "ci95_low": -0.19367765838011666,
+      "conventional_mean_on_pairs": 0.4414612990111678,
+      "fmapper_mean_on_pairs": 0.5597790720393779,
+      "mean_conventional_minus_fmapper": -0.11831777302821028,
+      "metric_id": "bottleneck_distance",
+      "n_pairs": 30,
+      "noise_sigma": "0.03"
+    },
+    {
+      "bootstrap": {
+        "B": 5000,
+        "method": "paired percentile bootstrap of replicate-level method differences",
+        "seed": 20260830,
+        "unit": "matched replication_id and perturbation_seed"
+      },
+      "ci95_high": 0.05928442482413528,
+      "ci95_low": -0.12922931282601682,
+      "conventional_mean_on_pairs": 0.5589462956220733,
+      "fmapper_mean_on_pairs": 0.5963945691091012,
+      "mean_conventional_minus_fmapper": -0.03744827348702769,
+      "metric_id": "bottleneck_distance",
+      "n_pairs": 30,
+      "noise_sigma": "0.05"
+    },
+    {
+      "bootstrap": {
+        "B": 5000,
+        "method": "paired percentile bootstrap of replicate-level method differences",
+        "seed": 20260830,
+        "unit": "matched replication_id and perturbation_seed"
+      },
+      "ci95_high": 0.005675236381292741,
+      "ci95_low": -0.24116224657397575,
+      "conventional_mean_on_pairs": 0.7104058621215684,
+      "fmapper_mean_on_pairs": 0.831784856393593,
+      "mean_conventional_minus_fmapper": -0.12137899427202466,
+      "metric_id": "bottleneck_distance",
+      "n_pairs": 30,
+      "noise_sigma": "0.08"
+    },
+    {
+      "bootstrap": {
+        "B": 5000,
+        "method": "paired percentile bootstrap of replicate-level method differences",
+        "seed": 20260830,
+        "unit": "matched replication_id and perturbation_seed"
+      },
+      "ci95_high": 0.027504381470711402,
+      "ci95_low": -0.17546537651586896,
+      "conventional_mean_on_pairs": 0.6825505864420085,
+      "fmapper_mean_on_pairs": 0.7550101943198517,
+      "mean_conventional_minus_fmapper": -0.07245960787784321,
+      "metric_id": "bottleneck_distance",
+      "n_pairs": 29,
+      "noise_sigma": "0.1"
+    },
+    {
+      "bootstrap": {
+        "B": 5000,
+        "method": "paired percentile bootstrap of replicate-level method differences",
+        "seed": 20260830,
+        "unit": "matched replication_id and perturbation_seed"
+      },
+      "ci95_high": 0.18052599726107435,
+      "ci95_low": -0.1804609253540711,
+      "conventional_mean_on_pairs": 1.180021406205319,
+      "fmapper_mean_on_pairs": 1.176390496062657,
+      "mean_conventional_minus_fmapper": 0.0036309101426620434,
+      "metric_id": "wasserstein_distance",
+      "n_pairs": 30,
+      "noise_sigma": "0.01"
+    },
+    {
+      "bootstrap": {
+        "B": 5000,
+        "method": "paired percentile bootstrap of replicate-level method differences",
+        "seed": 20260830,
+        "unit": "matched replication_id and perturbation_seed"
+      },
+      "ci95_high": 0.09838996770081623,
+      "ci95_low": -0.4006299799744994,
+      "conventional_mean_on_pairs": 2.7180147712271894,
+      "fmapper_mean_on_pairs": 2.874414739041174,
+      "mean_conventional_minus_fmapper": -0.1563999678139848,
+      "metric_id": "wasserstein_distance",
+      "n_pairs": 30,
+      "noise_sigma": "0.03"
+    },
+    {
+      "bootstrap": {
+        "B": 5000,
+        "method": "paired percentile bootstrap of replicate-level method differences",
+        "seed": 20260830,
+        "unit": "matched replication_id and perturbation_seed"
+      },
+      "ci95_high": 0.5783734299535455,
+      "ci95_low": -0.032637644312476725,
+      "conventional_mean_on_pairs": 4.112496112775091,
+      "fmapper_mean_on_pairs": 3.8422633818162013,
+      "mean_conventional_minus_fmapper": 0.27023273095888933,
+      "metric_id": "wasserstein_distance",
+      "n_pairs": 30,
+      "noise_sigma": "0.05"
+    },
+    {
+      "bootstrap": {
+        "B": 5000,
+        "method": "paired percentile bootstrap of replicate-level method differences",
+        "seed": 20260830,
+        "unit": "matched replication_id and perturbation_seed"
+      },
+      "ci95_high": 0.8327926321273755,
+      "ci95_low": 0.14424674721653621,
+      "conventional_mean_on_pairs": 5.794896481774917,
+      "fmapper_mean_on_pairs": 5.291603202931645,
+      "mean_conventional_minus_fmapper": 0.5032932788432699,
+      "metric_id": "wasserstein_distance",
+      "n_pairs": 30,
+      "noise_sigma": "0.08"
+    },
+    {
+      "bootstrap": {
+        "B": 5000,
+        "method": "paired percentile bootstrap of replicate-level method differences",
+        "seed": 20260830,
+        "unit": "matched replication_id and perturbation_seed"
+      },
+      "ci95_high": 1.1051493554868264,
+      "ci95_low": 0.2628978371496975,
+      "conventional_mean_on_pairs": 6.486015329557802,
+      "fmapper_mean_on_pairs": 5.808698874076235,
+      "mean_conventional_minus_fmapper": 0.6773164554815675,
+      "metric_id": "wasserstein_distance",
+      "n_pairs": 29,
+      "noise_sigma": "0.1"
+    }
+  ],
+  "primary_ordering_metric": "bottleneck_extended_pd",
+  "role": "companion descriptive summary; not the primary M6-A2 ordering claim",
+  "rows": [
+    {
+      "ci95_high": 1.3392113474870118,
+      "ci95_low": 1.024621093751841,
+      "mean": 1.180021406205319,
+      "method_id": "conventional",
+      "n_valid": 30,
+      "noise_sigma": "0.01"
+    },
+    {
+      "ci95_high": 2.9787172010087586,
+      "ci95_low": 2.479783206283376,
+      "mean": 2.7180147712271894,
+      "method_id": "conventional",
+      "n_valid": 30,
+      "noise_sigma": "0.03"
+    },
+    {
+      "ci95_high": 4.459557395808168,
+      "ci95_low": 3.785553420233523,
+      "mean": 4.112496112775091,
+      "method_id": "conventional",
+      "n_valid": 30,
+      "noise_sigma": "0.05"
+    },
+    {
+      "ci95_high": 6.144590559748175,
+      "ci95_low": 5.451863768891491,
+      "mean": 5.794896481774917,
+      "method_id": "conventional",
+      "n_valid": 30,
+      "noise_sigma": "0.08"
+    },
+    {
+      "ci95_high": 6.861312459298004,
+      "ci95_low": 6.122825718657138,
+      "mean": 6.481171128401028,
+      "method_id": "conventional",
+      "n_valid": 30,
+      "noise_sigma": "0.1"
+    },
+    {
+      "ci95_high": 1.3282474525376313,
+      "ci95_low": 1.0314538182893853,
+      "mean": 1.176390496062657,
+      "method_id": "f_mapper",
+      "n_valid": 30,
+      "noise_sigma": "0.01"
+    },
+    {
+      "ci95_high": 3.1331349466718135,
+      "ci95_low": 2.6164523577643903,
+      "mean": 2.874414739041174,
+      "method_id": "f_mapper",
+      "n_valid": 30,
+      "noise_sigma": "0.03"
+    },
+    {
+      "ci95_high": 4.140969639492605,
+      "ci95_low": 3.5414663604130627,
+      "mean": 3.8422633818162013,
+      "method_id": "f_mapper",
+      "n_valid": 30,
+      "noise_sigma": "0.05"
+    },
+    {
+      "ci95_high": 5.6748378887759126,
+      "ci95_low": 4.899129221883545,
+      "mean": 5.291603202931645,
+      "method_id": "f_mapper",
+      "n_valid": 30,
+      "noise_sigma": "0.08"
+    },
+    {
+      "ci95_high": 6.233344092196765,
+      "ci95_low": 5.386406618494782,
+      "mean": 5.808698874076235,
+      "method_id": "f_mapper",
+      "n_valid": 29,
+      "noise_sigma": "0.1"
+    }
+  ],
+  "source": {
+    "bootstrap": "evidence/baseline/m6a2/bootstrap_intervals.csv",
+    "bootstrap_sha256": "1534ed61eeb961a2b75d997861c4688c1dcbdec4937134a6280e0feb371af1d6",
+    "cells": "evidence/baseline/m6a2/cell_summaries.csv",
+    "cells_sha256": "bd4c096a89ef3c9eafe25c955d23e4c26f82caccda16d39651483a7e6657df0e",
+    "per_run": "evidence/baseline/m6a2/per_run_metrics.csv",
+    "per_run_sha256": "f912e613b6db8f68f544c30dc5b42f9d3c6dd8d3675e0eacbc7bd38aaf03dfd4"
+  },
+  "uniform_ordering": false
+}

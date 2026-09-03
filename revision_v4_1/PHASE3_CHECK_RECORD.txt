@@ -1,0 +1,42 @@
+Phase 3 check record — derived analyses from frozen evidence
+============================================================
+
+Status
+    Phase 3 complete. No new Mapper constructions. Frozen evidence hashes
+    unchanged. verify_phase3.py prints PHASE3_CHECKS_PASSED (includes Phase 2).
+
+5.1 C1 full dose-response (required)
+    Derived object: revision_v4_1/derived/C1_FULL_DOSE_RESPONSE_V4_1.json
+    Figure: fig07_c1_full_dose_response (pdf/svg/png)
+    30/30 eligible at each of four positive doses; reason=success on all 120
+    pairs. Original confirmatory pattern remains not observed.
+
+5.2 M6-A2 Wasserstein companion (required)
+    Derived object: M6A2_WASSERSTEIN_COMPANION_V4_1.json
+    Table: tab:m6a2w
+    Primary ordering remains bottleneck. Wasserstein means are not uniformly
+    Conventional-below-F-Mapper.
+
+5.3--5.4 C8 discordance and 72-vs-315 bootstrap (strongly recommended)
+    Derived object: C8_QUALITY_FIDELITY_DISCORDANCE_V4_1.json
+    Table: tab:c8discord
+    High quality = within-grid eligible Silhouette 75th percentile, not a
+    fixed cutoff. Discordance rate 0.371134 (36/97). Spearman rho = -0.469971.
+    Bootstrap B=10000 seed 20260830: Silhouette mean difference 0.034752
+    [0.030035, 0.039450]; Davies-Bouldin -0.052745 [-0.059958, -0.045493].
+
+5.5 Failure taxonomy (recommended)
+    Derived object: FAILURE_TAXONOMY_V4_1.json
+    Table: tab:failtax
+    C8 run-level: 530 attempted, 408 success, 111 FCM non-convergence, 11
+    coverage-gap. III-2B cell-level only: 72 cells, 2160/2160 successful
+    eligible constructions, 1201 joint recoveries; run-level III-2B journals
+    are not reconstructed.
+
+Phase 3 re-audit (start of Phase 4)
+    verify_phase3.py reprints PHASE3_CHECKS_PASSED. Frozen evidence hashes
+    unchanged. C1/M6-A2/C8/taxonomy JSON hashes unchanged. The C1 full-dose
+    PDF hash drifted when the Phase 3 verifier re-ran matplotlib; the
+    generator now skips figure rewrite unless the files are missing, and
+    the verifier sets PHASE3_WRITE_FIGURES=never. The registry records the
+    surviving figure hash. No scientific numbers changed.

@@ -1,0 +1,13 @@
+{
+  "campaign_id": "IB5_INTERACTIONS_FIXED_REALIZED_COVER_CORRECTION_V3",
+  "comparison_rows": 480,
+  "completed_constructions": 600,
+  "cover_policy": "clean realized pullback memberships frozen within configuration and replicate",
+  "eligible": 480,
+  "exact_metric_sha256": "5ddeac40a45bd2e32b670b51359d95ad8bcf1c4ebbf96a55cb24be062a4ab864",
+  "ineligible": 0,
+  "planned_constructions": 600,
+  "status_counts": {
+    "success": 600
+  }
+}

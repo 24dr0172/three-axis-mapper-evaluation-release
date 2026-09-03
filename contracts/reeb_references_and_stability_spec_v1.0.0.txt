@@ -1,0 +1,127 @@
+# SPEC-REEB-STAB: Reeb References, Extended Persistence, and Stability Metrics Specification
+
+**Document Version**: 1.0.0  
+**Phase**: Phase 0 (Mathematical Specification and Validation)  
+**Milestone**: M4 (Reeb References + Stability Metrics + Dataset Contracts)  
+**Status**: FROZEN FOR RELEASE — EXECUTED IMPLEMENTATION BASIS  
+**Primary Mathematical Authorities**:
+- Carrière, M., Michel, B., & Oudot, S. (2018). *Statistical analysis and parameter selection for Mapper*. JMLR, 19(1), 478–516.
+- Edelsbrunner, H., & Harer, J. (2010). *Computational Topology: An Introduction*. AMS.
+- Biasotti, S., et al. (2008). *Describing shapes by local topological features of functions*. Computational Geometry, 40(3), 226–240.
+
+---
+
+## 1. Scope and Objective
+
+This specification formalizes:
+1. The mathematical definition and construction hierarchy of **continuous Reeb references** $R_f(S)$ for topological spaces $S$ equipped with continuous scalar functions $f: S \to \mathbb{R}$.
+2. The **Same-Filter Reeb Contract** governing valid structural fidelity comparisons.
+3. **Extended persistence** representations for graph/function pairs and their associated metric primitives (Bottleneck and Wasserstein distances).
+4. **Compatibility contracts** for candidate stability metrics across Axis I (Stability) and Axis III (Topological Fidelity).
+5. Strict segregation between static membership nerve homology ($\beta_0^{\rm nerve}, \beta_1^{\rm nerve}$) and filtered persistence invariants.
+
+---
+
+## 2. SOURCE-DEFINED REQUIREMENTS
+
+### 2.1 Definition of the Reeb Graph
+Let $S$ be a compact topological space and $f: S \to \mathbb{R}$ a continuous scalar function.
+The **Reeb graph** $R_f(S)$ is the quotient space:
+$$R_f(S) = S / \sim$$
+where $x \sim y$ if and only if $x$ and $y$ belong to the same path-connected component of the level set $f^{-1}(c)$ for some $c \in \mathbb{R}$.
+The quotient map $q: S \to R_f(S)$ induces a continuous function $f_R: R_f(S) \to \mathbb{R}$ such that $f = f_R \circ q$.
+
+### 2.2 Reference Hierarchy & Authority (Blocking)
+For any synthetic topological fidelity benchmark on $(S, f)$, the authoritative reference is strictly the continuous pair $(S, f)$ and its Reeb graph $R_f(S)$.
+
+Authorized reference implementations in code and metadata:
+1. `analytic_reference`: Closed-form mathematical Reeb graph derived analytically from $(S, f)$ with exact critical values, branch topology, and Betti numbers.
+2. `exact_PL_reference`: Exact piecewise-linear quotient computed on a known triangulated/polygonal model of $S$ with piecewise-linear function $f$.
+3. `independent_numerical_reference`: Computed using an independently verified topological library (e.g. GUDHI) on a known dense mesh.
+4. `mapper_proxy_sanity_check`: High-resolution Conventional Mapper output, strictly scoped as a numerical convergence proxy and **NEVER** labelled as ground-truth truth.
+
+> **GROUND-TRUTH NAMING RULE**:  
+> The term "ground-truth Reeb graph" is reserved exclusively for `analytic_reference` or `exact_PL_reference`. A Mapper output must never be treated as the ground-truth definition against which other Mappers are evaluated.
+
+### 2.3 Same-Filter Reeb Contract (Non-Negotiable)
+Every Reeb-fidelity comparison must pair objects generated under the **same continuous scalar function**:
+- Baseline comparison: $M(X_n, f) \leftrightarrow R_f(S)$
+- Alternate filter $f_j$: $M(X_n, f_j) \leftrightarrow R_{f_j}(S)$
+- Perturbed filter $f_\delta = f + \delta h$: $M(X_n, f_\delta) \leftrightarrow R_{f_\delta}(S)$
+
+> **FORBIDDEN COMPARISON**:  
+> Directly comparing $M(X_n, f_\delta)$ to $R_f(S)$ and reporting the distance as "Mapper approximation error" is strictly forbidden. That comparison confluates target change ($R_f(S) \to R_{f_\delta}(S)$) with Mapper error ($M(X_n, f_\delta) \to R_{f_\delta}(S)$).
+
+### 2.4 Extended Persistence of Graph/Function Pairs
+For a 1D graph $G = (V, E)$ and node-function $f_G: V \to \mathbb{R}$ (e.g., $R_f(S)$ or Mapper 1-skeleton with node mean filter), the extended persistence diagram $\mathrm{Dgm}_{\rm ext}(G, f_G)$ captures the sub-level and super-level topological transitions:
+$$\mathrm{Dgm}_{\rm ext}(G, f_G) = \mathrm{Dgm}_0^{\rm ord} \cup \mathrm{Dgm}_0^{\rm ext+} \cup \mathrm{Dgm}_1^{\rm ext-} \cup \mathrm{Dgm}_1^{\rm rel}$$
+- **Bottleneck Distance**:
+  $$d_B(\mathcal{D}_1, \mathcal{D}_2) = \inf_{\gamma} \sup_{p \in \mathcal{D}_1} \|p - \gamma(p)\|_\infty$$
+  where $\gamma$ ranges over bijections between diagrams augmented with diagonal projections $\Delta = \{(x, x)\}$.
+- **$p$-Wasserstein Distance**:
+  $$W_p(\mathcal{D}_1, \mathcal{D}_2) = \left( \inf_{\gamma} \sum_{p \in \mathcal{D}_1} \|p - \gamma(p)\|_\infty^p \right)^{1/p}$$
+
+### 2.5 Segregation of Static Nerve Homology
+The locked M0 membership nerve invariants:
+$$\beta_0^{\rm nerve}, \quad \beta_1^{\rm nerve} = \dim H_1(\mathcal{N}^{(2)}; \mathbb{F}_2)$$
+are static, un-filtered simplicial homology invariants.
+- No persistence diagram is attributed to the static membership nerve unless an explicit, mathematically accepted filtration has been formally defined.
+- No clique completion is permitted.
+
+---
+
+## 3. FROZEN METRICS AND COMPATIBILITY CONTRACTS
+
+Each metric primitive must expose an immutable `MetricCompatibilityContract`:
+
+| Metric Name | Input Type | Required Filter | Applicable Methods | Theoretical Role |
+| :--- | :--- | :--- | :--- | :--- |
+| `bottleneck_extended_pd` | Graph/Function pair extended PD | Yes (Same filter) | CM, FM, EM (Lens-based) | Primary Candidate: Axis I Stability / Axis III Tier C Fidelity |
+| `wasserstein_extended_pd` | Graph/Function pair extended PD | Yes (Same filter) | CM, FM, EM (Lens-based) | Primary Candidate: Axis I Stability / Axis III Tier C Fidelity |
+| `graph_cycle_rank_diff` | MapperGraph 1-skeleton | No | CM, FM, BM, EM (All) | Secondary Diagnostic: Axis I Stability / Axis III Tier A Diagnostic |
+| `nerve_betti_diff` | DualHomologyResult ($\mathbb{F}_2$) | No | CM, FM, BM, EM (All) | Secondary Diagnostic: Axis I Stability / Axis III Tier A Diagnostic |
+| `leaf_branch_feature_diff`| Reeb/Graph degree sequence | Yes (Same filter) | CM, FM, EM (Lens-based) | Axis III Tier B Structural Recovery |
+
+> **OPEN DECISION PRESERVATION & AXIS-1 CRITERIA (M4_GOVERNANCE_CLARIFICATION_01)**:  
+> Part I requires stability to be assessed using a mathematically defined Mapper-output distance. Stability of Betti numbers alone is insufficient; therefore `graph_cycle_rank_diff` and `nerve_betti_diff` are designated as `secondary_structural_diagnostic`.  
+> Candidate Primary Axis-1 metrics are restricted to compatible Mapper-output distances (`bottleneck_extended_pd`, `wasserstein_extended_pd`). The selection between them is deferred to the M5 human Freeze Sheet.
+
+---
+
+## 4. STANDARD CONTINUOUS REEB REFERENCE OBJECTS
+
+### 4.1 Reference 1: Unit Circle ($S^1$) with Height Lens
+- **Space**: $S^1 = \{(x, y) \in \mathbb{R}^2 \mid x^2 + y^2 = 1\}$.
+- **Function**: $f(x, y) = y$.
+- **Critical Points**: Min at $(0, -1)$ ($f=-1$), Max at $(0, 1)$ ($f=+1$).
+- **Level Sets**: $f^{-1}(c)$ consists of 2 points for $c \in (-1, 1)$, 1 point for $c \in \{-1, 1\}$.
+- **Reeb Graph $R_f(S^1)$**: 2 vertices (min $v_0$ with $f=-1$, max $v_1$ with $f=+1$), 2 distinct edges between $v_0$ and $v_1$ (left and right semicircles).
+- **Invariants**:
+  - $\beta_0 = 1, \beta_1 = 1$.
+  - Leaves = 0, Branch vertices (degree $\ge 3$) = 0 (or degree-2 critical vertices).
+  - Degree sequence of critical points: $(2, 2)$.
+
+### 4.2 Reference 2: Branching Y-Graph (Tripod)
+- **Space**: Compact 1D simplicial complex in $\mathbb{R}^2$ formed by 3 segments meeting at origin $O=(0, 0)$:
+  - Arm 1: $e_1 = [(-1, 1), (0, 0)]$
+  - Arm 2: $e_2 = [(1, 1), (0, 0)]$
+  - Arm 3: $e_3 = [(0, -1), (0, 0)]$
+- **Function**: $f(x, y) = y$.
+- **Critical Points / Vertices**:
+  - Min at $(0, -1)$ ($f=-1$, degree 1, leaf)
+  - Junction at $(0, 0)$ ($f=0$, degree 3, branch vertex)
+  - Max 1 at $(-1, 1)$ ($f=+1$, degree 1, leaf)
+  - Max 2 at $(1, 1)$ ($f=+1$, degree 1, leaf)
+- **Reeb Graph**: Identical to space (tree with 4 vertices, 3 edges).
+- **Invariants**:
+  - $\beta_0 = 1, \beta_1 = 0$.
+  - Leaves = 3, Branch vertices = 1.
+  - Critical values: $-1, 0, 1$.
+
+---
+
+## 5. Scope-Limiting Constraints
+
+1. **Ball Mapper Scope**: Ball Mapper is strictly `metric_cover_only` and must never be evaluated as a Reeb approximator against $R_f(S)$.
+2. **No Invented Nerve Filtrations**: Never create an ad-hoc nerve filtration to manufacture persistence diagrams.
+3. **No scientific sweep is defined by this specification**: M4 provides verified reference constructors and metrics; no scientific sweep or benchmark tables are produced.

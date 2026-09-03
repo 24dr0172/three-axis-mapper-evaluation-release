@@ -1,0 +1,41 @@
+Three-axis Mapper evaluation — v4.1 changelog
+=============================================
+
+Release version
+    Reproducibility package version 4.1.0. Prior releases remain immutable
+    archives. This changelog classifies v4.1 work; it does not replace
+    sealed scientific ledgers.
+
+Disclosure changes (text-only; no new science)
+    C1 original confirmatory pattern reported as not observed; four-level perturbation
+    series retained as descriptive axis disagreement with 30/30 eligibility.
+    C7 factorial, model, both intervals, and no-new-constructions statement.
+    CIA2 Digits 0/20 explained as all_points_unassigned reference-ineligible.
+    Every FCM non-convergence names tol=1e-7, max_iter=300, linspace init.
+    Ensemble identity qualified as Kang-Lim RCESCC with project-specified
+    metric-medoid Silhouette assignment.
+    Ball ineligible row named with selected_center_count<5.
+    D_M versus D_M^NA preserved; pi tuple defined before use.
+    Axis-III invariant recovery not conflated with zero bottleneck distance.
+    Metadata repair named by forensic proof SAME_FILTER_FORENSIC_PROOF_III2_V5.
+    Statistics policy: confirmatory vs exploratory vs failure-accounting vs
+    algebraic; no blanket p-value requirement; C7 small-n beside the interval.
+    Writing hygiene: abstract qualification, terminology, FCM objective label,
+    publisher-verified Tao--Ge DOIs, AI disclosure, no invented archive DOI.
+
+New derived analyses (0 Mapper constructions)
+    C1_FULL_DOSE_RESPONSE_V4_1 and fig07.
+    M6A2_WASSERSTEIN_COMPANION_V4_1 (not the primary ordering).
+    C8_QUALITY_FIDELITY_DISCORDANCE_V4_1 and 72-vs-315 bootstrap.
+    FAILURE_TAXONOMY_V4_1 (C8 run-level; III-2B cell-level only).
+    Master experimental-design table generated from ledgers.
+
+New robustness runs (authorized campaign IDs only)
+    FCM_SOLVER_SENSITIVITY_AUDIT_V4_1: FCM-only reclassification on frozen
+    C3/C8 lens values. Labelled robustness/sensitivity, not confirmatory.
+    ENV_EQUIVALENCE_CHECK_V4_1: skipped_interpreter_unavailable.
+
+Not in this revision
+    Random FCM initialization; Kang-Lim original crisp-assignment rerun;
+    C6-a refitted-cover control; arbitrary bottleneck threshold; reconstruction
+    of missing III-2B run-level journals; Zhou 2022 venue change.

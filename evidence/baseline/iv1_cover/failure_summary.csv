@@ -1,0 +1,2 @@
+campaign_id,campaign_status,halt_class,halt_reason,n_planned,n_attempted,n_terminal,n_unattempted,n_evaluated,n_anchor_confirmed,n_scientific_failure_attempted,n_not_attempted_preflight_halt,n_not_attempted_campaign_halt,evaluated,evaluated_anchor_confirmed,quality_undefined,ineligible,metric_failure,schema_invalid,resource_timeout,anchor_mismatch,not_attempted_preflight_halt,not_attempted_campaign_halt
+IV1_COVER_ARM_CONVENTIONAL,ran_complete_pending_audit,NA,NA,33,33,33,0,33,12,0,0,0,21,12,0,0,0,0,0,0,0,0

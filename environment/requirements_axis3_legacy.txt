@@ -1,0 +1,7 @@
+# Exact software record for the Conventional III-1/III-2 evidence.
+# Interpreter: CPython 3.13.5. Not the portable reproduction install.
+numpy==2.1.3
+scipy==1.15.3
+scikit-learn==1.6.1
+networkx==3.4.2
+gudhi==3.13.0

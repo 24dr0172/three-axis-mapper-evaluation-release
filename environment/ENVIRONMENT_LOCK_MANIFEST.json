@@ -1,0 +1,62 @@
+{
+  "artifact_type": "ENVIRONMENT_LOCK_MANIFEST",
+  "version": "1.0.0",
+  "created_utc": "2026-08-24",
+  "policy": [
+    "no network access during production runs",
+    "no dependency download, install, upgrade, or mutation during production runs",
+    "runner must verify interpreter version and every locked distribution version before any construction",
+    "scikit-learn/joblib/threadpoolctl/narwhals must resolve from this lock's site-packages (or byte-identical wheel-derived location); numpy/scipy come from the pinned system dist-packages"
+  ],
+  "python": {
+    "implementation": "CPython",
+    "version": "3.12.3",
+    "version_info": [
+      3,
+      12,
+      3
+    ]
+  },
+  "platform_assumption": {
+    "os": "Linux x86_64, glibc>=2.39",
+    "recorded_platform": "Linux-6.14.0-37-generic-x86_64-with-glibc2.39"
+  },
+  "system_distributions": {
+    "numpy": {
+      "version": "1.26.4",
+      "import_path": "/usr/lib/python3/dist-packages/numpy",
+      "tree_sha256": "56e47650c5972360a2b75837039ea75bc356d87c620232f0ca4996c0348a61cd",
+      "tree_file_count": 782
+    },
+    "scipy": {
+      "version": "1.11.4",
+      "import_path": "/usr/lib/python3/dist-packages/scipy",
+      "tree_sha256": "c65c0bd943235cce127e66fae4488145646a7e36dee3780503bf0a3ed7bc508b",
+      "tree_file_count": 1258
+    }
+  },
+  "locked_wheels": {
+    "joblib-1.5.3-py3-none-any.whl": "5fc3c5039fc5ca8c0276333a188bbd59d6b7ab37fe6632daa76bc7f9ec18e713",
+    "narwhals-2.25.0-py3-none-any.whl": "1f0f403e8c7e4463cde9bfe78b12fdd809e3ae3dda6d9b2f802934fb9c7a6a8f",
+    "scikit_learn-1.9.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl": "056c92bb67ad4c28463c2f2653d9701449201e7e7a9e94e321be0f71c4fef2b8",
+    "threadpoolctl-3.6.0-py3-none-any.whl": "43a0b8fd5a2928500110039e43a5eed8480b918967083ea48dc3ab9f13c4a7fb"
+  },
+  "locked_versions": {
+    "scikit-learn": "1.9.0",
+    "joblib": "1.5.3",
+    "threadpoolctl": "3.6.0",
+    "narwhals": "2.25.0"
+  },
+  "site_packages_relative": "environment_lock/site-packages",
+  "site_packages_tree_sha256": "4b798fe946a19e88cc76acdab277b285e2b28f2f900adc5f2748348ba11792c3",
+  "site_packages_tree_file_count": 1467,
+  "usage": "PYTHONPATH=<package_root>/environment_lock/site-packages python3 <runner> --authorization <signed.json>",
+  "test_tooling_wheels": {
+    "exceptiongroup-1.3.1-py3-none-any.whl": "a7a39a3bd276781e98394987d3a5701d0c4edffb633bb7a5144577f82c773598",
+    "iniconfig-2.3.0-py3-none-any.whl": "f631c04d2c48c52b84d0d0549c99ff3859c98df65b3101406327ecc7d53fbf12",
+    "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+    "pluggy-1.6.0-py3-none-any.whl": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+    "pytest-9.1.1-py3-none-any.whl": "37a86b45efb9a47a61a36449063e8e18d0cab3161329fc099eb21783169c4f0c",
+    "tomli-2.4.1-py3-none-any.whl": "0d85819802132122da43cb86656f8d1f8c6587d54ae7dcaf30e90533028b49fe"
+  }
+}

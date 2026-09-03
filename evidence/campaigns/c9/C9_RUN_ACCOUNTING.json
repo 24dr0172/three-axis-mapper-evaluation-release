@@ -1,0 +1,92 @@
+{
+  "campaign_id": "C9_BALL_CIRCLE_NOISE_X_RADIUS_2026-08-29",
+  "run_id": "C9_CONF_001",
+  "contract_id": "C9_BALL_CIRCLE_NOISE_X_RADIUS_V1",
+  "contract_sha256": "8f370156a6d3cb5abfd7af33cf4d5a54916728921408630837306fef825b8ad9",
+  "runner_sha256": "cd63d4e58c300c384f8df3f87a351482a3daf4f678b3343a1d05ad0ca54e5079",
+  "planned_constructions": 300,
+  "result_rows": 300,
+  "frozen_landmark_constructions": 300,
+  "clean_landmark_selections": 60,
+  "accounting_note": "Each of the 300 result rows is one frozen-landmark construction. Additionally 60 clean BallMapper calls (20 replicates x 3 radii) SELECT the clean landmarks; those are the only landmark-selection calls in the campaign.",
+  "status_counts": {
+    "success": 300
+  },
+  "defined_jaccard": 300,
+  "null_ineligible": 0,
+  "identity_checks_passed": 60,
+  "imputation_used": false,
+  "retries_performed": 0,
+  "execution_failed": 0,
+  "clean_graph_summary": {
+    "1.0": {
+      "V": [
+        4,
+        5,
+        6
+      ],
+      "E": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "n_landmarks": [
+        4,
+        5,
+        6
+      ]
+    },
+    "1.5": {
+      "V": [
+        3,
+        4
+      ],
+      "E": [
+        3,
+        4
+      ],
+      "n_landmarks": [
+        3,
+        4
+      ]
+    },
+    "2.0": {
+      "V": [
+        2
+      ],
+      "E": [
+        1
+      ],
+      "n_landmarks": [
+        2
+      ]
+    }
+  },
+  "primary_estimand": {
+    "contrast_definition": "(J[alpha=0.10, k=2.0] - J[alpha=0.05, k=2.0]) - (J[alpha=0.10, k=1.0] - J[alpha=0.05, k=1.0]), paired within replicate",
+    "primary_alphas": [
+      0.05,
+      0.1
+    ],
+    "primary_radii_multipliers": [
+      1.0,
+      2.0
+    ],
+    "n_complete_replicates": 20,
+    "n_incomplete_replicates": 0,
+    "median_difference_in_differences": 0.0,
+    "ci95_low": 0.0,
+    "ci95_high": 0.0,
+    "bootstrap_B": 20000,
+    "bootstrap_seed": 20260829,
+    "primary_radii_clean_reference_eligible": {
+      "1.0": true,
+      "2.0": true
+    },
+    "primary_cell_response_distinct_values": 4,
+    "response_saturated": false,
+    "terminal_state": "INTERACTION_ESTIMABLE"
+  },
+  "total_runtime_seconds": 1.1081997179999235
+}

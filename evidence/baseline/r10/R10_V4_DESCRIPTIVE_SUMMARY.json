@@ -1,0 +1,520 @@
+{
+ "artifact_type": "R10_V4_1_DESCRIPTIVE_SUMMARY",
+ "campaign_id": "R10_STRUCTURAL_ROBUSTNESS_V4_2026-08-25",
+ "run_id": "R10_STRUCTURAL_ROBUSTNESS_V4_UNIT_001",
+ "R": 10,
+ "reporting_constraints": [
+  "no cross-dataset pooling",
+  "no p-values (not prospectively authorized)",
+  "medians/ranges only; no parametric intervals - the frozen charter mandates descriptive R=1-style reporting extended to R=10, not inferential testing",
+  "Ball's Axis-II diagnostic is NONCOMPARABLE and never pooled with Conventional Axis-II",
+  "structural diagnostics are not fidelity",
+  "this campaign does not close a complete three-axis cohort"
+ ],
+ "cells": [
+  {
+   "method": "ball",
+   "dataset_id": "digits_1797x64_scaled16",
+   "alpha": 0.05,
+   "R": 10,
+   "eligible": 10,
+   "success_ineligible": 0,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.5413826679649465,
+    "min": 0.5263157894736842,
+    "max": 0.5714285714285714,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 0,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "ball",
+   "dataset_id": "digits_1797x64_scaled16",
+   "alpha": 0.1,
+   "R": 10,
+   "eligible": 10,
+   "success_ineligible": 0,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.9768934531450578,
+    "min": 0.9764705882352941,
+    "max": 0.9773727215587681,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 0,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "ball",
+   "dataset_id": "digits_1797x64_scaled16",
+   "alpha": 0.2,
+   "R": 10,
+   "eligible": 0,
+   "success_ineligible": 10,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.9801652892561984,
+    "min": 0.9801652892561984,
+    "max": 0.9801652892561984,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 0,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "ball",
+   "dataset_id": "digits_1797x64_scaled16",
+   "alpha": 0.3,
+   "R": 10,
+   "eligible": 0,
+   "success_ineligible": 10,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.9801652892561984,
+    "min": 0.9801652892561984,
+    "max": 0.9801652892561984,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 0,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "ball",
+   "dataset_id": "swiss_roll_with_hole",
+   "alpha": 0.05,
+   "R": 10,
+   "eligible": 10,
+   "success_ineligible": 0,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.0,
+    "min": 0.0,
+    "max": 0.15789473684210525,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 1,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "ball",
+   "dataset_id": "swiss_roll_with_hole",
+   "alpha": 0.1,
+   "R": 10,
+   "eligible": 10,
+   "success_ineligible": 0,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.1,
+    "min": 0.047619047619047616,
+    "max": 0.23809523809523808,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 1,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "ball",
+   "dataset_id": "swiss_roll_with_hole",
+   "alpha": 0.2,
+   "R": 10,
+   "eligible": 10,
+   "success_ineligible": 0,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.26136363636363635,
+    "min": 0.2,
+    "max": 0.4074074074074074,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 0,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "ball",
+   "dataset_id": "swiss_roll_with_hole",
+   "alpha": 0.3,
+   "R": 10,
+   "eligible": 10,
+   "success_ineligible": 0,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.45141065830721006,
+    "min": 0.3939393939393939,
+    "max": 0.5,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 0,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "ball",
+   "dataset_id": "unit_circle_S1",
+   "alpha": 0.05,
+   "R": 10,
+   "eligible": 10,
+   "success_ineligible": 0,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.0,
+    "min": 0.0,
+    "max": 0.0,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 10,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "ball",
+   "dataset_id": "unit_circle_S1",
+   "alpha": 0.1,
+   "R": 10,
+   "eligible": 9,
+   "success_ineligible": 1,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.0,
+    "min": 0.0,
+    "max": 0.1111111111111111,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 8,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "ball",
+   "dataset_id": "unit_circle_S1",
+   "alpha": 0.2,
+   "R": 10,
+   "eligible": 10,
+   "success_ineligible": 0,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.09090909090909091,
+    "min": 0.0,
+    "max": 0.16666666666666666,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 1,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "ball",
+   "dataset_id": "unit_circle_S1",
+   "alpha": 0.3,
+   "R": 10,
+   "eligible": 10,
+   "success_ineligible": 0,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.2857142857142857,
+    "min": 0.2,
+    "max": 0.375,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 0,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "conventional",
+   "dataset_id": "digits_1797x64_scaled16",
+   "alpha": 0.05,
+   "R": 10,
+   "eligible": 0,
+   "success_ineligible": 0,
+   "typed_failure": 10,
+   "failure_rate_exact": "10/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 1.0,
+    "min": 1.0,
+    "max": 1.0,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 0,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "conventional",
+   "dataset_id": "digits_1797x64_scaled16",
+   "alpha": 0.1,
+   "R": 10,
+   "eligible": 0,
+   "success_ineligible": 0,
+   "typed_failure": 10,
+   "failure_rate_exact": "10/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 1.0,
+    "min": 1.0,
+    "max": 1.0,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 0,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "conventional",
+   "dataset_id": "digits_1797x64_scaled16",
+   "alpha": 0.2,
+   "R": 10,
+   "eligible": 0,
+   "success_ineligible": 0,
+   "typed_failure": 10,
+   "failure_rate_exact": "10/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 1.0,
+    "min": 1.0,
+    "max": 1.0,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 0,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "conventional",
+   "dataset_id": "digits_1797x64_scaled16",
+   "alpha": 0.3,
+   "R": 10,
+   "eligible": 0,
+   "success_ineligible": 0,
+   "typed_failure": 10,
+   "failure_rate_exact": "10/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 1.0,
+    "min": 1.0,
+    "max": 1.0,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 0,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "conventional",
+   "dataset_id": "swiss_roll_with_hole",
+   "alpha": 0.05,
+   "R": 10,
+   "eligible": 10,
+   "success_ineligible": 0,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.06831976674868037,
+    "min": 0.025210084033613446,
+    "max": 0.1332263242375602,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 9,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "conventional",
+   "dataset_id": "swiss_roll_with_hole",
+   "alpha": 0.1,
+   "R": 10,
+   "eligible": 10,
+   "success_ineligible": 0,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.31869372204459434,
+    "min": 0.24748490945674045,
+    "max": 0.3872340425531915,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 9,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "conventional",
+   "dataset_id": "swiss_roll_with_hole",
+   "alpha": 0.2,
+   "R": 10,
+   "eligible": 10,
+   "success_ineligible": 0,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.6071741090811931,
+    "min": 0.5717884130982368,
+    "max": 0.6675191815856778,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 9,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "conventional",
+   "dataset_id": "swiss_roll_with_hole",
+   "alpha": 0.3,
+   "R": 10,
+   "eligible": 10,
+   "success_ineligible": 0,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.7525894609693493,
+    "min": 0.7126760563380282,
+    "max": 0.8287292817679558,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 9,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "conventional",
+   "dataset_id": "unit_circle_S1",
+   "alpha": 0.05,
+   "R": 10,
+   "eligible": 9,
+   "success_ineligible": 1,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.8357920792079208,
+    "min": 0.7688442211055276,
+    "max": 0.9057591623036649,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 10,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "conventional",
+   "dataset_id": "unit_circle_S1",
+   "alpha": 0.1,
+   "R": 10,
+   "eligible": 7,
+   "success_ineligible": 3,
+   "typed_failure": 0,
+   "failure_rate_exact": "0/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.948399096585625,
+    "min": 0.9027027027027027,
+    "max": 0.9891304347826086,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 10,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "conventional",
+   "dataset_id": "unit_circle_S1",
+   "alpha": 0.2,
+   "R": 10,
+   "eligible": 6,
+   "success_ineligible": 3,
+   "typed_failure": 1,
+   "failure_rate_exact": "1/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 0.9788264948886711,
+    "min": 0.9572192513368984,
+    "max": 1.0,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 10,
+    "n_defined": 10
+   }
+  },
+  {
+   "method": "conventional",
+   "dataset_id": "unit_circle_S1",
+   "alpha": 0.3,
+   "R": 10,
+   "eligible": 2,
+   "success_ineligible": 2,
+   "typed_failure": 6,
+   "failure_rate_exact": "6/10",
+   "axis1_symmetric_norm_abs_delta_V": {
+    "median": 1.0,
+    "min": 0.9572192513368984,
+    "max": 1.0,
+    "n_defined": 10,
+    "denominator": 10
+   },
+   "beta1_graph_recovered_exact": {
+    "n_true": 10,
+    "n_defined": 10
+   }
+  }
+ ]
+}

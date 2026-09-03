@@ -1,0 +1,11 @@
+{
+  "campaign": "C4 Ball Mapper and Ensemble Mapper fixed-design completion",
+  "ball_fit_transform_calls": 123,
+  "ensemble_outer_fit_transform_calls": 123,
+  "conventional_candidate_fit_transform_calls": 6150,
+  "fit_transform_calls_total": 6396,
+  "fixed_landmark_restrictions": 120,
+  "mapper_operations_total": 6516,
+  "ball_rows": 123,
+  "ensemble_rows": 123
+}

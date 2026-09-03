@@ -1,0 +1,481 @@
+{
+  "campaign_id": "C8_FMAPPER_CIRCLE_GRID_AND_AXIS3_REPLICATION_2026-08-29",
+  "denominator_rule": "Every typed failure is RETAINED in the primary denominator. The eligible-only conditional frequency is reported separately and must never be presented as the primary result.",
+  "grid_aggregation_note": "For every secondary grid cell, status counts and Tier-A recovery frequencies use all attempted rows. The mean_coverage_fraction, mean_silhouette_macro, mean_davies_bouldin_macro, mean_noise_fraction_macro, mean_multiplicity_mean, mean_n_nodes, and mean_n_edges fields are computed only over rows with status=success and a non-null field; they are success-conditioned summaries, not all-attempted means.",
+  "primary_axis3": {
+    "circle_at_c10_tau0.10": {
+      "label": "Circle, c=10, tau=0.10, 20 realizations",
+      "denominator_all_attempted": 20,
+      "recoveries": 14,
+      "recovery_frequency": 0.7,
+      "wilson95_lo": 0.4810271816464765,
+      "wilson95_hi": 0.8545227551323956,
+      "status_counts": {
+        "success": 14,
+        "fcm_non_convergence": 6
+      },
+      "tier_a_eligible": 14,
+      "typed_failures_retained_in_denominator": 6,
+      "conditional_on_eligible": {
+        "denominator": 14,
+        "recoveries": 14,
+        "frequency": 1.0,
+        "wilson95_lo": 0.7846891972623643,
+        "wilson95_hi": 1.0
+      }
+    },
+    "tripod_at_c10_tau0.10": {
+      "label": "Tripod, c=10, tau=0.10, 30 realizations",
+      "denominator_all_attempted": 30,
+      "recoveries": 21,
+      "recovery_frequency": 0.7,
+      "wilson95_lo": 0.5212421254128504,
+      "wilson95_hi": 0.8333525173175619,
+      "status_counts": {
+        "success": 21,
+        "fcm_non_convergence": 9
+      },
+      "tier_a_eligible": 21,
+      "typed_failures_retained_in_denominator": 9,
+      "conditional_on_eligible": {
+        "denominator": 21,
+        "recoveries": 21,
+        "frequency": 1.0,
+        "wilson95_lo": 0.8453609810751531,
+        "wilson95_hi": 1.0
+      }
+    }
+  },
+  "c5_single_case_comparison": {
+    "note": "The sealed C5 campaign observed exactly one Circle case (success, exact Tier-A agreement) and one Tripod case (fcm_non_convergence, ineligible). C8 replaces those two single observations with 20 and 30 independent realizations respectively, which is what III-1 required.",
+    "c5_circle_status": "success",
+    "c5_circle_tier_a_agreement": true,
+    "c5_tripod_status": "fcm_non_convergence",
+    "c5_tripod_tier_a_agreement": false
+  },
+  "secondary_descriptive_surface": {
+    "status": "SECONDARY AND DESCRIPTIVE ONLY",
+    "prohibition": "No interval, no inferential claim, and no selection of a best (c, tau) cell may be drawn from this surface.",
+    "grid": {
+      "c=5": {
+        "tau=0.10": {
+          "n": 20,
+          "status_counts": {
+            "fcm_non_convergence": 1,
+            "success": 19
+          },
+          "tier_a_recoveries": 19,
+          "tier_a_recovery_frequency": 0.95,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.8535906188646174,
+          "mean_davies_bouldin_macro": 0.2215538625216639,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.3343684210526316,
+          "mean_n_nodes": 8.0,
+          "mean_n_edges": 8.0
+        },
+        "tau=0.15": {
+          "n": 20,
+          "status_counts": {
+            "success": 19,
+            "fcm_non_convergence": 1
+          },
+          "tier_a_recoveries": 19,
+          "tier_a_recovery_frequency": 0.95,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.8649671991909326,
+          "mean_davies_bouldin_macro": 0.20343234578087588,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.268315789473684,
+          "mean_n_nodes": 8.0,
+          "mean_n_edges": 8.0
+        },
+        "tau=0.20": {
+          "n": 20,
+          "status_counts": {
+            "success": 20
+          },
+          "tier_a_recoveries": 20,
+          "tier_a_recovery_frequency": 1.0,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.8736743294701679,
+          "mean_davies_bouldin_macro": 0.19027424998237566,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.2104,
+          "mean_n_nodes": 8.0,
+          "mean_n_edges": 8.0
+        },
+        "tau=0.30": {
+          "n": 20,
+          "status_counts": {
+            "success": 20
+          },
+          "tier_a_recoveries": 20,
+          "tier_a_recovery_frequency": 1.0,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.8884286433097179,
+          "mean_davies_bouldin_macro": 0.16727792275409586,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.12025,
+          "mean_n_nodes": 8.0,
+          "mean_n_edges": 8.0
+        },
+        "tau=0.40": {
+          "n": 20,
+          "status_counts": {
+            "success": 20
+          },
+          "tier_a_recoveries": 18,
+          "tier_a_recovery_frequency": 0.9,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9005381493436466,
+          "mean_davies_bouldin_macro": 0.14857617378694501,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.04005,
+          "mean_n_nodes": 8.0,
+          "mean_n_edges": 7.9
+        }
+      },
+      "c=8": {
+        "tau=0.10": {
+          "n": 20,
+          "status_counts": {
+            "success": 18,
+            "fcm_non_convergence": 2
+          },
+          "tier_a_recoveries": 18,
+          "tier_a_recovery_frequency": 0.9,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9001964100760235,
+          "mean_davies_bouldin_macro": 0.14796946588809726,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.361611111111111,
+          "mean_n_nodes": 14.0,
+          "mean_n_edges": 14.0
+        },
+        "tau=0.15": {
+          "n": 20,
+          "status_counts": {
+            "success": 18,
+            "fcm_non_convergence": 2
+          },
+          "tier_a_recoveries": 18,
+          "tier_a_recovery_frequency": 0.9,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9075173960413542,
+          "mean_davies_bouldin_macro": 0.1368903613235128,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.2842222222222222,
+          "mean_n_nodes": 14.0,
+          "mean_n_edges": 14.0
+        },
+        "tau=0.20": {
+          "n": 20,
+          "status_counts": {
+            "success": 17,
+            "fcm_non_convergence": 3
+          },
+          "tier_a_recoveries": 17,
+          "tier_a_recovery_frequency": 0.85,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.914184731052019,
+          "mean_davies_bouldin_macro": 0.12702660503243757,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.2197058823529412,
+          "mean_n_nodes": 14.0,
+          "mean_n_edges": 14.0
+        },
+        "tau=0.30": {
+          "n": 20,
+          "status_counts": {
+            "success": 19,
+            "fcm_non_convergence": 1
+          },
+          "tier_a_recoveries": 19,
+          "tier_a_recovery_frequency": 0.95,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.924170810379937,
+          "mean_davies_bouldin_macro": 0.11180061851674321,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.117842105263158,
+          "mean_n_nodes": 14.0,
+          "mean_n_edges": 14.0
+        },
+        "tau=0.40": {
+          "n": 20,
+          "status_counts": {
+            "fcm_non_convergence": 3,
+            "success": 17
+          },
+          "tier_a_recoveries": 1,
+          "tier_a_recovery_frequency": 0.05,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9329783846513147,
+          "mean_davies_bouldin_macro": 0.09854019311606119,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.0334705882352941,
+          "mean_n_nodes": 14.0,
+          "mean_n_edges": 11.294117647058824
+        }
+      },
+      "c=10": {
+        "tau=0.10": {
+          "n": 20,
+          "status_counts": {
+            "success": 14,
+            "fcm_non_convergence": 6
+          },
+          "tier_a_recoveries": 14,
+          "tier_a_recovery_frequency": 0.7,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9158962593267672,
+          "mean_davies_bouldin_macro": 0.12402919598679445,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.3742142857142858,
+          "mean_n_nodes": 18.0,
+          "mean_n_edges": 18.0
+        },
+        "tau=0.15": {
+          "n": 20,
+          "status_counts": {
+            "success": 16,
+            "fcm_non_convergence": 4
+          },
+          "tier_a_recoveries": 16,
+          "tier_a_recovery_frequency": 0.8,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.922134567642567,
+          "mean_davies_bouldin_macro": 0.11451015160258515,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.2903125,
+          "mean_n_nodes": 18.0,
+          "mean_n_edges": 18.0
+        },
+        "tau=0.20": {
+          "n": 20,
+          "status_counts": {
+            "fcm_non_convergence": 4,
+            "success": 16
+          },
+          "tier_a_recoveries": 16,
+          "tier_a_recovery_frequency": 0.8,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9280320479358205,
+          "mean_davies_bouldin_macro": 0.10569810202158733,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.2235625,
+          "mean_n_nodes": 18.0,
+          "mean_n_edges": 18.0
+        },
+        "tau=0.30": {
+          "n": 20,
+          "status_counts": {
+            "fcm_non_convergence": 5,
+            "success": 15
+          },
+          "tier_a_recoveries": 13,
+          "tier_a_recovery_frequency": 0.65,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9355791754277469,
+          "mean_davies_bouldin_macro": 0.09440112391546893,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.1197333333333332,
+          "mean_n_nodes": 18.0,
+          "mean_n_edges": 17.866666666666667
+        },
+        "tau=0.40": {
+          "n": 20,
+          "status_counts": {
+            "success": 16,
+            "fcm_non_convergence": 4
+          },
+          "tier_a_recoveries": 0,
+          "tier_a_recovery_frequency": 0.0,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9431316472698565,
+          "mean_davies_bouldin_macro": 0.0836731744048238,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.0310625,
+          "mean_n_nodes": 18.0,
+          "mean_n_edges": 12.6875
+        }
+      },
+      "c=15": {
+        "tau=0.10": {
+          "n": 20,
+          "status_counts": {
+            "success": 11,
+            "fcm_non_convergence": 9
+          },
+          "tier_a_recoveries": 11,
+          "tier_a_recovery_frequency": 0.55,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9396098882771349,
+          "mean_davies_bouldin_macro": 0.08817128633771097,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.3772727272727272,
+          "mean_n_nodes": 28.0,
+          "mean_n_edges": 28.0
+        },
+        "tau=0.15": {
+          "n": 20,
+          "status_counts": {
+            "success": 13,
+            "fcm_non_convergence": 7
+          },
+          "tier_a_recoveries": 13,
+          "tier_a_recovery_frequency": 0.65,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9431661138184607,
+          "mean_davies_bouldin_macro": 0.08291494759251558,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.2964615384615383,
+          "mean_n_nodes": 28.0,
+          "mean_n_edges": 28.0
+        },
+        "tau=0.20": {
+          "n": 20,
+          "status_counts": {
+            "success": 16,
+            "fcm_non_convergence": 4
+          },
+          "tier_a_recoveries": 16,
+          "tier_a_recovery_frequency": 0.8,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9480594084451336,
+          "mean_davies_bouldin_macro": 0.075562179874907,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.2245625,
+          "mean_n_nodes": 28.0,
+          "mean_n_edges": 28.0
+        },
+        "tau=0.30": {
+          "n": 20,
+          "status_counts": {
+            "success": 15,
+            "fcm_non_convergence": 5
+          },
+          "tier_a_recoveries": 10,
+          "tier_a_recovery_frequency": 0.5,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9539703715010182,
+          "mean_davies_bouldin_macro": 0.06692917452892154,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.1177333333333335,
+          "mean_n_nodes": 28.0,
+          "mean_n_edges": 27.466666666666665
+        },
+        "tau=0.40": {
+          "n": 20,
+          "status_counts": {
+            "success": 11,
+            "coverage_gap": 2,
+            "fcm_non_convergence": 7
+          },
+          "tier_a_recoveries": 0,
+          "tier_a_recovery_frequency": 0.0,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9583606774020965,
+          "mean_davies_bouldin_macro": 0.060469976657199845,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.0247272727272727,
+          "mean_n_nodes": 28.0,
+          "mean_n_edges": 13.090909090909092
+        }
+      },
+      "c=20": {
+        "tau=0.10": {
+          "n": 20,
+          "status_counts": {
+            "fcm_non_convergence": 5,
+            "success": 15
+          },
+          "tier_a_recoveries": 15,
+          "tier_a_recovery_frequency": 0.75,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9515498972310158,
+          "mean_davies_bouldin_macro": 0.07020050932400189,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.3838000000000001,
+          "mean_n_nodes": 38.0,
+          "mean_n_edges": 38.0
+        },
+        "tau=0.15": {
+          "n": 20,
+          "status_counts": {
+            "success": 14,
+            "fcm_non_convergence": 6
+          },
+          "tier_a_recoveries": 14,
+          "tier_a_recovery_frequency": 0.7,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9553208675897598,
+          "mean_davies_bouldin_macro": 0.06460053225090567,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.2943571428571428,
+          "mean_n_nodes": 38.0,
+          "mean_n_edges": 38.0
+        },
+        "tau=0.20": {
+          "n": 20,
+          "status_counts": {
+            "success": 11,
+            "fcm_non_convergence": 9
+          },
+          "tier_a_recoveries": 8,
+          "tier_a_recovery_frequency": 0.4,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9584999583027652,
+          "mean_davies_bouldin_macro": 0.05984891794191165,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.2311818181818184,
+          "mean_n_nodes": 38.0,
+          "mean_n_edges": 37.72727272727273
+        },
+        "tau=0.30": {
+          "n": 20,
+          "status_counts": {
+            "success": 11,
+            "fcm_non_convergence": 9
+          },
+          "tier_a_recoveries": 0,
+          "tier_a_recovery_frequency": 0.0,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.9637775001494007,
+          "mean_davies_bouldin_macro": 0.05226351247475476,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.1160909090909092,
+          "mean_n_nodes": 38.0,
+          "mean_n_edges": 35.0
+        },
+        "tau=0.40": {
+          "n": 20,
+          "status_counts": {
+            "coverage_gap": 9,
+            "fcm_non_convergence": 5,
+            "success": 6
+          },
+          "tier_a_recoveries": 0,
+          "tier_a_recovery_frequency": 0.0,
+          "mean_coverage_fraction": 1.0,
+          "mean_silhouette_macro": 0.968067049719588,
+          "mean_davies_bouldin_macro": 0.04576849828357238,
+          "mean_noise_fraction_macro": 0.0,
+          "mean_multiplicity_mean": 1.0221666666666667,
+          "mean_n_nodes": 38.0,
+          "mean_n_edges": 12.833333333333334
+        }
+      }
+    }
+  },
+  "campaign_totals": {
+    "rows": 530,
+    "status_counts": {
+      "fcm_non_convergence": 111,
+      "success": 408,
+      "coverage_gap": 11
+    },
+    "circle_rows": 500,
+    "tripod_rows": 30
+  }
+}

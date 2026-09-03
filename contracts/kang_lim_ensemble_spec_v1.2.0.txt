@@ -1,0 +1,267 @@
+# SPEC-EM: Kang–Lim Ensemble Mapper Specification
+
+**Document Version**: 1.2.0  
+**Phase**: Phase 0 (Mathematical Specification and Validation)  
+**Milestone**: M3 (Kang–Lim Ensemble Mapper Core)  
+**Status**: FROZEN FOR RELEASE — EXECUTED RECONSTRUCTION BASIS  
+**Governing Documents**:
+- *Decision Z: M3 Candidate Selection Reconstruction — Classical Silhouette with Metric-Medoid Hardening* (17 August 2026)  
+**Primary Mathematical Authority**: Kang, S. J., and Lim, Y. (2021). *Ensemble mapper*. Stat, 10(1), e405. DOI: 10.1002/sta4.405.
+
+---
+
+## 1. Scope and Objective
+
+This specification formalizes the exact mathematical equations, finite-sample algorithms, eligibility gates, distance contracts, and execution invariants for the reconstructed **Kang–Lim RCESCC Ensemble Mapper**.
+
+It cleanly separates:
+1. **SOURCE-DEFINED Kang–Lim Core Mathematics**: Candidate base-Mapper generation, pooled cluster-cluster interset correlation (Equation 2), distance transform $D_c = (1 - S_c)/2$ (Equation 4), hierarchical average-linkage clustering, object-to-meta-cluster membership normalization (Equations 5–6), $O_c > 0$ overlapping final node supports, and non-empty sample-intersection graph assembly.
+2. **PROJECT-CONTRACT Reconstruction Rules**: Deterministic containment-restricted metric-medoid candidate hardening for internal top-10 Rousseeuw (1987) Silhouette selection, pre-ranking exact-universe candidate eligibility, structured failure semantics (eliminating the `-1.0` sentinel), exact-$K$ sequential-merge dendrogram cutting, canonical semantic keys (`nodekey`, `candidatekey`, `pooledkey`, `metakey`) guaranteeing determinism under the frozen software/environment contract and canonical semantic ordering, and integration with the locked M0 dual-homology 2-skeleton framework.
+
+---
+
+## 2. Source-Defined Kang–Lim Mathematics (Kang & Lim, 2021)
+
+### 2.1 Base-Node Binary Membership Indicator (Kang & Lim Equation 1)
+Let $E_1, \dots, E_{10}$ denote the 10 selected base Conventional Mappers, where base Mapper $E_i$ has $k_i$ nodes $\{C_1^i, \dots, C_{k_i}^i\}$. The total number of pooled base nodes is $a = \sum_{i=1}^{10} k_i$.
+For each observation $x_n \in X$ ($n = 0, \dots, N-1$) and pooled base node $C_j^i$:
+$$C_j^i(x_n) = \begin{cases} 1 & \text{if } x_n \in C_j^i \\ 0 & \text{if } x_n \notin C_j^i \end{cases} \tag{1}$$
+Distinct base nodes possessing identical sample supports ($S(C_a) = S(C_b)$) **must remain distinct pooled entries** in the similarity matrix, distinguished by their stable source-node provenance.
+
+### 2.2 Cluster-Cluster Interset Correlation (Kang & Lim Equation 2)
+For two base nodes $A, B \subseteq X$ defined on observation universe $X$ ($N = |X|$), with $a = |A|$, $b = |B|$, and intersection size $q = |A \cap B|$:
+$$S_c(A, B) = \frac{N q - a b}{\sqrt{a(N - a) b(N - b)}} \tag{2}$$
+- **Mathematical Invariants**:
+  - $S_c(A, B) \in [-1, 1]$ for all non-degenerate nodes ($0 < a < N$ and $0 < b < N$).
+  - $S_c(A, A) = 1.0$ (identical node supports).
+  - $S_c(A, X \setminus A) = -1.0$ (strictly complementary node supports).
+  - $S_c(A, B) = S_c(B, A)$ (exact symmetry).
+- **Degenerate Support Handling**: If $a = 0$ or $a = N$, the denominator is zero. The algorithm must reject the consensus input with an explicit `degenerate_cluster_similarity` failure status.
+
+### 2.3 Cluster-Cluster Distance Transformation (Kang & Lim Equation 4)
+The symmetric $a \times a$ similarity matrix $S_c$ is transformed into distance matrix $D_c$:
+$$D_c = 1 - \frac{S_c + 1}{2} = \frac{1 - S_c}{2} \tag{4}$$
+- $S_c = 1.0 \implies D_c = 0.0$
+- $S_c = 0.0 \implies D_c = 0.5$
+- $S_c = -1.0 \implies D_c = 1.0$
+- $\mathrm{diag}(D_c) = 0.0$.
+$D_c$ measures dissimilarity between **base Mapper nodes**, not original data points.
+
+### 2.4 Hierarchical Average-Linkage Consensus Clustering
+Hierarchical average-linkage clustering (`linkage(..., method='average')`) is applied to $D_c$ to group the $a$ base nodes into a pre-specified number $K = n_{\text{meta\_clusters}}$ of meta-clusters:
+$$\omega_0, \omega_1, \dots, \omega_{K-1}$$
+Each meta-cluster $\omega_k$ is a set of base-node indices ($\omega_k \subseteq \{0, \dots, a-1\}$).
+
+### 2.5 Object-to-Meta-Cluster Membership Matrix $O_c$ (Kang & Lim Equations 5–6)
+1. **Object-to-Cluster Support Score** (Equation 6):
+   $$s(x_n, \omega_k) = \frac{1}{|\omega_k|} \sum_{C \in \omega_k} C(x_n) \tag{6}$$
+   where $C(x_n)$ is the binary indicator from Equation (1).
+2. **Normalized Membership Matrix** (Equation 5):
+   $$O_c[n, k] = \frac{s(x_n, \omega_k)}{\sum_{l=0}^{K-1} s(x_n, \omega_l)} \tag{5}$$
+   - $O_c[n, k] \ge 0$ and $\sum_{k=0}^{K-1} O_c[n, k] = 1.0$ for all $n \in \{0, \dots, N-1\}$.
+
+### 2.6 Overlap-Preserving Final Node Supports & Ensemble Graph
+1. **Final Meta-Node Sample Support**:
+   An observation $x_n$ belongs to final Ensemble node $\omega_k$ if and only if its normalized membership degree is strictly positive:
+   $$x_n \in S(\omega_k) \iff O_c[n, k] > 0$$
+   Overlapping memberships are fully preserved; no `argmax` hardening is applied to the final consensus.
+2. **Final Ensemble 1-Skeleton Graph**:
+   - Graph vertices correspond to the $K$ meta-clusters $\{\omega_0, \dots, \omega_{K-1}\}$.
+   - Edge $(u, v)$ exists if and only if $S(\omega_u) \cap S(\omega_v) \neq \emptyset$.
+
+---
+
+## 3. Source Ambiguity in Candidate Selection
+
+Kang & Lim (2021, §3, p. 3) specify selecting the 10 candidate Mappers with the highest Silhouette scores (citing Rousseeuw, 1987) from a candidate grid across $(l, p)$.
+
+However:
+1. Conventional Mapper node sets $\{C_j^i\}$ form an **overlapping cover** of $X$, whereas classical Rousseeuw (1987) Silhouette mathematically requires a **crisp partition** of $X$.
+2. Kang & Lim provide no mathematical transformation from overlapping node sets to crisp cluster labels.
+3. No author code survives in public repositories (`peekxc/Mapper` is external infrastructure).
+4. Secondary literature (Fitzpatrick et al., 2023) describes the selection as Fuzzy Silhouette, creating an empirical provenance conflict.
+
+To resolve this ambiguity deterministically and reproducibly, the project freezes the **containment-restricted metric-medoid hardening rule** (Decision Z).
+
+---
+
+## 4. Project Metric-Medoid Reconstruction Rule (Decision Z)
+
+For a candidate Conventional Mapper with nodes $C_0, \dots, C_{q-1} \subseteq X$:
+
+1. **Metric Medoid Definition**:
+   For each node $C_j$, its metric medoid $m_j \in C_j$ is:
+   $$m_j = \arg\min_{z \in C_j} \sum_{y \in C_j} d_X(z, y)$$
+   - **Medoid Tie Rule**: If multiple sample indices $z \in C_j$ achieve identical minimum distance sums, choose the candidate with the **smallest sample integer index** $\min z$.
+2. **Containment-Restricted Assignment**:
+   For each observation $x_n \in X$, define its set of containing Mapper nodes:
+   $$J_n = \{j \in \{0, \dots, q-1\} : x_n \in C_j\}$$
+   Its crisp selection-stage label $h(x_n)$ is:
+   $$h(x_n) = \arg\min_{j \in J_n} d_X(x_n, m_j)$$
+   - **Containment Invariant**: $x_n \in C_{h(x_n)}$ strictly holds for every observation. Assignment to a non-containing node is strictly prohibited.
+3. **Canonical Semantic Node Key**:
+   To prevent arbitrary graph node IDs or dictionary iteration order from leaking into semantic tie-breaking, define:
+   $$\operatorname{nodekey}(C) = (\operatorname{tuple}(\operatorname{sorted}(C.\operatorname{members})), C.\operatorname{interval\_idx}, C.\operatorname{cluster\_label})$$
+   Node ID, insertion order, or enumeration index must **never** participate in semantic tie-breaking.
+4. **Assignment Tie Rule**:
+   If multiple containing nodes in $J_n$ attain identical minimum distance $d_X(x_n, m_j)$ to their respective medoids, choose the containing node with the lexicographically smallest $\operatorname{nodekey}(C)$.
+5. **Relabeling Invariant**:
+   If graph node IDs are arbitrarily permuted or relabeled while sample supports and source metadata remain unchanged, medoids, semantic assignments, and Silhouette scores remain strictly identical.
+
+---
+
+## 5. Canonical Candidate Identity & Deterministic Ranking Contract
+
+1. **Canonical Candidate Key**:
+   Candidate identity is defined from the complete effective candidate configuration:
+   $$\operatorname{candidatekey}(E) = \operatorname{CanonicalSerialize}(\text{candidate parameters})$$
+   For Conventional Mapper candidates, this includes:
+   - interval count ($l$), overlap fraction ($p$),
+   - non-empty lens configuration/identity (`lens_id`),
+   - concrete effective clusterer identity and hyperparameters,
+   - input mode (`coordinates` or `precomputed_distance`),
+   - non-empty candidate pool ID (`candidate_pool_id`),
+   - deterministic seed namespaces (`data_seed`, `construction_seed`).
+2. **Strict Canonical Serialization**:
+   - Estimators serialize fully qualified class names and parameter mappings without memory addresses.
+   - Callables serialize module and `__qualname__` only if top-level and non-anonymous; lambdas, local functions, and opaque objects are rejected in strict mode.
+   - Floats serialize via IEEE-754 hexadecimal notation (`float.hex()`).
+3. **Duplicate Configuration Rejection**:
+   The candidate grid must not contain duplicate candidate configurations. If duplicate canonical keys are detected, the pipeline rejects the grid with an explicit `ConfigurationInvalidError`.
+4. **Top-10 Ranking Rule**:
+   Rank eligible candidates deterministically by:
+   $$\operatorname{rank\_key} = (-\operatorname{Silhouette\_score}, \operatorname{candidatekey}(E))$$
+   Select exactly the top 10 eligible candidates ($n_{\text{selected\_base\_mappers}} = 10$).
+
+---
+
+## 6. Canonical Pooled Base-Node Order & Exact-$K$ Consensus
+
+1. **Canonical Pooled-Node Key**:
+   Before constructing similarity matrix $S_c$ and distance matrix $D_c$, sort all pooled base nodes lexicographically by:
+   $$\operatorname{pooledkey}(C) = (\operatorname{candidatekey}(E_i), \operatorname{nodekey}(C))$$
+2. **Exact-$K$ Sequential-Merge Tree Cut**:
+   Hierarchical average linkage produces $a-1$ sequential merges recorded in linkage matrix $Z \in \mathbb{R}^{(a-1) \times 4}$.
+   The exact $K$-cluster partition is obtained by executing **exactly $a - K$ sequential merges** via Disjoint Set (Union-Find).
+   Tied dendrogram heights **never reduce the meta-cluster count below $K$**.
+3. **Canonical Meta-Cluster Semantic Key**:
+   For each resulting meta-cluster $\omega_k$, define its semantic key:
+   $$\operatorname{metakey}(\omega) = \operatorname{tuple}\left(\operatorname{sorted}(\{\operatorname{pooledkey}(C) : C \in \omega\})\right)$$
+   Sort final meta-clusters by `metakey`.
+4. **Canonical Consensus Outputs**:
+   Construct normalized membership matrix $O_c$, final supports $S(\omega_k)$, final graph nodes, and dual homology using this canonical meta-cluster order.
+
+---
+
+## 7. Distance and Input-Mode Contract
+
+1. **`input_mode="coordinates"`**:
+   - $X \in \mathbb{R}^{N \times d}$ is an array of finite Euclidean coordinates.
+   - Euclidean distance $d_X(x, y) = \|x - y\|_2$ is used consistently for medoids, point-to-medoid distances, and candidate Silhouette scoring.
+2. **`input_mode="precomputed_distance"`**:
+   - $X \in \mathbb{R}^{N \times N}$ is a pairwise dissimilarity matrix $D$.
+   - **Validation & Canonicalization Contract** ($\tau = 10^{-12}$):
+     1. Square $(N, N)$ matching dataset length $N$.
+     2. All entries finite (no NaN/Inf).
+     3. Symmetry within tolerance: $\max |D - D^T| \le \tau \cdot \max(1.0, \max D)$.
+     4. Diagonal magnitude within tolerance: $\max |D_{ii}| \le \tau$.
+     5. No entry $D_{ij} < -\tau$. If any $D_{ij} < -\tau$, reject with explicit validation error.
+   - **Canonical Working Copy**:
+     $$D^\star = \frac{D + D^T}{2}, \quad \operatorname{diag}(D^\star) = 0, \quad D^\star[D^\star < 0] = 0$$
+   - The caller's raw matrix $D$ is never mutated in place.
+   - $D^\star$ is passed to `silhouette_score(D_star, labels, metric="precomputed")`. Treating distance matrix rows as Euclidean feature vectors is strictly prohibited.
+
+---
+
+## 8. Pre-Ranking Candidate Eligibility & Structured Failure Semantics
+
+Candidate eligibility is evaluated **before** computing Silhouette scores:
+
+| Check | Condition | Failure Status | Action |
+| :--- | :--- | :--- | :--- |
+| **Execution Success** | `cand.status != "success"` or `cand.graph is None` | `invalid_candidate_output` | Reject; `score=None` |
+| **Node Count** | `cand.graph.n_nodes < 2` | `insufficient_candidate_nodes` | Reject; `score=None` |
+| **Member Indices** | $\forall \text{node}, \forall idx \in \text{members}: 0 \le idx < N$ | `invalid_member_index` | Reject; `score=None` |
+| **Exact Universe Coverage** | $\bigcup_{j} C_j == \{0, \dots, N-1\}$ | `partial_coverage_ineligible` | Reject; `score=None` |
+| **Hardened Cluster Count** | $K_{\text{hard}} < 2$ (all points in 1 cluster) | `single_hardened_cluster` | Reject; `score=None` |
+| **All Singletons** | $K_{\text{hard}} == N$ (every point in own cluster) | `all_singleton_clusters` | Reject; `score=None` |
+
+Candidate selection scoring returns an immutable structured container:
+```python
+@dataclass(frozen=True)
+class CandidateSelectionScore:
+    eligible: bool
+    score: Optional[float]
+    status: str
+    reason: Optional[str]
+    labels: Optional[np.ndarray] = None
+```
+- The numeric value `-1.0` is a valid scientific score (worst-case clustering) and must **never** be used as a failure sentinel.
+- Ineligible or failed candidates return `score=None` and explicit failure status.
+
+---
+
+## 9. Dual-Homology Project Evaluation Extension (Locked M0 Reuse)
+
+Final Ensemble sample supports $\{S(\omega_0), \dots, S(\omega_{K-1})\}$ are passed directly to M0 `build_membership_nerve_2d` and `compute_dual_homology`:
+1. **Dual $\beta_1$ Reporting**:
+   - Ensemble 1-Skeleton Cycle Rank: $\beta_1^{\rm graph} = E - V + C$ (1-skeleton graph invariant).
+   - Project Membership Nerve Homology: $\beta_1^{\rm nerve} = \dim H_1(\mathcal{N}^{(2)}; \mathbb{F}_2)$ (2-skeleton diagnostic).
+2. **Incidence-Driven 2-Simplices**:
+   A 2-simplex $[u, v, w]$ is created if and only if $S(\omega_u) \cap S(\omega_v) \cap S(\omega_w) \neq \emptyset$. No clique completion is permitted. A triangle with pairwise intersections but empty 3-way intersection remains hollow ($\beta_1^{\rm graph} = 1, \beta_1^{\rm nerve} = 1$).
+
+---
+
+## 10. Execution-Firewall & Scientific Evidence Eligibility
+
+A run is eligible for scientific evidence (`scientific_evidence_eligible=True`) **if and only if** all of the following conditions hold:
+
+1. `strict_scientific == True`.
+2. `injected_scores is None` (no diagnostic score injection).
+3. `injected_candidates is None` (no diagnostic candidate injection).
+4. Exactly $n_{\text{selected\_base\_mappers}} == 10$.
+5. Candidate scores computed internally via Decision Z (`compute_candidate_selection_score`).
+6. `candidate_params` explicitly supplied (no exploratory default grid).
+7. `candidate_pool_id` explicitly supplied, non-empty, and non-placeholder.
+8. `lens_id` explicitly supplied, non-empty, and non-placeholder.
+9. `clusterer` explicitly supplied (no hidden runner defaults).
+10. Effective clusterer identity fully canonicalized without memory addresses.
+11. Required seed namespaces supplied (`data_seed`, `construction_seed`).
+12. No unsupported or non-canonical serialization objects appear.
+13. `n_meta_clusters` explicitly supplied ($K \ge 1$).
+14. All selected candidate identities are complete.
+15. All selected candidates meet exact universe coverage and eligibility contracts.
+16. Method execution status is `success`.
+17. Selection provenance metadata (`selected_candidate_keys`, `selected_scores`, `candidate_provenance`) is complete and persisted into `ExperimentRunRecord`.
+
+---
+
+## 11. Explicit Method Identity Statement
+
+The implementation conforming to this specification shall be formally identified as:
+
+> **“Kang–Lim RCESCC Ensemble Mapper with project-specified metric-medoid Silhouette hardening”**
+
+---
+
+## 12. Forbidden Implementations
+
+1. **NO GREEDY FIRST-NODE-WINS**: Assignment must not depend on node iteration order.
+2. **NO NODE ID IN TIE-BREAKING**: Semantic tie keys must strictly use `(sorted_members, interval_idx, cluster_label)`.
+3. **NO CANDIDATE ENUMERATION INDEX IN RANKING**: Ranking must strictly use `(-score, candidatekey)`.
+4. **NO ASSIGNMENT TO NON-CONTAINING NODES**: $x_n \in C_{h(x_n)}$ must hold.
+5. **NO `-1.0` FAILURE SENTINEL**: Failures must have `score=None` and explicit status.
+6. **NO SILENT REDUCTION OF $K$**: Average linkage must return exactly $K$ meta-clusters.
+7. **NO HIDDEN DEFAULT FOR $K$**: $n_{\text{meta\_clusters}}$ must be explicitly specified.
+8. **NO POST-SELECTION COVERAGE CHECKS**: Exact universe coverage must be evaluated before ranking.
+9. **NO RAW DISTANCE MATRIX MUTATION**: Distance canonicalization must operate on an internal working copy.
+10. **NO FITZPATRICK POINT-COOCCURRENCE / THRESHOLD-GRAPH CONSENSUS**: Consensus is strictly Equations (2)–(6).
+11. **NO ARGMAX FINAL CONSENSUS HARDENING**: Final node supports use $O_c > 0$.
+12. **NO CLIQUE COMPLETION**: 2-simplices require genuine 3-way sample intersections.
+13. **NO INJECTED SCORES IN SCIENTIFIC EXECUTION**: Injected scores are strictly diagnostic and must set `scientific_evidence_eligible=False`.
+14. **NO INJECTED CANDIDATES IN SCIENTIFIC EXECUTION**: Injected candidates are strictly diagnostic and prohibited in strict scientific mode.
+15. **NO NON-10 BASE MAPPERS IN SCIENTIFIC EXECUTION**: Canonical scientific execution strictly requires $n_{\text{selected\_base\_mappers}} = 10$.
+16. **NO PLACEHOLDER IDENTIFIERS IN SCIENTIFIC EXECUTION**: `lens_id` and `candidate_pool_id` must be non-empty and non-placeholder.
+17. **NO HIDDEN CANDIDATE GRID OR CLUSTERER DEFAULTS**: `candidate_params`, `candidate_pool_id`, and `clusterer` must be explicitly specified.
+18. **NO UNSTABLE SERIALIZATION IN CANDIDATE KEYS**: Lambdas, local functions, and memory addresses are strictly prohibited.
+19. **NO DISCARDING SELECTION PROVENANCE**: `ExperimentRunner` must persist clean/perturbed selection provenance and propagate method-level eligibility.

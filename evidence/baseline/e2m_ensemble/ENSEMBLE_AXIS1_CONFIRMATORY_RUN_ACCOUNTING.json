@@ -1,0 +1,20 @@
+{
+  "planned": 50,
+  "attempted": 50,
+  "eligible": 21,
+  "success_ineligible_retained": 0,
+  "execution_failed": 0,
+  "selection_failed": 29,
+  "ids_exact_match": true,
+  "reconciliation": true,
+  "runner_version": "4.1.0",
+  "metric_estimand": "D_STAR_JACCARD_MEAN",
+  "output_inventory_conforms": true,
+  "output_inventory_report": {
+    "conforms": true,
+    "missing": [],
+    "extra": [],
+    "malformed": [],
+    "duplicate": []
+  }
+}

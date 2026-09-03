@@ -1,0 +1,39 @@
+{
+  "contract_id": "C6B_BALL_SWISS_NOISE_X_RADIUS_V1",
+  "status": "FINAL_EXECUTED",
+  "dataset_id": "swiss_roll_with_hole",
+  "method_id": "ball_mapper",
+  "replicates": 20,
+  "alphas": [0.0, 0.05, 0.10, 0.20, 0.30],
+  "epsilon0": 0.8143977317769947,
+  "radius_multipliers": [1.0, 1.5, 2.0],
+  "radii": [0.8143977317769947, 1.221596597665492, 1.6287954635539894],
+  "frozen_metric_cover_rule": {
+    "landmarks_selected_once_from_clean_realization_per_radius": true,
+    "reuse_clean_landmark_ids": true,
+    "reuse_clean_landmark_coordinates": true,
+    "reuse_exact_radius": true,
+    "perturb_observation_coordinates_only": true,
+    "independent_noisy_landmark_refit": false
+  },
+  "pairing": {
+    "same_data_realization_across_radii": true,
+    "same_coordinate_noise_draw_across_radii": true,
+    "same_observation_ids_and_order": true
+  },
+  "primary_response": "edge_jaccard_distance",
+  "primary_response_formula": "1-|E_clean_intersection_E_noisy|/|E_clean_union_E_noisy|",
+  "empty_union_convention": "null_ineligible_not_zero",
+  "primary_interaction_contrast": "[dJ(alpha0.10,k2.0)-dJ(alpha0.05,k2.0)]-[dJ(alpha0.10,k1.0)-dJ(alpha0.05,k1.0)]",
+  "primary_estimand": "median_within_replicate_difference_in_differences",
+  "uncertainty": "paired_percentile_bootstrap_95CI_fixed_resampling_seed",
+  "preferred_direction": null,
+  "secondary_endpoints": ["edge_loss_fraction", "edge_gain_fraction", "node_support_churn", "component_count_delta", "cycle_rank_delta", "descriptive_all_alpha_all_radius_profiles"],
+  "prohibited_endpoint": "fixed_cover_D_COMMON_ID_as_scientific_response",
+  "clean_reference_eligibility": "V>=2_and_E>=1",
+  "primary_measurability": "k1.0_and_k2.0_clean_references_eligible_and_all_four_primary_cells_defined",
+  "planned_constructions": 300,
+  "stream_range": [16200, 16299],
+  "failure_policy": "retain_typed_nulls_no_imputation",
+  "terminal_states": ["INTERACTION_ESTIMABLE", "PRIMARY_CONTRAST_NOT_OBSERVED", "FACTOR_COLLAPSES_TO_ONE_LEVEL", "PRIMARY_ESTIMAND_NOT_MEASURABLE", "RUN_FAILED"]
+}

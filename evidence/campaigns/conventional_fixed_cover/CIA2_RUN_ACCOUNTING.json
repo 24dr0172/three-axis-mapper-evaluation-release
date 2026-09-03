@@ -1,0 +1,33 @@
+{
+  "accounting_note": "total_mapper_constructions = 123 sealed fit_transform calls (3 references + 120 refits) + 120 frozen-interval constructions = 243. Do not omit either class.",
+  "campaign_id": "CIA2_CONVENTIONAL_FIXED_COVER_REPAIR_2026-08-28",
+  "exact_metric_recomputed": true,
+  "exact_metric_sha256": "5ddeac40a45bd2e32b670b51359d95ad8bcf1c4ebbf96a55cb24be062a4ab864",
+  "fixed_cover_constructions": 120,
+  "fixed_cover_rows": 120,
+  "n_fixed_cover_distances_success": 68,
+  "n_fixed_cover_distances_undefined": 52,
+  "plan_units": 123,
+  "reference_rows": 3,
+  "refit_cover_rows": 120,
+  "result_rows": 243,
+  "run_id": "CIA2_CONV_FIXED_COVER_CONF_001",
+  "runner_sha256": "21215799fc5b7eb5ff04aae087fba4e673b3cb68f99fc4144ad4ada3d95602c4",
+  "sealed_conventional_fit_transform_calls": 123,
+  "status_by_arm": {
+    "fixed_cover": {
+      "degenerate_output": 8,
+      "reference_ineligible": 40,
+      "success": 72
+    },
+    "reference": {
+      "degenerate_output": 1,
+      "success": 2
+    },
+    "refit_cover": {
+      "degenerate_output": 48,
+      "success": 72
+    }
+  },
+  "total_mapper_constructions": 243
+}

@@ -1,0 +1,50 @@
+Phase 5 check record — statistics and reporting policy
+======================================================
+
+Status
+    Phase 5 complete. verify_phase5.py prints PHASE5_CHECKS_PASSED and
+    includes the Phase 4 and plan-surface regression checks. No scientific
+    evidence, campaign output, solver code, figure, or SHA256SUMS.txt entry
+    was changed.
+
+Confirmatory reporting
+    CLAIM_EVIDENCE_INDEX.csv retains the stable 35-claim architecture. Each
+    confirmatory row has a nonblank estimand, controlling evidence,
+    uncertainty statement, predeclared resolution rule, manuscript location,
+    and terminal status. Resampling-based claims report the resampling unit,
+    independent-cluster/stream count, interval method, and resolution rule in
+    the manuscript. Exact finite-design and algebraic claims are labelled as
+    such rather than assigned artificial resampling uncertainty.
+
+C7 small-cluster disclosure
+    The C7 block identifies beta_12, the stream as the resampling unit, 10
+    independent stream clusters, the B=10000 nonparametric percentile
+    bootstrap interval, the secondary CR1 t_9 interval, terminal state T2,
+    and the limitation from only 10 stream clusters beside the intervals.
+
+Tier and multiplicity policy
+    Descriptive prose maps to the exploratory tier unless another tier is
+    stated. Exploratory results are not described as hypothesis confirmation.
+    The paper makes no familywise-significance claim across descriptive or
+    exploratory analyses, and their intervals/diagnostic p-values are not an
+    omnibus testing family. Confidence intervals, exact finite-design
+    accounting, and predeclared decision rules are accepted without a blanket
+    requirement to report p-values. IB4F diagnostic p-values do not adjudicate
+    C3.
+
+Files changed
+    manuscript/mapper_manuscript.tex
+    manuscript/CLAIMS.txt
+    manuscript/RESULTS.txt
+    revision_v4_1/verify_phase5.py
+    revision_v4_1/PHASE5_CHECK_RECORD.txt
+
+Self-check boundary
+    The scientific checks in code/verification/verify_release.py pass when
+    run after its release-finalization gates. The full legacy verifier stops
+    at manifest path-set equality because additive revision_v4_1 and revised
+    manuscript files are intentionally absent from the frozen pre-v4.1
+    SHA256SUMS.txt. Phase 6 owns regeneration of that final manifest. No
+    pdflatex or latexmk executable is provisioned on this host, so PDF compile
+    validation is likewise deferred to the Phase 6 environment/finalization
+    gate rather than treated as a Phase 5 failure.

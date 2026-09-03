@@ -1,0 +1,14 @@
+{
+  "artifact_type": "BALL_RUN_ACCOUNTING",
+  "campaign_id": "BALL_IB4_II6_III5_EVALUATION",
+  "run_id": "BALL_IB4_II6_III5_UNIT_001",
+  "runner_version": "ball_ib4_iii5_runner_v1.0.1-candidate",
+  "planned_count": 45,
+  "attempted_count": 45,
+  "completed_count": 45,
+  "failed_count": 0,
+  "status_counts": {
+    "success": 45
+  },
+  "ledger_path": "BALL_CONSTRUCTION_LEDGER.jsonl"
+}

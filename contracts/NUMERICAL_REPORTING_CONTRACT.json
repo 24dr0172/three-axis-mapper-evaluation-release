@@ -1,0 +1,8 @@
+{
+  "contract_id": "NUMERICAL_REPORTING_V1",
+  "locked_numpy": "1.26.4",
+  "cross_environment_absolute_tolerance": 5e-15,
+  "paper_decimal_places": 6,
+  "rule": "Recompute under the locked environment. Cross-environment verification uses absolute tolerance only for floating-point refits; manuscript values are rounded to six decimal places. Counts, statuses, hashes, and identities remain exact."
+}
+

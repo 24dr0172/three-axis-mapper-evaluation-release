@@ -1,0 +1,10 @@
+{
+  "ball_mapper_spec_v1.0.0.txt": {"executed_sha256": "66a51b5ccd3ecf6101a7b605ff2871dc215997398d5a2d2501ee659a94367081", "release_sha256": "b5b8ff8a66ad8b289496bee111d03f86921f4d8f6f03c39feab458a198b7a9d8"},
+  "conventional_mapper_spec_v1.2.0.txt": {"executed_sha256": "a1bcf6b1653d22f4405b16edc9dfc99a474820450a5d32da62334d65d12544ff", "release_sha256": "73d315f6986e7fdbfa22a8387a7a25996d0488f4ce1945d6d6add4c5d634797c"},
+  "dataset_contracts_v1.0.0.txt": {"executed_sha256": "90c0b19f8b231bfbb9d5686b1886a616b35fecbe89f082439ffae3113345fa4d", "release_sha256": "0a9794a56bc5fd51f88ea2e9ef16480fec67bd8e828b01d224d183bef629f484"},
+  "f_mapper_spec_v1.0.0.txt": {"executed_sha256": "19c30bd1ec36780b1dfac8692b3bbc2c876209152b7e3d4d75aca78c6a3d7357", "release_sha256": "90c68cbc9f09aed8bc8bf8f209ceb93d456249ed7fbd3d784ade67be95b40eb6"},
+  "kang_lim_ensemble_spec_v1.2.0.txt": {"executed_sha256": "94242d1f14d1e24c264572cbe8191bfbb94acf957840e0067b7e96060d8559ce", "release_sha256": "01c191e76202bc58136078fc9874f1924dc3f2e8496b0ec6bf4d4bed631215d3"},
+  "membership_nerve_homology_spec_v1.2.0.txt": {"executed_sha256": "b966746074028e2d67fe459dc124ad397908aefeb2e7f192995dc150ed39a92f", "release_sha256": "d8f6c346269bc33b557855cce348d9aa1edf1c024244a3d35a52c4570289cee3"},
+  "M6A2_SWISS_SCALE_RULE_v1.0.0.txt": {"executed_sha256": "3e3ca9ff8ca043c6590ac8ac9dbeabd81eb847e0469fa10a4ceba376e1fa38d6", "release_sha256": "cac7232f627084962c57c4804dbf82e30ddae4a1771a91105f6ec756506c4cee"},
+  "reeb_references_and_stability_spec_v1.0.0.txt": {"executed_sha256": "e3dbd598e5b84e3a9c4d5ed3d7a3990cdaaa9671c3080f9bedaf26f7c4c7f4e6", "release_sha256": "d98641c3a8d97663c9eaf5f7e78f9143d0c28f00a8b131d2817ffe2421629b7e"}
+}

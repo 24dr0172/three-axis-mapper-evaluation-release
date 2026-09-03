@@ -1,0 +1,191 @@
+{
+  "no_cross_dataset_pooling": true,
+  "no_inference": true,
+  "primary_confirmatory_decisions": [
+    {
+      "alpha": 0.05,
+      "criterion": "n_complete>=8 and n_signature>=8",
+      "dataset_id": "unit_circle_S1",
+      "n_complete": 10,
+      "n_planned": 10,
+      "n_signature": 0,
+      "replicated": false
+    },
+    {
+      "alpha": 0.05,
+      "criterion": "n_complete>=8 and n_signature>=8",
+      "dataset_id": "swiss_roll_with_hole",
+      "n_complete": 5,
+      "n_planned": 10,
+      "n_signature": 0,
+      "replicated": false
+    }
+  ],
+  "strata": [
+    {
+      "alpha": 0.0,
+      "dataset_id": "digits_1797x64_scaled16",
+      "median_E_all_silhouette": 0.0,
+      "median_coverage_fraction": 0.0,
+      "median_globally_unclustered_fraction": 1.0,
+      "median_silhouette_coverage_adjusted_01": null,
+      "median_silhouette_macro": null,
+      "n_finite_silhouette": 0,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.05,
+      "dataset_id": "digits_1797x64_scaled16",
+      "median_E_all_silhouette": 0.0,
+      "median_coverage_fraction": 0.0,
+      "median_globally_unclustered_fraction": 1.0,
+      "median_silhouette_coverage_adjusted_01": null,
+      "median_silhouette_macro": null,
+      "n_finite_silhouette": 0,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.1,
+      "dataset_id": "digits_1797x64_scaled16",
+      "median_E_all_silhouette": 0.0,
+      "median_coverage_fraction": 0.0,
+      "median_globally_unclustered_fraction": 1.0,
+      "median_silhouette_coverage_adjusted_01": null,
+      "median_silhouette_macro": null,
+      "n_finite_silhouette": 0,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.2,
+      "dataset_id": "digits_1797x64_scaled16",
+      "median_E_all_silhouette": 0.0,
+      "median_coverage_fraction": 0.0,
+      "median_globally_unclustered_fraction": 1.0,
+      "median_silhouette_coverage_adjusted_01": null,
+      "median_silhouette_macro": null,
+      "n_finite_silhouette": 0,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.3,
+      "dataset_id": "digits_1797x64_scaled16",
+      "median_E_all_silhouette": 0.0,
+      "median_coverage_fraction": 0.0,
+      "median_globally_unclustered_fraction": 1.0,
+      "median_silhouette_coverage_adjusted_01": null,
+      "median_silhouette_macro": null,
+      "n_finite_silhouette": 0,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.0,
+      "dataset_id": "swiss_roll_with_hole",
+      "median_E_all_silhouette": 0.1,
+      "median_coverage_fraction": 0.005887916431394691,
+      "median_globally_unclustered_fraction": 0.9941120835686053,
+      "median_silhouette_coverage_adjusted_01": 0.006750936159606411,
+      "median_silhouette_macro": 0.9800841037141249,
+      "n_finite_silhouette": 7,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.05,
+      "dataset_id": "swiss_roll_with_hole",
+      "median_E_all_silhouette": 0.05,
+      "median_coverage_fraction": 0.005093380239106715,
+      "median_globally_unclustered_fraction": 0.9949066197608933,
+      "median_silhouette_coverage_adjusted_01": 0.0067369573589038745,
+      "median_silhouette_macro": 0.9795426372912571,
+      "n_finite_silhouette": 5,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.1,
+      "dataset_id": "swiss_roll_with_hole",
+      "median_E_all_silhouette": 0.0,
+      "median_coverage_fraction": 0.0033445190156599636,
+      "median_globally_unclustered_fraction": 0.99665548098434,
+      "median_silhouette_coverage_adjusted_01": 0.008426795639966058,
+      "median_silhouette_macro": 0.9842294800240112,
+      "n_finite_silhouette": 1,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.2,
+      "dataset_id": "swiss_roll_with_hole",
+      "median_E_all_silhouette": 0.0,
+      "median_coverage_fraction": 0.0008328706274292053,
+      "median_globally_unclustered_fraction": 0.9991671293725708,
+      "median_silhouette_coverage_adjusted_01": null,
+      "median_silhouette_macro": null,
+      "n_finite_silhouette": 0,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.3,
+      "dataset_id": "swiss_roll_with_hole",
+      "median_E_all_silhouette": 0.0,
+      "median_coverage_fraction": 0.0,
+      "median_globally_unclustered_fraction": 1.0,
+      "median_silhouette_coverage_adjusted_01": null,
+      "median_silhouette_macro": null,
+      "n_finite_silhouette": 0,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.0,
+      "dataset_id": "unit_circle_S1",
+      "median_E_all_silhouette": 0.8,
+      "median_coverage_fraction": 1.0,
+      "median_globally_unclustered_fraction": 0.0,
+      "median_silhouette_coverage_adjusted_01": 0.9695202131471661,
+      "median_silhouette_macro": 0.939040426294332,
+      "n_finite_silhouette": 10,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.05,
+      "dataset_id": "unit_circle_S1",
+      "median_E_all_silhouette": 0.8,
+      "median_coverage_fraction": 1.0,
+      "median_globally_unclustered_fraction": 0.0,
+      "median_silhouette_coverage_adjusted_01": 0.9543534969035267,
+      "median_silhouette_macro": 0.9087069938070533,
+      "n_finite_silhouette": 10,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.1,
+      "dataset_id": "unit_circle_S1",
+      "median_E_all_silhouette": 0.6,
+      "median_coverage_fraction": 0.9995,
+      "median_globally_unclustered_fraction": 0.0005,
+      "median_silhouette_coverage_adjusted_01": 0.9457104642178207,
+      "median_silhouette_macro": 0.892742195063104,
+      "n_finite_silhouette": 10,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.2,
+      "dataset_id": "unit_circle_S1",
+      "median_E_all_silhouette": 0.5,
+      "median_coverage_fraction": 0.988,
+      "median_globally_unclustered_fraction": 0.012,
+      "median_silhouette_coverage_adjusted_01": 0.848207821176135,
+      "median_silhouette_macro": 0.7161438916485938,
+      "n_finite_silhouette": 10,
+      "n_rows": 10
+    },
+    {
+      "alpha": 0.3,
+      "dataset_id": "unit_circle_S1",
+      "median_E_all_silhouette": 0.6,
+      "median_coverage_fraction": 0.975,
+      "median_globally_unclustered_fraction": 0.025,
+      "median_silhouette_coverage_adjusted_01": 0.7291493312995464,
+      "median_silhouette_macro": 0.4875352108492813,
+      "n_finite_silhouette": 10,
+      "n_rows": 10
+    }
+  ]
+}

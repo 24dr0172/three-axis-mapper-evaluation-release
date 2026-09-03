@@ -1,0 +1,15 @@
+{
+  "manifest": {
+    "campaign_id": "C5_FMAPPER_TIER_A_2026-08-28",
+    "run_id": "C5_FMAPPER_TIER_A_CONF_001",
+    "plan_units": 2,
+    "result_rows": 2,
+    "fmapper_fit_transform_calls": 2,
+    "total_mapper_operations": 2,
+    "accounting_note": "Exactly one FMapper.fit_transform call per planned unit; no nested or wrapper Mapper construction occurs in this campaign, so attempts, operations, units and rows all equal 2.",
+    "attempted": 2,
+    "successful_constructions": 1,
+    "eligible_for_tier_a": 1,
+    "runner_sha256": "68ae47222836495632332c1dcdd3f8bd3733d15956f5fd032bf7cadc85a35736"
+  }
+}

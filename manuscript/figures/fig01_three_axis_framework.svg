@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="407.52pt" height="185.94pt" viewBox="0 0 407.52 185.94" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Three-axis Mapper release</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 185.94 
+L 407.52 185.94 
+L 407.52 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 15.33456 143.78076 
+L 131.04144 143.78076 
+Q 138.27312 143.78076 138.27312 140.53752 
+L 138.27312 29.18628 
+Q 138.27312 25.94304 131.04144 25.94304 
+L 15.33456 25.94304 
+Q 8.10288 25.94304 8.10288 29.18628 
+L 8.10288 140.53752 
+Q 8.10288 143.78076 15.33456 143.78076 
+z
+" clip-path="url(#p7440f6a301)" style="fill: #ffffff; stroke: #0072b2; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 15.33456 51.88896 
+L 131.04144 51.88896 
+Q 138.27312 51.88896 138.27312 48.64572 
+L 138.27312 29.18628 
+Q 138.27312 25.94304 131.04144 25.94304 
+L 15.33456 25.94304 
+Q 8.10288 25.94304 8.10288 29.18628 
+L 8.10288 48.64572 
+Q 8.10288 51.88896 15.33456 51.88896 
+z
+" clip-path="url(#p7440f6a301)" style="fill: #0072b2"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 145.90656 143.78076 
+L 261.61344 143.78076 
+Q 268.84512 143.78076 268.84512 140.53752 
+L 268.84512 29.18628 
+Q 268.84512 25.94304 261.61344 25.94304 
+L 145.90656 25.94304 
+Q 138.67488 25.94304 138.67488 29.18628 
+L 138.67488 140.53752 
+Q 138.67488 143.78076 145.90656 143.78076 
+z
+" clip-path="url(#p7440f6a301)" style="fill: #ffffff; stroke: #009e73; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 145.90656 51.88896 
+L 261.61344 51.88896 
+Q 268.84512 51.88896 268.84512 48.64572 
+L 268.84512 29.18628 
+Q 268.84512 25.94304 261.61344 25.94304 
+L 145.90656 25.94304 
+Q 138.67488 25.94304 138.67488 29.18628 
+L 138.67488 48.64572 
+Q 138.67488 51.88896 145.90656 51.88896 
+z
+" clip-path="url(#p7440f6a301)" style="fill: #009e73"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 276.47856 143.78076 
+L 392.18544 143.78076 
+Q 399.41712 143.78076 399.41712 140.53752 
+L 399.41712 29.18628 
+Q 399.41712 25.94304 392.18544 25.94304 
+L 276.47856 25.94304 
+Q 269.24688 25.94304 269.24688 29.18628 
+L 269.24688 140.53752 
+Q 269.24688 143.78076 276.47856 143.78076 
+z
+" clip-path="url(#p7440f6a301)" style="fill: #ffffff; stroke: #d55e00; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 276.47856 51.88896 
+L 392.18544 51.88896 
+Q 399.41712 51.88896 399.41712 48.64572 
+L 399.41712 29.18628 
+Q 399.41712 25.94304 392.18544 25.94304 
+L 276.47856 25.94304 
+Q 269.24688 25.94304 269.24688 29.18628 
+L 269.24688 48.64572 
+Q 269.24688 51.88896 276.47856 51.88896 
+z
+" clip-path="url(#p7440f6a301)" style="fill: #d55e00"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 28.9944 112.7898 
+L 117.3816 112.7898 
+" clip-path="url(#p7440f6a301)" style="fill: none; stroke: #e5e7eb; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 159.5664 112.7898 
+L 247.9536 112.7898 
+" clip-path="url(#p7440f6a301)" style="fill: none; stroke: #e5e7eb; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 290.1384 112.7898 
+L 378.5256 112.7898 
+" clip-path="url(#p7440f6a301)" style="fill: none; stroke: #e5e7eb; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #ffffff; font: 700 11px 'DejaVu Sans'; text-anchor: middle" x="73.188" y="41.951313" transform="rotate(-0 73.188 41.951313)">AXIS I</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #111827; font: 700 9.5px 'DejaVu Sans'" transform="translate(33.259055 63.208336)">Stability under</text>
+    <text style="fill: #111827; font: 700 9.5px 'DejaVu Sans'" transform="translate(39.080773 73.920477)">perturbation</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #111827; font: 8.5px 'DejaVu Sans'" transform="translate(14.617023 91.873798)">State object + perturbation</text>
+    <text style="fill: #111827; font: 8.5px 'DejaVu Sans'" transform="translate(26.546242 102.360739)">State correspondence</text>
+   </g>
+   <g id="text_4">
+    <text style="fill: #6b7280; font: 8.2px 'DejaVu Sans'" transform="translate(31.298172 124.564248)">Observation / edge /</text>
+    <text style="fill: #6b7280; font: 8.2px 'DejaVu Sans'" transform="translate(28.744 134.369527)">filtered-graph change</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #ffffff; font: 700 11px 'DejaVu Sans'; text-anchor: middle" x="203.76" y="41.951313" transform="rotate(-0 203.76 41.951313)">AXIS II</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #111827; font: 700 9.5px 'DejaVu Sans'" transform="translate(169.679492 63.245445)">Local cluster</text>
+    <text style="fill: #111827; font: 700 9.5px 'DejaVu Sans'" transform="translate(177.052383 73.883367)">validation</text>
+   </g>
+   <g id="text_7">
+    <text style="fill: #111827; font: 8.5px 'DejaVu Sans'" transform="translate(164.51457 91.873798)">Pullback partitions</text>
+    <text style="fill: #111827; font: 8.5px 'DejaVu Sans'" transform="translate(146.273438 102.360739)">Silhouette / Davies-Bouldin</text>
+   </g>
+   <g id="text_8">
+    <text style="fill: #6b7280; font: 8.2px 'DejaVu Sans'" transform="translate(169.223266 124.564248)">Coverage / noise</text>
+    <text style="fill: #6b7280; font: 8.2px 'DejaVu Sans'" transform="translate(163.754891 134.369527)">Construction status</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #ffffff; font: 700 11px 'DejaVu Sans'; text-anchor: middle" x="334.332" y="41.951313" transform="rotate(-0 334.332 41.951313)">AXIS III</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #111827; font: 700 9.5px 'DejaVu Sans'" transform="translate(304.224422 63.171227)">Topological</text>
+    <text style="fill: #111827; font: 700 9.5px 'DejaVu Sans'" transform="translate(305.117273 73.883367)">agreement</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #111827; font: 8.5px 'DejaVu Sans'" transform="translate(291.085594 91.873798)">Fixed domain + lens</text>
+    <text style="fill: #111827; font: 8.5px 'DejaVu Sans'" transform="translate(282.525828 102.360739)">Graph / nerve invariants</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #6b7280; font: 8.2px 'DejaVu Sans'" transform="translate(289.34475 124.564248)">Reference invariants /</text>
+    <text style="fill: #6b7280; font: 8.2px 'DejaVu Sans'" transform="translate(289.966797 134.369527)">extended persistence</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7440f6a301">
+   <rect x="2.88" y="2.88" width="401.76" height="180.18"/>
+  </clipPath>
+ </defs>
+</svg>

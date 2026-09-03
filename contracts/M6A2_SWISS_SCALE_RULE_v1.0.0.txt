@@ -1,0 +1,128 @@
+# Specification: Milestone M6-A2 Deterministic Scale-Aware DBSCAN Radius Rule
+**Specification Document**: SPEC-SCALE-M6A2  
+**Version**: 1.0.0  
+**Status**: **FROZEN FOR RELEASE — EXECUTED M6-A2 SCALE CONTRACT**  
+**Author**: Evaluation Framework Implementation Team  
+**Approving Authority**: Human Researcher (Lead Investigator)  
+
+---
+
+## 1. Scope & Purpose
+
+This specification establishes the formal mathematical, numerical, and algorithmic contract for computing the scale-aware clustering radius ($\text{eps}$) used by DBSCAN in Milestone M6-A2 (I-A1-Swiss-Revised).
+
+The rule replaces the arbitrary fixed numerical value $\text{eps} = 0.15$ with a deterministic, scale-equivariant radius derived strictly from the clean reference point cloud geometry ($X_0$).
+
+---
+
+## 2. Input Dataset & Coordinate Domain
+
+* **Dataset Generator**: `mapper_framework.dataset_generators.generate_swiss_roll_with_hole(N=2500, data_seed=42)`
+* **Sample Size**: Canonical finite point cloud $X_0 = \{x_1, \dots, x_N\} \subset \mathbb{R}^3$, with realized sample size $N = 2241$ (after hole excision).
+* **Coordinate System**: Raw ambient Euclidean 3D coordinates ($x, y, z$).
+* **Metric**: Standard Euclidean metric $d(x_i, x_j) = \|x_i - x_j\|_2$.
+
+---
+
+## 3. Nearest-Neighbor Distance Definition
+
+For every clean observation $x_i \in X_0$ ($i = 1, \dots, N$):
+1. **Distance Vector**: Compute the Euclidean distances to all other observations:
+   \[
+   D_i = \{d(x_i, x_j) \mid j \in \{1, \dots, N\}, j \neq i\}
+   \]
+   **Self-distance ($j = i$, $d(x_i, x_i) = 0$) is strictly excluded**.
+2. **Ascending Sort**: Sort the $N - 1$ distinct distances in ascending order:
+   \[
+   D_i^{\rm sorted} = (d_{(1)}(x_i), d_{(2)}(x_i), \dots, d_{(N-1)}(x_i))
+   \]
+   where $d_{(1)}(x_i) \le d_{(2)}(x_i) \le \dots \le d_{(N-1)}(x_i)$.
+3. **Second-Nearest Distinct Neighbor Distance**: Define $r_i$ as the second entry in the sorted distance vector:
+   \[
+   r_i = d_{(2)}(x_i)
+   \]
+   which represents the minimum radius centered at $x_i$ enclosing at least 2 distinct neighboring observations.
+
+### Duplicate Point Handling
+In synthetic dataset generators with continuous densities, points are almost surely distinct. If duplicate points occur ($d(x_i, x_j) = 0$ for $j \neq i$), the distance $0.0$ occupies index 1 in the sorted list, correctly reflecting zero separation to a distinct sample index.
+
+---
+
+## 4. Quantile Definition & Numerical Implementation
+
+### 4.1 Quantile Contract
+The scale-aware radius is defined as the empirical 90th percentile ($Q_{0.90}$) of the second-nearest distinct neighbor distances:
+\[
+\epsilon_{\rm scale} = Q_{0.90}(\{r_1, r_2, \dots, r_N\})
+\]
+
+### 4.2 Numerical Freeze Contract
+The calculation is executed via:
+```python
+epsilon_M6A2 = float(numpy.quantile(r, 0.90, method="linear"))
+```
+For the canonical realization of `swiss_roll_with_hole` under `data_seed=42` ($N=2241$), the exact numerical values are:
+* **Double Precision (Float64)**: `1.015739105123552`
+* **IEEE-754 Hexadecimal Float**: `0x1.04077a5dc6226p+0`
+* **SHA-256 of Clean Dataset $X_0$**: `46369c0d6cfcfaf2fa8b584061b40280ebdbd25249ea3b9e4a3bcf44eb1c4ca7`
+* **SHA-256 of Sorted 2NN Vector**: `df1a6136d85eb2419a4a75aaae4ff80362f6b86fbc95ca03e031eb58dc03f4dc`
+* **Numerical Library**: NumPy 2.2.3 / SciPy 1.15.2
+
+The radius $\epsilon_{\rm M6A2}$ is a fixed numerical constant used for all M6-A2 Swiss noise runs.
+
+---
+
+## 5. Mathematical & Methodological Properties
+
+### 5.1 Project Scientific Design Choice & Attribution
+* **Attribution**: The scale rule is an independently pre-declared **project scientific design choice**. It is not claimed to be a theorem from legacy literature or part of the foundational Mapper algorithm.
+* **Min-Samples Motivation**: The choice of $k=2$ (second nearest neighbor) is motivated by the local neighborhood requirement associated with `min_samples=3` under scikit-learn DBSCAN semantics, where the query observation itself counts as 1 element toward `min_samples`.
+* **Pullback Adequacy Qualification**: $Q_{0.90}(\{r_i\})$ provides a deterministic estimate of the **clean ambient sampling scale**. Because DBSCAN clusters within individual Mapper pullbacks, actual pullback-level density is recorded descriptively. No post-hoc tuning of $\epsilon$ is permitted.
+
+### 5.2 Scale Equivariance
+For any positive scalar $a > 0$:
+\[
+\epsilon_{\rm scale}(a \cdot X) = a \cdot \epsilon_{\rm scale}(X)
+\]
+Proof: For every pair $(x_i, x_j)$, $\|a x_i - a x_j\|_2 = a \|x_i - x_j\|_2$. Thus $r_i(aX) = a r_i(X)$, and linear quantile interpolation preserves scalar multiplication: $Q_q(a \cdot r) = a \cdot Q_q(r)$. $\blacksquare$
+
+### 5.3 Translation Invariance
+For any translation vector $v \in \mathbb{R}^3$:
+\[
+\epsilon_{\rm scale}(X + v) = \epsilon_{\rm scale}(X)
+\]
+Proof: Distances are translation-invariant $\|(x_i + v) - (x_j + v)\|_2 = \|x_i - x_j\|_2$. $\blacksquare$
+
+---
+
+## 6. Execution Rules & Anti-Tuning Guarantees
+
+1. **Clean-Only Derivation**: $\epsilon_{\rm M6A2}$ is derived strictly from clean $X_0$. It is never computed from, influenced by, or calibrated against noisy perturbation datasets ($X_\sigma$).
+2. **Identical Radius for CM and FM**: Both Conventional Mapper and F-Mapper consume the exact same frozen numerical value $\epsilon_{\rm M6A2} = 1.015739105123552$.
+3. **No Dynamic Recomputation**: Across M6-A2 Swiss noise levels $\sigma \in \{0.00, 0.01, 0.03, 0.05, 0.08, 0.10\}$ and replications $r \in \{1, \dots, 30\}$, the clustering radius remains fixed at $\epsilon_{\rm M6A2}$.
+4. **No Topology-Directed Optimization**: Selection of $\epsilon_{\rm M6A2}$ is entirely mechanical via the $Q_{0.90}$ formula. No grid search over quantile levels ($Q_{0.80}, Q_{0.85}, Q_{0.95}$) or target Betti numbers was performed.
+
+---
+
+## 7. Ambient Radial Lens Contract & Perturbation Semantics
+
+### 7.1 Mathematical Definition
+Under the Axis 1 Same-Lens-Function Principle, the Swiss Roll scalar filter is defined continuously on the ambient coordinate space $\mathbb{R}^3$:
+\[
+f(x, y, z) = \sqrt{x^2 + z^2}
+\]
+which measures the radial Euclidean distance from the central cylinder axis $(0, y, 0)$.
+
+### 7.2 Clean Manifold Equivalence
+On the clean Swiss Roll surface embedded via $(x, y, z) = (u \cos u, v, u \sin u)$ for $u \in [1.5\pi, 4.5\pi]$:
+\[
+f(x, y, z) = \sqrt{(u \cos u)^2 + (u \sin u)^2} = |u| = u
+\]
+Thus, on clean $X_0$, $f(X_0)$ is identically the intrinsic unrolled coordinate $u$.
+
+### 7.3 Perturbation Dynamic Re-evaluation
+Under isotropic Gaussian coordinate noise $X_{\sigma, r} = X_0 + \mathcal{N}(0, \sigma^2 I_3)$, the filter values are dynamically re-evaluated from the perturbed coordinates:
+\[
+f_{\sigma, r}(x_i + \epsilon_{x, i}, y_i + \epsilon_{y, i}, z_i + \epsilon_{z, i}) = \sqrt{(x_i + \epsilon_{x, i})^2 + (z_i + \epsilon_{z, i})^2}
+\]
+This guarantees that Swiss Roll coordinate-noise evaluation follows the exact same perturbation law as the Circle height lens ($f(x, y) = y \mapsto y + \epsilon_y$).

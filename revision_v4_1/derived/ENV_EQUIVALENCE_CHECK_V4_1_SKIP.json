@@ -1,0 +1,13 @@
+{
+  "campaign_id": "ENV_EQUIVALENCE_CHECK_V4_1",
+  "label": "equivalence check skipped; provenance disclosure retained",
+  "mapper_constructions_generated": 0,
+  "python_available": [
+    "3.12.3"
+  ],
+  "python_missing": [
+    "3.13.5"
+  ],
+  "reason": "CPython 3.13.5 is not provisioned on this host; only 3.12.3 is available. Plan section 6.2: not blocking if 3.12 cannot be paired with 3.13.5.",
+  "status": "skipped_interpreter_unavailable"
+}

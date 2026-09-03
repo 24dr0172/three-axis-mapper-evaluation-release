@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Reproducibility release version 4.1.0; embedded mapper_framework package/API version 3.0.0. If you use this release, please cite the associated manuscript."
+title: "Mapper Evaluation: Reproducibility Release"
+type: software
+version: "4.1.0"
+date-released: 2026-08-30
+authors:
+  - family-names: Sen
+    given-names: Annesha
+  - family-names: Singh
+    given-names: Shivam
+  - family-names: Tiwari
+    given-names: S. P.
+preferred-citation:
+  type: article
+  title: "Evaluating Mapper: A Three-Axis Critical Review"
+  authors:
+    - family-names: Sen
+      given-names: Annesha
+    - family-names: Singh
+      given-names: Shivam
+    - family-names: Tiwari
+      given-names: S. P.
+  year: 2026

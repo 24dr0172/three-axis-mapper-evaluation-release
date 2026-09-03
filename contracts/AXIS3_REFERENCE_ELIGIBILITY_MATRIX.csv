@@ -1,0 +1,5 @@
+method_id,method_name,primary_same_filter_reeb_eligibility,tier_a_structural_eligible,tier_b_typed_pd_eligible,tier_c_full_reeb_distance_eligible,reference_role,axis3_status,mandatory_conditions
+conventional,Conventional Mapper,YES,YES,YES,DISABLED,primary_reeb_target,FROZEN,"Scalar lens, verified continuous/PL reference, same-filter contract"
+f_mapper,F-Mapper,DEFERRED,YES,YES,DISABLED,candidate_reeb_target,DEFERRED,"Fuzzy level-set thresholding, lower-star filtration, same-filter contract"
+ensemble_kang_lim,Kang–Lim RCESCC Ensemble Mapper,NO,YES,NO,DISABLED,part4_comparison_and_diagnostics,FROZEN,"Diagnostic structural comparison only; no continuous Reeb quotient claim"
+ball_mapper,Ball Mapper,NO,YES,NO,DISABLED,metric_cover_only,FROZEN,"Metric cover only; III-5 metric-cover structural diagnostics; no scalar-lens Reeb claim"

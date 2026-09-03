@@ -1,0 +1,60 @@
+Phase 1 check record — mandatory manuscript factual repair
+==========================================================
+
+Status
+    Phase 1 complete. Frozen evidence, contracts, src, and code hashes are
+    unchanged. Manuscript source, RESULTS.txt, and CLAIMS.txt were revised.
+    SHA256SUMS.txt is still the pre-v4.1 file-level authority for frozen
+    objects; it will be regenerated at the Phase 6 integrity step.
+
+Phase 0 self-check (done first)
+    Snapshot tar SHA256 still
+        69de1663642f69bffd8db2e1aba09b09fe21b6cb3e5976b79567d47fe5d9beee
+    CLAIM_TIER_TABLE.csv remains 1:1 with CLAIM_EVIDENCE_INDEX.csv (35 rows).
+    Correction applied: PHASE0_FREEZE_RECORD.txt no longer lists E2M_III3 as
+    a descriptive unnamed row; it is a confirmatory finite-case appendix
+    assignment. C3/C8 iteration traces are recorded as
+    not_exposed_by_sealed_run_fcm_1d.
+
+3.1 C1
+    Original confirmatory pattern stated as not observed.
+    Four-dose table tab:c1doses reports median D_M^NA, Silhouette, and 30/30
+    eligibility at alpha in {0.05,0.10,0.20,0.30}.
+    Figure 4 is labelled as the original alpha=0.05 slice.
+    Unlabelled "most direct counterexample" language removed.
+
+3.2 C7 / Track C
+    Four positive doses, n, eps, 10 streams, 4 x 4 x 3 = 48 cells, alpha=0
+    is the clean reference. Full bilinear model with n, eps, alpha effects.
+    Sequence disclosed: preregistered estimand, endpoint correction,
+    reanalysis of already-generated evidence, zero new Mapper constructions.
+    Primary stream-bootstrap interval and secondary CR1 t_9 interval both
+    reported; 10-cluster limitation stated beside the interval.
+
+3.3 Master experimental-design table
+    Generated from ledgers/contracts by
+    revision_v4_1/generate_master_design_table.py (do not hand-edit).
+    Known corrections present: CIA2 Digits eps=0.15; C3 Digits
+    eps=1.455055840852852; C1 30 references plus 30 pairs at four doses;
+    Swiss N_base=2500 with hole excision; Track C 48 positive-dose cells.
+    Manuscript inputs manuscript/tables/master_experimental_design.tex.
+    Verifier: revision_v4_1/verify_phase1.py (PHASE1_CHECKS_PASSED).
+
+3.4 CIA2 Digits
+    Clean reference is degenerate / all points unassigned; subsample
+    comparisons are reference-ineligible. Explicitly not a universal
+    Conventional-on-Digits law. Open-problems paragraph narrowed to match.
+
+3.5 FCM solver language
+    Frozen criterion tol=1e-7, max_iter=300, deterministic linspace
+    initialization named at the method definition, C3 counts, C8/C5
+    non-convergences, and RESULTS.txt. C3/C8 ledgers record those
+    hyperparameters on every row; iteration/objective-change traces are
+    not exposed by the sealed runner.
+
+Not done in Phase 1 (later phases)
+    C1 full-dose figure regeneration (Phase 3 B1).
+    M6-A2 / R10 / N1 manuscript placement (Phase 2).
+    FCM solver-sensitivity audit (Phase 4).
+    SHA256SUMS regeneration and PDF compile (Phase 6). pdflatex is not
+    available in this environment; compile remains a Phase 6 gate.

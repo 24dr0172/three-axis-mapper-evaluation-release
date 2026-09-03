@@ -1,0 +1,36 @@
+{
+  "output_inventory_conforms": true,
+  "output_inventory_report": {
+    "conforms": true,
+    "duplicate": [],
+    "extra": [],
+    "malformed": [],
+    "missing": []
+  },
+  "paired_rows": 120,
+  "planned_comparisons": 120,
+  "planned_constructions": 150,
+  "primary_decisions": [
+    {
+      "alpha": 0.05,
+      "criterion": "n_complete>=8 and n_signature>=8",
+      "dataset_id": "unit_circle_S1",
+      "n_complete": 10,
+      "n_planned": 10,
+      "n_signature": 0,
+      "replicated": false
+    },
+    {
+      "alpha": 0.05,
+      "criterion": "n_complete>=8 and n_signature>=8",
+      "dataset_id": "swiss_roll_with_hole",
+      "n_complete": 5,
+      "n_planned": 10,
+      "n_signature": 0,
+      "replicated": false
+    }
+  ],
+  "replay_mismatches": 0,
+  "replayed_constructions": 150,
+  "zero_imputation_count": 0
+}

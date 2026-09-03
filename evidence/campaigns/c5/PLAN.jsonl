@@ -1,0 +1,2 @@
+{"construction_id": "C5_FMAPPER_TIER_A_2026-08-28__unit_circle", "dataset_id": "unit_circle", "domain_id": "unit_circle_R2", "n": 1000, "data_seed": 42, "filter_id": "circle_height_y", "stream_index": 16000}
+{"construction_id": "C5_FMAPPER_TIER_A_2026-08-28__branching_tripod_y", "dataset_id": "branching_tripod_y", "domain_id": "branching_tripod_Y", "n": 1000, "data_seed": 42, "filter_id": "tripod_height_y", "stream_index": 16001}

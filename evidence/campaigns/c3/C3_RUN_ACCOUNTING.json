@@ -1,0 +1,17 @@
+{
+  "n_units": 525,
+  "status_counts": {
+    "success": 339,
+    "fcm_non_convergence": 181,
+    "coverage_gap": 5
+  },
+  "campaign_manifest": {
+    "campaign_id": "C3_FMAPPER_AXIS2_COMPLETION_2026-08-27",
+    "run_id": "C3_FMAPPER_AXIS2_CONF_001",
+    "runner_sha256": "e66a01ba013e066212efba2e049ff28c5ebdd3d2ca7f5add07369bccae76690a",
+    "f_mapper_sha256": "f0f5adfc2db7437cdf8951ae1c142761e90016cb21292c513d6e88b83cacb141",
+    "local_quality_sha256": "3c2e7e1dffe6195959f15d06835708e492c8b2257ff5bdb5ac482e44ca94d089",
+    "plan_ledger_sha256": "4eb76444149677ff112d1a03e5f958a18f398538ad0f578ad595245584e33578",
+    "environment_lock_manifest_sha256": "46c58532e16925920e54a363e9727f7fa0afa908e2f5f1317d9f057be8ed11d9"
+  }
+}

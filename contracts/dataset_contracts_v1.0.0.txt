@@ -1,0 +1,81 @@
+# SPEC-DATA: Synthetic Dataset Generators and Experimental Protocol Contracts
+
+**Document Version**: 1.0.0  
+**Phase**: Phase 0 (Mathematical Specification and Validation)  
+**Milestone**: M4 (Reeb References + Stability Metrics + Dataset Contracts)  
+**Status**: FROZEN FOR RELEASE — EXECUTED DATASET BASIS  
+
+---
+
+## 1. Scope and Objective
+
+This specification formalizes:
+1. The mathematical formulas, parameterizations, and coordinate conventions for synthetic point-cloud generators.
+2. The strict **Clean vs. Perturbed Dataset Contract** ($S \to X_0 \to X_{\sigma, r}$).
+3. The five-tier **Seed Hierarchy** ensuring reproducible, matched-realization experiments across all three evaluation axes.
+4. The **Preprocessing Freeze Contract** preventing confounding between data noise and learned transformations.
+
+---
+
+## 2. SYNTHETIC DATASET GENERATOR MATHEMATICS
+
+### 2.1 Synthetic Dataset 1: Clean Unit Circle ($S^1$)
+- **Continuous Space**: $S^1 \subset \mathbb{R}^2$.
+- **Sampling Rule**: For sample size $N$ and `data_seed`:
+  $$\theta_n \sim \text{Uniform}(0, 2\pi) \quad \text{or} \quad \theta_n = \frac{2\pi n}{N} \quad (n = 0, \dots, N-1)$$
+  $$x_n = (\cos \theta_n, \sin \theta_n)$$
+- **Canonical Lens**: Height function $f(x_n) = \sin \theta_n = y_n \in [-1, 1]$.
+- **Authoritative Reeb Target**: `analytic_reference` $R_f(S^1)$ ($\beta_0=1, \beta_1=1$, 2 critical vertices).
+
+### 2.2 Synthetic Dataset 2: Branching Y-Graph (Tripod)
+- **Continuous Space**: 3 line segments in $\mathbb{R}^2$ meeting at $O=(0, 0)$:
+  - Arm 1: $L_1 = \{ (1-t)(0, 0) + t(-1, 1) \mid t \in [0, 1] \}$
+  - Arm 2: $L_2 = \{ (1-t)(0, 0) + t(1, 1) \mid t \in [0, 1] \}$
+  - Arm 3: $L_3 = \{ (1-t)(0, 0) + t(0, -1) \mid t \in [0, 1] \}$
+- **Sampling Rule**: Allocate $N/3$ points uniformly per arm under `data_seed`.
+- **Canonical Lens**: Height function $f(x, y) = y \in [-1, 1]$.
+- **Authoritative Reeb Target**: `exact_PL_reference` (Tree with $\beta_0=1, \beta_1=0$, 3 leaves, 1 branch vertex).
+
+### 2.3 Synthetic Dataset 3: Swiss Roll with Rectangular Hole
+- **Continuous Space**: 2D manifold embedded in $\mathbb{R}^3$:
+  $$\phi(u, v) = (u \cos u, v, u \sin u)$$
+  for $u \in [1.5\pi, 4.5\pi]$ and $v \in [0, 21]$.
+- **Hole Exclusion Region**: Remove points where $u \in [2.5\pi, 3.5\pi]$ and $v \in [7, 14]$.
+- **Sampling Rule**: Rejection sampling under `data_seed` until $N$ points in un-excluded region are obtained.
+- **Canonical Lens**: $u$-coordinate or first coordinate $x$.
+
+---
+
+## 3. SEED HIERARCHY AND RANDOMNESS ISOLATION
+
+To ensure matched-realization pairing across Parts I–IV, five distinct random seed namespaces are established:
+
+| Seed Namespace | Purpose | Isolation Rule |
+| :--- | :--- | :--- |
+| `data_seed` | Clean sample generation $X_0$. | Completely independent of noise, method, and evaluation seeds. |
+| `perturbation_seed` | Coordinate noise $\sigma$ or filter perturbation $h_r$. | Shared across all applicable methods for matched-realization comparisons. |
+| `resample_seed` | Subsampling observation indices. | Stored as explicit integer index arrays. |
+| `construction_seed` | Internal method randomness (e.g. FCM init, Ball point order). | Method-specific; logged in raw record. |
+| `selection_seed` | Algorithmic candidate generation / selection. | Never shared with evaluation randomness. |
+
+---
+
+## 4. CLEAN VS. PERTURBED DATASET CONTRACT
+
+Every experimental unit operates on explicitly distinguished data objects:
+1. $S$: Continuous mathematical space.
+2. $X_0$: Clean, unperturbed finite reference sample of size $N$.
+3. $X_{\sigma, r}$: Perturbed finite sample with noise scale $\sigma$ and realization $r$:
+   $$X_{\sigma, r} = X_0 + \epsilon, \quad \epsilon \sim \mathcal{N}(0, \sigma^2 I_d)$$
+   generated strictly via `perturbation_seed`.
+
+### Preprocessing Freeze Rule
+- If a learned transformation (such as PCA or standardization) is applied, the transformation fitted on clean reference $X_0$ is **frozen**.
+- The frozen transformation is applied to each noisy realization $X_{\sigma, r}$.
+- Re-fitting preprocessing on each noisy realization is strictly forbidden unless preprocessing adaptation is the explicit factor under study.
+
+---
+
+## 5. Campaign-specific experimental values
+
+Sample sizes, perturbation grids, repetition counts, method parameters, and evaluation endpoints are defined by the corresponding released campaign records and contracts. This dataset specification defines only data generation, preprocessing, identities, lenses, and randomness semantics; it does not impose one global experimental grid.

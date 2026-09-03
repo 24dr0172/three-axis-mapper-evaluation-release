@@ -1,0 +1,71 @@
+{
+  "analysis_contract_id": "C7_TRACKC_INTERACTION_ANALYSIS_V3_CORRECTED_ENDPOINT",
+  "analysis_contract_sha256": "b5387cb7ea04165dc606fbd0c8c294567ee98cfa77cde6388cf5376c33f5a4f7",
+  "beta_12": {
+    "point_estimate": -0.023328450168527127,
+    "primary_interval": {
+      "B": 10000,
+      "bootstrap_failure_rate": 0.0,
+      "bootstrap_failures": 0,
+      "clusters": 10,
+      "hi_97.5": -0.01965800098178656,
+      "lo_2.5": -0.0267187577306038,
+      "method": "stream-level nonparametric percentile bootstrap",
+      "seed": 20260829
+    },
+    "secondary_interval": {
+      "df": 9,
+      "hi": -0.018927264055580963,
+      "lo": -0.02772963628147329,
+      "method": "CR1 cluster-by-stream sandwich, t_{G-1}",
+      "se": 0.0019455704428166525,
+      "t_crit": 2.262157162798205
+    }
+  },
+  "campaign_id": "C7_TRACKC_FIXED_COVER_EXACT_REFIT_V3",
+  "denominator": {
+    "rows_analysed": 480,
+    "rows_excluded": 0,
+    "rows_in_ledger": 480
+  },
+  "design": {
+    "alpha_levels": [
+      0.05,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "cover_policy": "fixed realized reference pullbacks",
+    "eps_levels": [
+      0.08,
+      0.15,
+      0.25
+    ],
+    "metric": "joint common-cover distance (D_M^NA where special states occur)",
+    "n_intervals_levels": [
+      6,
+      10,
+      15,
+      20
+    ],
+    "replicate_streams": 10
+  },
+  "estimand": "beta_12, n_intervals x eps interaction",
+  "exact_metric_sha256": "5ddeac40a45bd2e32b670b51359d95ad8bcf1c4ebbf96a55cb24be062a4ab864",
+  "imputation_used": false,
+  "input_accounting_sha256": "91ee8ef6d759dcbcb590c141e12cd935960155bac06acdaee9757ac82e4ea9f1",
+  "input_ledger_sha256": "947f0e83f32812571e4d0a619760a99c66596ae7406eb46a8a535bafd58e9994",
+  "label": "reanalysis of the specified estimand after mathematical endpoint correction",
+  "mapper_constructions_generated": 0,
+  "other_coefficients": {
+    "alpha_0.10": 0.04535833333333337,
+    "alpha_0.20": 0.23096666666666657,
+    "alpha_0.30": 0.41448333333333326,
+    "eps_centered": -1.9691815223105231,
+    "interaction": -0.023328450168527127,
+    "n_centered": 0.006436915050970435
+  },
+  "p_values_computed": false,
+  "terminal_state": "T2",
+  "terminal_state_text": "INTERACTION RESOLVED, NEGATIVE"
+}

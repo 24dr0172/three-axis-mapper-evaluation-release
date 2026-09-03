@@ -1,0 +1,55 @@
+# IV-1 Cover-Arm Analysis Specification
+
+**Status**: FINAL EXECUTED ANALYSIS
+**Method**: Conventional Mapper only
+**Design**: descriptive, R = 1; no cell-level inferential p-values
+
+## Scope
+
+IV-1 associates cover-induced Mapper-output distance with local clustering quality on three datasets, using the sealed I-B2/II-2 Conventional cover grid.
+
+Datasets:
+
+- `unit_circle_S1`
+- `swiss_roll_with_hole`
+- `digits_1797x64_scaled16`
+
+Cover grid: 12 cells per dataset. Reference cell `L10_P030` (`n_intervals=10`, `overlap_frac=0.30`). The 11 non-reference cells in each dataset are the analysis spokes.
+
+Planned evaluations: 11 spokes × 3 datasets = 33.
+
+## Estimands
+
+For spoke cover `C` and reference cover `C_ref = L10_P030` on the same dataset:
+
+    D_C = D_COMMON(Mapper(C_ref), Mapper(C))
+
+where `D_COMMON` is the type-restricted extended-persistence bottleneck distance on the Mapper 1-skeleton with node-mean lens filtration.
+
+Primary association: Spearman `rho_s(D_C, Macro Silhouette)` on the complete-case mask of finite `D_C` and finite quality.
+
+Secondary association: Spearman `rho_s(D_C, Macro Davies–Bouldin)` on the corresponding complete-case mask.
+
+No p-values are reported. Ties and undefined quality remain explicit. Dual graph/nerve structural fields are stored for each spoke.
+
+## Evidence
+
+- `evidence/baseline/iv1_cover/dataset_associations.csv`
+- `evidence/baseline/iv1_cover/failure_summary.csv`
+- `evidence/baseline/iv1_cover/spoke_disposition_table.csv`
+- `evidence/baseline/iv1_cover/spoke_structural_table.csv`
+
+## Accounting
+
+| Quantity | Value |
+| :--- | ---: |
+| Planned | 33 |
+| Attempted | 33 |
+| Terminal | 33 |
+| Unattempted | 0 |
+| Evaluated | 33 |
+| Anchor-confirmed | 12 |
+| Novel evaluated | 21 |
+| Scientific failure | 0 |
+
+All 33 planned spoke evaluations completed.

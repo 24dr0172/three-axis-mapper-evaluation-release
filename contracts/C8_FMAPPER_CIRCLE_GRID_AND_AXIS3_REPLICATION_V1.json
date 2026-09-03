@@ -1,0 +1,154 @@
+{
+  "contract_id": "C8_FMAPPER_CIRCLE_GRID_AND_AXIS3_REPLICATION_V1",
+  "campaign_id": "C8_FMAPPER_CIRCLE_GRID_AND_AXIS3_REPLICATION_2026-08-29",
+  "run_id": "C8_CONF_001",
+  "status": "FINAL_EXECUTED",
+  "date": "2026-08-29",
+  "method_id": "f_mapper",
+  "purpose": [
+    "Arm A closes the Circle gap in the C3 F-Mapper Axis-II (c, tau) grid, which covered only Swiss Roll and Digits.",
+    "Arm B and the Arm A (c=10, tau=0.10) subset supply the replicated Axis-III recovery frequencies that III-1 requires and that C5 could not provide from one Circle case and one Tripod case."
+  ],
+  "source_obligations": {
+    "II-2": "cover resolution and overlap quality, F-Mapper arm, unit circle",
+    "II-5": "F-Mapper fuzzy-membership diagnostics, unit circle",
+    "III-1": "recovery frequencies/distributions across independent samples rather than one illustrative graph"
+  },
+
+  "frozen_grid": {
+    "n_intervals_values": [5, 8, 10, 15, 20],
+    "threshold_values": [0.10, 0.15, 0.20, 0.30, 0.40],
+    "provenance": "The C8 grid is identical to the C3 grid (C_VALUES, TAU_VALUES)."
+  },
+
+  "arms": [
+    {
+      "arm_id": "A_CIRCLE_GRID",
+      "dataset_id": "unit_circle",
+      "domain_id": "unit_circle_R2",
+      "N": 1000,
+      "lens_id": "circle_height_y",
+      "sampling": "uniform",
+      "radius": 1.0,
+      "replicate_axis": "data_realization",
+      "replicates": 20,
+      "grid": "full 5 x 5 frozen grid",
+      "planned_constructions": 500,
+      "stream_block": [17000, 17499]
+    },
+    {
+      "arm_id": "B_TRIPOD_AXIS3_REPLICATION",
+      "dataset_id": "branching_tripod_y",
+      "domain_id": "branching_tripod_Y",
+      "N": 1000,
+      "lens_id": "tripod_height_y",
+      "replicate_axis": "data_realization",
+      "replicates": 30,
+      "grid": "single cell (n_intervals=10, threshold=0.10)",
+      "grid_provenance": "the exact C5 Tier-A configuration, so the replication is comparable to the sealed single case",
+      "planned_constructions": 30,
+      "stream_block": [17500, 17529]
+    }
+  ],
+  "total_planned_constructions": 530,
+
+  "frozen_configuration": {
+    "fuzzifier": 2.0,
+    "fcm_tol": 1e-07,
+    "fcm_max_iter": 300,
+    "fcm_seed": 42,
+    "dbscan_eps": 0.15,
+    "dbscan_min_samples": 3,
+    "input_mode": "coordinates",
+    "dbscan_eps_provenance": "The frozen Axis-III clusterer for the Reeb benchmark domains, DBSCAN(eps=0.15, min_samples=3), established by the III-1 Conventional baseline (executed 2026-08-18, CIRCLE_RESULT.json / TRIPOD_RESULT.json) and carried verbatim into the C5 Tier-A contract. It is NOT re-derived for C8 and is NOT selected by C8.",
+    "dbscan_eps_scope_note": "The M6-A2 scale rule (contracts/M6A2_SWISS_SCALE_RULE_v1.0.0.txt) is explicitly scoped to Milestone M6-A2 / I-A1-Swiss-Revised on swiss_roll_with_hole and does NOT govern the Circle or Tripod Reeb benchmark domains. For the record, applying that Swiss rule to unit_circle N=1000 seed=42 would give eps=0.01193108 and to branching_tripod_y eps=0.00696442, i.e. 12.6x and 21.5x smaller than the III-1 Axis-III clusterer. C8 uses the III-1 clusterer because C8's Axis-III arm is compared against the III-1 Conventional baseline and the C5 F-Mapper case, and a different radius would break exactly that comparability. This is recorded so the choice is auditable, not silent."
+  },
+
+  "seed_derivation": {
+    "rule": "data_seed = SeedManager(master_seed=42).derive_seed('data', stream_index)",
+    "verified_against": "evidence/campaigns/c3/PLAN.jsonl (all inspected rows reproduce exactly)",
+    "fcm_seed": "fixed at 42 for every unit; FCM initialization is deterministic in the sealed implementation"
+  },
+
+  "stream_disjointness": {
+    "claimed_block": [17000, 17529],
+    "verification": "no stream_index in [17000, 18199] occurs in any released evidence stream"
+  },
+
+  "primary_endpoints": {
+    "arm_A_axis2": [
+      "membership strength distribution (mean, std, min, max, p10, p50, p90)",
+      "multiplicity distribution (mean, frac_0, frac_1, frac_ge2, max)",
+      "coverage_fraction and n_uncovered",
+      "silhouette_macro / silhouette_incidence",
+      "davies_bouldin_macro / davies_bouldin_incidence",
+      "noise_fraction_macro / noise_fraction_incidence",
+      "globally_unclustered_fraction",
+      "n_nodes, n_edges, beta_1_graph, beta_0_nerve, beta_1_nerve",
+      "status distribution over the frozen failure taxonomy"
+    ],
+    "axis3_tier_a": [
+      "beta0_graph_mapper", "beta1_graph_mapper",
+      "beta0_nerve_mapper", "beta1_nerve_mapper",
+      "delta_beta1_graph_to_reference", "delta_beta1_nerve_to_reference",
+      "tripod_delta_leaves", "tripod_delta_branch_vertices",
+      "tripod_non_degree2_signature_agreement"
+    ]
+  },
+
+  "specified_primary_axis3_estimand": {
+    "definition": "Tier-A recovery FREQUENCY across independent data realizations: the proportion of all attempted constructions whose Tier-A invariants agree exactly with the frozen same-filter Reeb reference; typed failures count as non-recovery.",
+    "circle_denominator": "the 20 Arm A realizations at (n_intervals=10, threshold=0.10), the C5-comparable cell",
+    "tripod_denominator": "all 30 Arm B realizations",
+    "denominator_rule": "Non-convergence, coverage_gap, and every other typed failure are RETAINED IN THE DENOMINATOR. Recovery frequency is reported over all attempted realizations, with the eligible-only conditional frequency reported separately and clearly labelled. No realization is ever dropped or retried.",
+    "interval": "Wilson score 95% interval on the recovery proportion, reported with the exact numerator and denominator"
+  },
+
+  "secondary_descriptive": "Tier-A endpoints are additionally recorded for all 500 Arm A Circle rows, giving a descriptive recovery surface over the full (c, tau) grid. Status counts and recovery frequencies use all attempted rows; local-quality means are success-conditioned and labelled as such. This is explicitly SECONDARY and DESCRIPTIVE. No interval, no inferential claim, and no selection of a best cell is permitted from it.",
+
+  "failure_retention": {
+    "policy": "Every typed failure status is retained as a scientific observation with null metrics. Zero imputation. No retuning, no retries, no substitution of a different seed for a failing unit.",
+    "recognised_statuses": [
+      "configuration_invalid", "fcm_degenerate_input", "fcm_non_convergence",
+      "clusterer_failure", "resource_failure", "homology_failure",
+      "coverage_gap", "degenerate_output", "empty_complex", "success"
+    ],
+    "abort_rule": "Unexpected infrastructure or programming exceptions abort the run fail-closed and are never recorded as scientific observations."
+  },
+
+  "def01_compliance": "The ledger `status` field is assigned directly from the real MapperOutput.status returned by the sealed FMapper.fit_transform, at exactly one call site, never from a literal. Statically audited by tests/test_def01_no_hardcoded_status.py.",
+
+  "same_filter_gate": {
+    "require_id_equality": true,
+    "require_definition_hash_equality": true,
+    "failure_is_ineligible": true
+  },
+
+  "tier_b": "DEFERRED_REQUIRES_NEW_VERSIONED_GUDHI_ENVIRONMENT",
+  "tier_c": "DISABLED",
+
+  "claim_language": "finite-sample empirical recovery frequency of specified graph/nerve invariants and branching diagnostics against the exact same-filter reference, across independent data realizations",
+
+  "prohibited_claims": [
+    "continuous_open_cover_of_all_f_of_S_established",
+    "F_Mapper_is_a_proven_Reeb_approximant",
+    "Carriere_Oudot_interval_resolution_or_gain_bound_transfers",
+    "combinatorial_Reeb_type_recovered",
+    "convergence_or_universal_fidelity",
+    "Tier_B_without_new_Gudhi_lock",
+    "Tier_C",
+    "selection_of_a_best_(c,tau)_cell_from_the_descriptive_surface",
+    "extension_of_any_C8_result_to_swiss_roll_or_digits"
+  ],
+
+  "interpretive_boundary": "Threshold memberships are evaluated only on observed lens values. No continuous extension of the FCM membership cover to all f(S) is established. Circle and Tripod results are finite-sample empirical statements about these two benchmark domains only.",
+
+  "sealed_module_digests": {
+    "f_mapper.py": "f0f5adfc2db7437cdf8951ae1c142761e90016cb21292c513d6e88b83cacb141",
+    "local_quality.py": "3c2e7e1dffe6195959f15d06835708e492c8b2257ff5bdb5ac482e44ca94d089",
+    "reeb_references.py": "c3a5bf530b3e739cb7b225470487e3d3a1236e04805dafb8ba306b3b606bf5f8",
+    "environment_lock_manifest": "46c58532e16925920e54a363e9727f7fa0afa908e2f5f1317d9f057be8ed11d9"
+  },
+
+  "plumbing_probe_disclosure": "A runtime/plumbing probe was executed at six (dataset, c, tau) corners before this contract was frozen (checks/plumbing_probe.py). It measured per-construction runtime and confirmed that the failure taxonomy is exercised. It was NOT used to choose n_intervals, threshold, eps, N, replicate count, or any other parameter: every one of those was inherited unchanged from the already-executed C3 grid and the already-executed C5 configuration. Per the governing plan, a debugging pilot checks plumbing and runtime only and cannot select parameter values."
+}

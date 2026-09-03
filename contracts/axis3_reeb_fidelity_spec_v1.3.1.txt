@@ -1,0 +1,182 @@
+# SPEC-AXIS3: Axis III Topological and Reeb Fidelity Specification
+
+**Document Version**: 1.3.1  
+**Phase**: Phase 0 (Mathematical Specification and Validation)  
+**Milestone Authorization**: Axis III III-2 Cover-Resolution × Sampling-Density Gate  
+**Status**: FROZEN FOR RELEASE — EXECUTED AXIS-III BASIS  
+**Governing Documents**:
+- *DECISION-AXIS3-01: Axis III Mapper Graph Filtration Decision — Empirical Node-Mean Lens Filtration*
+- *DECISION-AXIS3-02: Tripod III-1 Direct-Baseline Configuration*
+- *DECISION-AXIS3-03: Axis-III III-2 Cover-Resolution × Sampling-Density Experimental Design*
+- *SPEC-REEB-STAB: Reeb References, Extended Persistence, and Stability Metrics Specification* (v1.0.0)
+- *SPEC-M0: Conventional Mapper Specification* (v1.2.0)
+- *SPEC-NH: Membership Nerve and Dual Homology Specification* (v1.2.0)  
+**Primary Mathematical Authorities**:
+- Carrière, M., Michel, B., & Oudot, S. (2018). *Statistical analysis and parameter selection for Mapper*. Journal of Machine Learning Research, 19(1), 478–516.
+- Edelsbrunner, H., & Harer, J. (2010). *Computational Topology: An Introduction*. American Mathematical Society.
+- Biasotti, S., Giorgi, D., Spagnuolo, M., & Falcidieno, B. (2008). *Describing shapes by local topological features of functions*. Computational Geometry, 40(3), 226–240.
+
+---
+
+## 1. Scope and Objective
+
+This specification establishes the mathematical foundations, evaluation contracts, reference hierarchies, and execution invariants for **Axis III: Topological and Reeb Fidelity**.
+
+Axis III evaluates:
+> **“How faithfully does a finite Mapper-family representation recover the topological / Reeb structure associated with the SAME underlying space and SAME scalar function, where such comparison is mathematically valid?”**
+
+Axis III strictly delineates:
+1. **Intrinsic Domain Topology**: Underlying space Betti numbers ($eta_k(S)$).
+2. **Reeb Quotient Topology**: Continuous quotient space $R_f(S) = S / \sim_f$ induced by continuous scalar lens $f: S 	o \mathbb{R}$.
+3. **Finite Mapper Graph Representations**: 1-skeleton graph $G_M = (V, E)$, 2-skeleton membership nerve $\mathcal{N}^{(2)}(M)$, and their scalar filtration diagrams.
+
+---
+
+## 2. Same-Filter Reeb Contract (ID + Definition Hash Invariant)
+
+For every direct Reeb-fidelity evaluation, the reference Reeb graph $R_f(S)$ and the Mapper representation $M(X_n, g)$ **must be generated with respect to mathematically identical scalar functions**:
+$$f \equiv g$$
+
+### 2.1 Formal Contract Invariant
+Scientific evidence eligibility requires simultaneous satisfaction of identifier and mathematical definition hash equality:
+$$	ext{reference\_filter\_id} \equiv 	ext{mapper\_filter\_id}$$
+$$	ext{reference\_filter\_definition\_hash} \equiv 	ext{mapper\_filter\_definition\_hash} \equiv 	ext{canonical\_registry\_hash}$$
+
+### 2.2 Persisted Record Attributes
+1. `reference_filter_id`: Canonical identifier of continuous reference filter (e.g. `"circle_height_y"`, `"tripod_height_y"`).
+2. `mapper_filter_id`: Canonical identifier of Mapper scalar lens (e.g. `"circle_height_y"`, `"tripod_height_y"`).
+3. `reference_filter_definition_hash`: SHA-256 digest of canonical reference filter definition.
+4. `mapper_filter_definition_hash`: SHA-256 digest of canonical Mapper filter definition.
+5. `same_filter_contract`: Boolean flag, $\operatorname{True} \iff (	ext{reference\_filter\_id} == 	ext{mapper\_filter\_id}) \land (	ext{reference\_filter\_definition\_hash} == 	ext{mapper\_filter\_definition\_hash} == 	ext{canonical\_registry\_hash})$.
+
+---
+
+## 3. Canonical Reference-Type Hierarchy
+
+| Reference Type Enum | Mathematical Grounding | Ground Truth Role | Permitted Use |
+| :--- | :--- | :--- | :--- |
+| `exact_continuous` | Closed-form continuous Reeb quotient $R_f(S) = S / \sim_f$ | **YES (Authoritative Ground Truth)** | Primary Axis-III Reference (Circle III-1, III-2) |
+| `exact_PL` | Exact piecewise-linear simplicial quotient on triangulated complex | **YES (Authoritative Ground Truth)** | Primary Axis-III Reference (Tripod III-1, III-2) |
+| `numerical_reference` | Independently verified mesh quotient via non-Mapper library | **NO (Numerical Benchmark)** | Empirical Benchmark Only |
+| `mapper_proxy_sanity_check` | High-resolution Conventional Mapper output | **NO (Convergence Sanity Check Only)** | Non-ground-truth sanity checks only |
+
+---
+
+## 4. Method Eligibility Matrix for Axis III
+
+| Method ID | Method Name | Primary Same-Filter Reeb Eligibility | Axis-III Scientific Role | Mandatory Conditions |
+| :--- | :--- | :--- | :--- | :--- |
+| `conventional` | Conventional Mapper | **YES** | Primary Reeb-fidelity target (III-1, III-2, III-3, III-4) | Valid scalar lens, verified continuous/PL reference |
+| `f_mapper` | F-Mapper | **DEFERRED** | Candidate Reeb-fidelity method (deferred to post-III-1) | Fuzzy level-set thresholding, lower-star filtration |
+| `ensemble_kang_lim`| Kang–Lim RCESCC Ensemble Mapper | **NO** | Part-IV fair comparison & empirical diagnostics | Consensus space $
+eq$ continuous level-set quotient |
+| `ball_mapper` | Ball Mapper | **NO** | III-5 metric-cover structural diagnostics | Metric cover only (`reference_role="metric_cover_only"`) |
+
+---
+
+## 5. Mapper Graph Filtration Rules & Attribution
+
+### 5.1 Node Filtration Rule (PROJECT-CONTRACT)
+For each vertex $v \in V(G)$ with non-empty observation support $S(v) \subseteq X$:
+$$\operatorname{filt}(v) = rac{1}{|S(v)|} \sum_{x \in S(v)} f(x)$$
+- Approved as `PROJECT-CONTRACT` via `DECISION-AXIS3-01`.
+
+### 5.2 Edge Filtration Rule (STANDARD SIMPLICIAL LOWER-STAR)
+For each edge $e = \{u, v\} \in E(G)$:
+$$\operatorname{filt}(e) = \max(\operatorname{filt}(u), \operatorname{filt}(v))$$
+
+---
+
+## 6. Extended-Persistence Type Contract & Interpretation Limits
+
+Extended persistence decomposes the topological transitions of a graph/function pair $(G, \operatorname{filt})$ into 4 disjoint subdiagrams:
+1. $	ext{Ord}_0$: Ordinary 0-dimensional persistence ($b \le d$).
+2. $	ext{Rel}_1$: Relative 1-dimensional persistence ($b \ge d$).
+3. $	ext{Ext}_0^+$: Extended 0-dimensional persistence ($b \le d$).
+4. $	ext{Ext}_1^-$: Extended 1-dimensional persistence ($b \ge d$).
+
+- **NO TYPE FLATTENING**: Matching across distinct subdiagram types is strictly prohibited.
+- **DIAGONAL PROJECTION COST**: For any off-diagonal point $p = (b, d)$, $\operatorname{dist}(p, \Delta) = rac{|d - b|}{2}$.
+- **Type-Restricted Bottleneck Distance**:
+  $$d_B(\mathcal{D}_1, \mathcal{D}_2) = \max_{k \in \{	ext{Ord}_0, 	ext{Rel}_1, 	ext{Ext}_0^+, 	ext{Ext}_1^-\}} d_B(\mathcal{D}_1[k], \mathcal{D}_2[k])$$
+- **Type-Restricted 1-Wasserstein Distance**:
+  $$W_1(\mathcal{D}_1, \mathcal{D}_2) = \sum_{k \in \{	ext{Ord}_0, 	ext{Rel}_1, 	ext{Ext}_0^+, 	ext{Ext}_1^-\}} W_1(\mathcal{D}_1[k], \mathcal{D}_2[k])$$
+
+---
+
+## 7. Axis III Evidence Tiers & Tier-A Branching Diagnostics
+
+### 7.1 Tier A — Standard Topological Invariants
+- Mapper quantities: `beta0_graph_mapper`, `beta1_graph_mapper`, `beta0_nerve_mapper`, `beta1_nerve_mapper`.
+- Reference quantities: `beta0_reeb_reference`, `beta1_reeb_reference`.
+- Evaluated Discrepancies: $\Delta eta_1^{
+m graph}$, $\Delta eta_1^{
+m nerve\_to\_reference}$.
+
+### 7.2 Tier A — Mapper-Graph Branching Diagnostics Relative to Exact PL Reference
+- Approved terminology: **Mapper-graph branching diagnostics relative to the exact PL Tripod reference.**
+- Fields: `n_leaves_mapper`, `n_branch_vertices_mapper`, `n_leaves_reeb_reference`, `n_branch_vertices_reeb_reference`, `delta_leaves`, `delta_branch_vertices`, `non_degree2_signature_mapper`, `non_degree2_signature_reference`.
+
+### 7.3 Tier B — Typed Extended-Persistence Fidelity
+- Subdiagram Bottleneck distances $d_B(	ext{Ord}_0), d_B(	ext{Rel}_1), d_B(	ext{Ext}_0^+), d_B(	ext{Ext}_1^-)$.
+- Overall type-restricted Bottleneck distance $d_B(M, R)$ and 1-Wasserstein distance $W_1(M, R)$.
+
+### 7.4 Tier C — Full Reeb-Graph Distance (DISABLED)
+- **STATUS: DISABLED**.
+
+---
+
+## 8. Authoritative Reeb Reference Definitions
+
+### 8.1 Reference 1: Exact Circle Analytic Reeb (`circle_analytic_reeb`)
+- SHA-256: `0ab5c6c1ee5a95c94fc2d6ef9658068311a6e5a1b7dc0b0016950f454ae3b2bc`
+- Filter: `circle_height_y` (`d784b8d86fb471649c90278087fec52270cf927c76bf862758e183e20f42b78d`)
+- Invariants: $eta_0 = 1, eta_1 = 1$.
+
+### 8.2 Reference 2: Exact Piecewise-Linear Tripod Reeb (`tripod_exact_pl_reeb`)
+- SHA-256: `f64882845a0a1c2fc50984ef069c56f9f693d3cf19d6ba4a35b544e78fc2eb2b`
+- Filter: `tripod_height_y` (`685f2da6e8571fb12140d8971dfbd5d3ef26b072a38a9c15a9cd1c68a955c3f4`)
+- Invariants: $eta_0 = 1, eta_1 = 0$, leaves = 3, branch vertices = 1, signature = $[1, 1, 1, 3]$.
+
+---
+
+## 9. III-1 Experiment Contracts (Sealed Baselines)
+- Circle Baseline: `III-1_Circle_Conventional_Baseline` (Sealed)
+- Tripod Baseline: `III-1_Tripod_Conventional_Baseline` (Sealed)
+
+---
+
+## 10. III-2 Experiment Contracts (DECISION-AXIS3-03)
+
+### 10.1 Stage III-2A: Full Cover-Resolution Landscape
+- **Domain & Sample**: Fixed $N=1000, 	ext{seed}=42$ point clouds matching sealed III-1 baselines.
+- **Full Cover Grid**: $n_{	ext{intervals}} \in \{5, 10, 15, 20, 25\} 	imes 	ext{overlap} \in \{0.10, 0.20, 0.30, 0.40, 0.50\}$ (25 cells).
+- **Baseline Anchor Integration**: Cell `L10_P030` is attached from immutable sealed III-1 evidence (`evidence_origin = sealed_III1_anchor`).
+- **New Constructions**: 24 new units per benchmark ($48$ total new units).
+
+### 10.2 Stage III-2B: Sampling Density $	imes$ Reduced Cover Grid Recovery Surface
+- **Sample Sizes**: $N \in \{100, 300, 600, 1200\}$.
+- **Reduced Cover Grid**: $n_{	ext{intervals}} \in \{5, 15, 25\} 	imes 	ext{overlap} \in \{0.10, 0.30, 0.50\}$ (9 cells).
+- **Replications**: $R = 30$ independent realizations per $(benchmark, N)$.
+- **Within-Realization Matching**: All 9 cover cells share the identical point cloud realization.
+- **New Constructions**: $2 	imes 4 	imes 30 	imes 9 = 2160$ new units.
+- **Total New Scientific Units**: $48 + 2160 = 2208$ units.
+
+### 10.3 Statistical Metrics & Uncertainty
+- **Primary Metric**: Attempt-level recovery frequency $\widehat{P}_{	ext{attempt}} = k / n_{	ext{planned}}$ with 95% Wilson score confidence interval.
+- **Secondary Metric**: Success-conditional recovery frequency $\widehat{P}_{	ext{success}} = k / n_{	ext{success}}$.
+- **Sample Coverage**: Hard observed-sample membership ratio $n_{	ext{covered}} / N$.
+
+### 10.7 Campaign Layer, Failure-Safe Partial Evidence & Identity Gates (v1.3.1 Addendum)
+1. **Planned Unit & Attempt Ledger**: Execution is governed by an immutable planned unit ledger (`AXIS3_III2_PLANNED_UNIT_LEDGER.csv`, 2,210 rows: 2 sealed anchors + 2,208 new units). Every unit execution is recorded in an append-only attempt ledger with zero retries (`retry_count = 0`). All new scientific raw records require a valid `planned_unit_id`.
+2. **Three-Way Failure-Safe Partial Evidence**:
+   - *Case A (Mapper Construction Failure)*: Graph, nerve, coverage, and EP quantities remain `None` (never zero-imputed).
+   - *Case B (Nerve Resource Limit Trip)*: Graph invariants, coverage fraction, and Tripod branching diagnostics are preserved. Nerve quantities remain `None`. Graph typed EP is attempted and preserved if valid. Status: `homology_resource_failure`.
+   - *Case C (Homology Computation / Consistency Error)*: Graph invariants, coverage fraction, Tripod branching diagnostics, and nerve 2-simplex count are preserved. Nerve Betti numbers remain `None`. Graph typed EP is attempted and preserved if valid. Status: `homology_computation_failure`.
+3. **Identity & Realization Gates**:
+   - Fixed sample dataset realization hash must match frozen baseline digest for III-2A before Mapper construction.
+   - `cover_cell_id` must match `canonical_cover_cell_id(n_intervals, overlap_frac)`.
+   - When `strict_confirmatory` is enabled, it must be `True` before reference or dataset execution.
+4. **Historical Baseline Anchor Coverage Protocol**: For `evidence_origin = sealed_III1_anchor`, coverage fields remain `None` / NA (never imputed).
+5. **Raw Record JSON Serialization**: `method_parameters` must be a JSON-safe dictionary of primitive types (no live sklearn objects).
+6. **Campaign Source Manifest Provenance**: Every scientific raw record carries `source_hashes["campaign_source_manifest_sha256"]`.

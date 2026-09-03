@@ -1,0 +1,48 @@
+{
+  "campaign_id": "C8_FMAPPER_CIRCLE_GRID_AND_AXIS3_REPLICATION_2026-08-29",
+  "run_id": "C8_CONF_001",
+  "contract_id": "C8_FMAPPER_CIRCLE_GRID_AND_AXIS3_REPLICATION_V1",
+  "contract_sha256": "cab173f9fa9f07d21e0704230f0ea6b80d87c92431e0a9d0ed761d86f29e35b4",
+  "runner_sha256": "e1ac46d0cc0bddb90bfbae33623b9931774b8014ebb140645d645e60afb7ede7",
+  "plan_sha256": "ab88e94cc1ec10dbe0f03f247ac232658e54050abfb3de4ba893650f9c44ab2a",
+  "planned_constructions": 530,
+  "attempted_constructions": 530,
+  "ids_exact_match": true,
+  "status_counts": {
+    "fcm_non_convergence": 111,
+    "success": 408,
+    "coverage_gap": 11
+  },
+  "success": 408,
+  "typed_failures_retained": 122,
+  "execution_failed": 0,
+  "imputation_used": false,
+  "retries_performed": 0,
+  "by_arm": {
+    "A_CIRCLE_GRID": {
+      "attempted": 500,
+      "status_counts": {
+        "fcm_non_convergence": 102,
+        "success": 387,
+        "coverage_gap": 11
+      },
+      "tier_a_eligible": 387,
+      "tier_a_exact_agreement": 315
+    },
+    "B_TRIPOD_AXIS3_REPLICATION": {
+      "attempted": 30,
+      "status_counts": {
+        "success": 21,
+        "fcm_non_convergence": 9
+      },
+      "tier_a_eligible": 21,
+      "tier_a_exact_agreement": 21
+    }
+  },
+  "environment": {
+    "numpy": "1.26.4",
+    "scipy": "1.11.4",
+    "sklearn": "1.9.0"
+  },
+  "total_runtime_seconds": 1535.297446643
+}

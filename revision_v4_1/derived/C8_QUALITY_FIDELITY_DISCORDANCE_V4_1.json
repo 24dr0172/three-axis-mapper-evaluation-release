@@ -1,0 +1,54 @@
+{
+  "analysis_id": "C8_QUALITY_FIDELITY_DISCORDANCE_V4_1",
+  "bootstrap_mean_difference_mismatch_minus_match": {
+    "davies_bouldin_macro": {
+      "B": 10000,
+      "ci95_high": -0.04549324194845767,
+      "ci95_low": -0.05995755192313402,
+      "method": "independent two-sample percentile bootstrap of mean(a)-mean(b)",
+      "n_a": 72,
+      "n_b": 315,
+      "point_estimate": -0.05274523168385627,
+      "seed": 20260830
+    },
+    "silhouette_macro": {
+      "B": 10000,
+      "ci95_high": 0.03944962470742483,
+      "ci95_low": 0.0300351584806273,
+      "method": "independent two-sample percentile bootstrap of mean(a)-mean(b)",
+      "n_a": 72,
+      "n_b": 315,
+      "point_estimate": 0.03475205967534878,
+      "seed": 20260830
+    }
+  },
+  "discordance_rate": 0.3711340206185567,
+  "eligible_silhouette_q75": 0.9464088593970219,
+  "group_means": {
+    "match_davies_bouldin": 0.1278732758497505,
+    "match_silhouette": 0.9138777358824658,
+    "mismatch_davies_bouldin": 0.07512804416589423,
+    "mismatch_silhouette": 0.9486297955578146
+  },
+  "mapper_constructions_generated": 0,
+  "n_circle": 500,
+  "n_eligible": 387,
+  "n_exact": 315,
+  "n_high_quality": 97,
+  "n_high_quality_and_mismatch": 36,
+  "n_mismatch": 72,
+  "predeclared_rules": {
+    "discordance_rate": "P(topology-mismatched | high-quality)",
+    "fidelity": "tier_a_exact_agreement",
+    "high_quality": "silhouette_macro >= 75th percentile of the eligible set (inclusive, within-grid)",
+    "not_a_universal_threshold": "The quartile is computed inside this eligible grid; it is not a fixed Silhouette cutoff for Mapper output in general",
+    "population": "C8 Circle grid constructions with tier_a_eligible true (n=387)",
+    "quality": "silhouette_macro",
+    "rank_association": "Pearson correlation of ranks (Spearman rho) between silhouette_macro and exact_agreement"
+  },
+  "source": {
+    "ledger": "evidence/campaigns/c8/C8_CONSTRUCTION_LEDGER.jsonl",
+    "sha256": "d8c8f3cd67bd6a6c6774d06d06f53f40b2d199173bc4f32349a950a1a416e163"
+  },
+  "spearman_silhouette_vs_exact": -0.46997128283303935
+}

@@ -1,0 +1,53 @@
+{
+  "contract_id": "C5_FMAPPER_TIER_A_ELIGIBILITY_AMENDMENT_V1",
+  "status": "FINAL_EXECUTED",
+  "supersedes_for_campaign_5_only": "f_mapper primary_same_filter_reeb_eligibility=DEFERRED",
+  "method_id": "f_mapper",
+  "admission": "CONDITIONAL_TIER_A_FINITE_SAMPLE_EMPIRICAL",
+  "domains": [
+    {"dataset_id": "unit_circle", "n": 1000, "data_seed": 42, "filter_id": "circle_height_y"},
+    {"dataset_id": "branching_tripod_y", "n": 1000, "data_seed": 42, "filter_id": "tripod_height_y"}
+  ],
+  "configuration": {
+    "n_intervals": 10,
+    "membership_threshold": 0.10,
+    "fuzzifier": 2.0,
+    "fcm_tol": 1e-7,
+    "fcm_max_iter": 300,
+    "fcm_interface_seed": 42,
+    "dbscan_eps": 0.15,
+    "dbscan_min_samples": 3
+  },
+  "same_filter_gate": {
+    "require_id_equality": true,
+    "require_definition_hash_equality": true,
+    "failure_is_ineligible": true
+  },
+  "tier_a_endpoints": [
+    "beta0_graph_mapper",
+    "beta1_graph_mapper",
+    "beta0_nerve_mapper",
+    "beta1_nerve_mapper",
+    "delta_beta1_graph_to_reference",
+    "delta_beta1_nerve_to_reference",
+    "tripod_delta_leaves",
+    "tripod_delta_branch_vertices",
+    "tripod_non_degree2_signature_agreement"
+  ],
+  "failure_states": ["fcm_non_convergence", "coverage_gap", "construction_failure", "homology_resource_failure", "homology_computation_failure"],
+  "claim_language": "finite-sample empirical agreement of specified graph/nerve invariants and branching diagnostics with the exact same-filter reference",
+  "prohibited_claims": [
+    "continuous_open_cover_of_all_f_of_S_established",
+    "F_Mapper_is_a_proven_Reeb_approximant",
+    "Carriere_Oudot_interval_resolution_or_gain_bound_transfers",
+    "combinatorial_Reeb_type_recovered",
+    "convergence_or_universal_fidelity",
+    "Tier_B_without_new_Gudhi_lock",
+    "Tier_C"
+  ],
+  "tier_b": "DEFERRED_REQUIRES_NEW_VERSIONED_GUDHI_ENVIRONMENT",
+  "tier_c": "DISABLED",
+  "interpretive_boundary": "Threshold memberships are evaluated only on observed lens values. No continuous extension of the FCM membership cover to all f(S) is established.",
+  "planned_units": 2,
+  "stream_indices": [16000, 16001]
+}

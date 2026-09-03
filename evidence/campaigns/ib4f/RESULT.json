@@ -1,0 +1,256 @@
+{
+  "source_ledger_sha256": "bc87f0c8a7b20d8852950c0d796e07b11ccff7e7deafe73a9c018ca392583815",
+  "n_source_rows": 525,
+  "scope": "F-Mapper CONSTRUCTION SUCCESS PROBABILITY only; not topology, quality, or fidelity",
+  "swiss_cell_counts": {
+    "c5_tau0.1": {
+      "successes": 20,
+      "trials": 20,
+      "rate": 1.0,
+      "wilson95": [
+        0.8388748419471806,
+        1.0
+      ]
+    },
+    "c5_tau0.15": {
+      "successes": 20,
+      "trials": 20,
+      "rate": 1.0,
+      "wilson95": [
+        0.8388748419471806,
+        1.0
+      ]
+    },
+    "c5_tau0.2": {
+      "successes": 20,
+      "trials": 20,
+      "rate": 1.0,
+      "wilson95": [
+        0.8388748419471806,
+        1.0
+      ]
+    },
+    "c5_tau0.3": {
+      "successes": 20,
+      "trials": 20,
+      "rate": 1.0,
+      "wilson95": [
+        0.8388748419471806,
+        1.0
+      ]
+    },
+    "c5_tau0.4": {
+      "successes": 20,
+      "trials": 20,
+      "rate": 1.0,
+      "wilson95": [
+        0.8388748419471806,
+        1.0
+      ]
+    },
+    "c8_tau0.1": {
+      "successes": 20,
+      "trials": 20,
+      "rate": 1.0,
+      "wilson95": [
+        0.8388748419471806,
+        1.0
+      ]
+    },
+    "c8_tau0.15": {
+      "successes": 15,
+      "trials": 20,
+      "rate": 0.75,
+      "wilson95": [
+        0.531299122381256,
+        0.8881382985923343
+      ]
+    },
+    "c8_tau0.2": {
+      "successes": 19,
+      "trials": 20,
+      "rate": 0.95,
+      "wilson95": [
+        0.763868806553258,
+        0.9911185511992047
+      ]
+    },
+    "c8_tau0.3": {
+      "successes": 19,
+      "trials": 20,
+      "rate": 0.95,
+      "wilson95": [
+        0.763868806553258,
+        0.9911185511992047
+      ]
+    },
+    "c8_tau0.4": {
+      "successes": 19,
+      "trials": 20,
+      "rate": 0.95,
+      "wilson95": [
+        0.763868806553258,
+        0.9911185511992047
+      ]
+    },
+    "c10_tau0.1": {
+      "successes": 15,
+      "trials": 20,
+      "rate": 0.75,
+      "wilson95": [
+        0.531299122381256,
+        0.8881382985923343
+      ]
+    },
+    "c10_tau0.15": {
+      "successes": 8,
+      "trials": 20,
+      "rate": 0.4,
+      "wilson95": [
+        0.21880653237281705,
+        0.6134184992377469
+      ]
+    },
+    "c10_tau0.2": {
+      "successes": 10,
+      "trials": 20,
+      "rate": 0.5,
+      "wilson95": [
+        0.2992980081982123,
+        0.7007019918017877
+      ]
+    },
+    "c10_tau0.3": {
+      "successes": 13,
+      "trials": 20,
+      "rate": 0.65,
+      "wilson95": [
+        0.43285427668523624,
+        0.818808175898918
+      ]
+    },
+    "c10_tau0.4": {
+      "successes": 9,
+      "trials": 20,
+      "rate": 0.45,
+      "wilson95": [
+        0.2581978582556243,
+        0.6579146575496577
+      ]
+    },
+    "c15_tau0.1": {
+      "successes": 11,
+      "trials": 20,
+      "rate": 0.55,
+      "wilson95": [
+        0.34208534245034233,
+        0.7418021417443759
+      ]
+    },
+    "c15_tau0.15": {
+      "successes": 9,
+      "trials": 20,
+      "rate": 0.45,
+      "wilson95": [
+        0.2581978582556243,
+        0.6579146575496577
+      ]
+    },
+    "c15_tau0.2": {
+      "successes": 5,
+      "trials": 20,
+      "rate": 0.25,
+      "wilson95": [
+        0.11186170140766569,
+        0.468700877618744
+      ]
+    },
+    "c15_tau0.3": {
+      "successes": 7,
+      "trials": 20,
+      "rate": 0.35,
+      "wilson95": [
+        0.18119182410108206,
+        0.5671457233147638
+      ]
+    },
+    "c15_tau0.4": {
+      "successes": 8,
+      "trials": 20,
+      "rate": 0.4,
+      "wilson95": [
+        0.21880653237281705,
+        0.6134184992377469
+      ]
+    },
+    "c20_tau0.1": {
+      "successes": 5,
+      "trials": 20,
+      "rate": 0.25,
+      "wilson95": [
+        0.11186170140766569,
+        0.468700877618744
+      ]
+    },
+    "c20_tau0.15": {
+      "successes": 10,
+      "trials": 20,
+      "rate": 0.5,
+      "wilson95": [
+        0.2992980081982123,
+        0.7007019918017877
+      ]
+    },
+    "c20_tau0.2": {
+      "successes": 10,
+      "trials": 20,
+      "rate": 0.5,
+      "wilson95": [
+        0.2992980081982123,
+        0.7007019918017877
+      ]
+    },
+    "c20_tau0.3": {
+      "successes": 11,
+      "trials": 20,
+      "rate": 0.55,
+      "wilson95": [
+        0.34208534245034233,
+        0.7418021417443759
+      ]
+    },
+    "c20_tau0.4": {
+      "successes": 6,
+      "trials": 20,
+      "rate": 0.3,
+      "wilson95": [
+        0.1454772448676043,
+        0.5189728183535235
+      ]
+    }
+  },
+  "likelihood_ratio_test": {
+    "model_main_effects_df_params": 9,
+    "model_saturated_df_params": 25,
+    "deviance_main_effects": 22.106899669212673,
+    "deviance_saturated": 2.6804238043971112e-06,
+    "lr_statistic": 22.10689698878887,
+    "df": 16,
+    "p_value": 0.13977340161971297,
+    "interpretation": "no statistically detectable departure from a logit-additive main-effects model at the 0.05 level"
+  },
+  "max_abs_residual_statistic": {
+    "observed_max_abs": 0.22199999999999998,
+    "observed_max_signed": -0.22199999999999998,
+    "max_cell": "c20_tau0.1",
+    "bootstrap_B": 20000,
+    "bootstrap_seed": 20260828,
+    "null_mean_max_abs": 0.1725234,
+    "null_p95_max_abs": 0.2480000000000001,
+    "calibrated_p_value": 0.128043597820109,
+    "superseded_uncalibrated_threshold": 0.05,
+    "superseded_threshold_null_exceedance_rate": 0.99995,
+    "interpretation": "the observed max|residual| is NOT extreme under the fitted no-interaction null once selection over 25 cells is accounted for"
+  },
+  "verdict": "EXPLORATORY_NO_CONFIRMATORY_INTERACTION"
+}

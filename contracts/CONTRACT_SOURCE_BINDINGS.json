@@ -1,0 +1,32 @@
+{
+  "C5_FMAPPER_TIER_A_ELIGIBILITY_AMENDMENT_V1": {
+    "executed_sha256": "48cbc5e5a2ce0a73819e8d91468681ef525d13c1232aa82eb0b1720e50c81291",
+    "release_sha256": "e49bdab4bd01089cde30af8e91ec0ab98ef05bdbf734c641e6679cb729b8af2a",
+    "normalization": "Release-facing status wording normalized after completed execution; scientific definitions, grids, endpoints, parameters, and claim boundaries are unchanged."
+  },
+  "C6A_CONVENTIONAL_SWISS_NOISE_X_COVER_V1": {
+    "executed_sha256": "37159a11b77930de09aacad2ce76d0825c8cc25a8d6bf78e5e11560bfe2ec364",
+    "release_sha256": "a1e71617ac52fa57e185d5593d103958e8af43a963b290d89594c9d5a2ddbb87",
+    "normalization": "Release-facing status wording normalized after completed execution; scientific definitions, grids, endpoints, parameters, and claim boundaries are unchanged."
+  },
+  "C6B_BALL_SWISS_NOISE_X_RADIUS_V1": {
+    "executed_sha256": "54dd5c288a63b2998c5463539af2db97a825ca0f053d6dc5953cb62cee2938a4",
+    "release_sha256": "a67cc668cc88bcc64c01c9c87eeb515d920e57d152ba72bed43770adf63ca31c",
+    "normalization": "Release-facing status wording normalized after completed execution; scientific definitions, grids, endpoints, parameters, and claim boundaries are unchanged."
+  },
+  "C7_TRACKC_INTERACTION_ANALYSIS_V3_CORRECTED_ENDPOINT": {
+    "executed_sha256": "579256094c5760f985258ee6a5d375a5090d70adf83d33ae3f357a3ba1c26c8a",
+    "release_sha256": "b5387cb7ea04165dc606fbd0c8c294567ee98cfa77cde6388cf5376c33f5a4f7",
+    "normalization": "Release-facing analysis-type wording normalized; scientific definitions, estimand, estimator, intervals, terminal states, and claim boundaries are unchanged."
+  },
+  "C8_FMAPPER_CIRCLE_GRID_AND_AXIS3_REPLICATION_V1": {
+    "executed_sha256": "cab173f9fa9f07d21e0704230f0ea6b80d87c92431e0a9d0ed761d86f29e35b4",
+    "release_sha256": "3126cef2b3a24d38fd7323c4327b121a885f5bef09e449f95a0d641b9047cfc3",
+    "normalization": "Release-facing denominator wording and secondary-grid aggregation conditioning clarified after completed execution; executed data, grid, endpoints, parameters, and claim boundaries are unchanged."
+  },
+  "C9_BALL_CIRCLE_NOISE_X_RADIUS_V1": {
+    "executed_sha256": "8f370156a6d3cb5abfd7af33cf4d5a54916728921408630837306fef825b8ad9",
+    "release_sha256": "3e99ee2b28e01670b19ead28ad47cf7dc162a3a24ce4e020cc411f647e2f85ac",
+    "normalization": "Release-facing status wording normalized after completed execution; one machine-bound historical source-path string remains replaced by a self-contained statement. All numeric values, scientific rules, endpoints, terminal states, and claim prohibitions are unchanged."
+  }
+}

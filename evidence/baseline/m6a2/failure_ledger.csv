@@ -1,0 +1,2 @@
+run_id,dataset_id,method_id,noise_condition_id,replication_id,status,failure_reason
+M6A2__swiss_roll_with_hole__f_mapper__sigma_0.10__rep17__e73903fcfc9b4191,swiss_roll_with_hole,f_mapper,sigma_0.10,17,fcm_non_convergence,FCM failed to converge within maximum iterations or produced invalid memberships.

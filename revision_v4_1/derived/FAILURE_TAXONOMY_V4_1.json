@@ -1,0 +1,848 @@
+{
+  "analysis_id": "FAILURE_TAXONOMY_V4_1",
+  "c8_run_level": {
+    "attempted": 530,
+    "by_arm": {
+      "A_CIRCLE_GRID": {
+        "n": 500,
+        "status_counts": {
+          "coverage_gap": 11,
+          "fcm_non_convergence": 102,
+          "success": 387
+        },
+        "tier_a_eligible": 387,
+        "tier_a_exact_agreement": 315
+      },
+      "B_TRIPOD_AXIS3_REPLICATION": {
+        "n": 30,
+        "status_counts": {
+          "fcm_non_convergence": 9,
+          "success": 21
+        },
+        "tier_a_eligible": 21,
+        "tier_a_exact_agreement": 21
+      }
+    },
+    "planned": 530,
+    "status_counts": {
+      "coverage_gap": 11,
+      "fcm_non_convergence": 111,
+      "success": 408
+    }
+  },
+  "iii2b_cell_level": {
+    "cells": [
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N100__L05_P010",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N100__L05_P030",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N100__L05_P050",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N100__L15_P010",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N100__L15_P030",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N100__L15_P050",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N100__L25_P010",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N100__L25_P030",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N100__L25_P050",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N300__L05_P010",
+        "k_joint_recovered": 19,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N300__L05_P030",
+        "k_joint_recovered": 27,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N300__L05_P050",
+        "k_joint_recovered": 27,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N300__L15_P010",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N300__L15_P030",
+        "k_joint_recovered": 9,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N300__L15_P050",
+        "k_joint_recovered": 27,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N300__L25_P010",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N300__L25_P030",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N300__L25_P050",
+        "k_joint_recovered": 14,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N600__L05_P010",
+        "k_joint_recovered": 26,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N600__L05_P030",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N600__L05_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N600__L15_P010",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N600__L15_P030",
+        "k_joint_recovered": 29,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N600__L15_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N600__L25_P010",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N600__L25_P030",
+        "k_joint_recovered": 9,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N600__L25_P050",
+        "k_joint_recovered": 29,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N1200__L05_P010",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N1200__L05_P030",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N1200__L05_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N1200__L15_P010",
+        "k_joint_recovered": 8,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N1200__L15_P030",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N1200__L15_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N1200__L25_P010",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N1200__L25_P030",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "unit_circle_S1",
+        "cell_id": "unit_circle_S1__N1200__L25_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N100__L05_P010",
+        "k_joint_recovered": 2,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N100__L05_P030",
+        "k_joint_recovered": 5,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N100__L05_P050",
+        "k_joint_recovered": 5,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N100__L15_P010",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N100__L15_P030",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N100__L15_P050",
+        "k_joint_recovered": 5,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N100__L25_P010",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N100__L25_P030",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N100__L25_P050",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 100
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N300__L05_P010",
+        "k_joint_recovered": 28,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N300__L05_P030",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N300__L05_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N300__L15_P010",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N300__L15_P030",
+        "k_joint_recovered": 27,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N300__L15_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N300__L25_P010",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N300__L25_P030",
+        "k_joint_recovered": 10,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N300__L25_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 300
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N600__L05_P010",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N600__L05_P030",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N600__L05_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N600__L15_P010",
+        "k_joint_recovered": 14,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N600__L15_P030",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N600__L15_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N600__L25_P010",
+        "k_joint_recovered": 0,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N600__L25_P030",
+        "k_joint_recovered": 29,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N600__L25_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 600
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N1200__L05_P010",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N1200__L05_P030",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N1200__L05_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N1200__L15_P010",
+        "k_joint_recovered": 29,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N1200__L15_P030",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N1200__L15_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N1200__L25_P010",
+        "k_joint_recovered": 13,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N1200__L25_P030",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      },
+      {
+        "benchmark": "branching_tripod_Y",
+        "cell_id": "branching_tripod_Y__N1200__L25_P050",
+        "k_joint_recovered": 30,
+        "n_attempts_executed": 30,
+        "n_eligible": 30,
+        "n_failed_or_missing": 0,
+        "n_planned": 30,
+        "n_success": 30,
+        "sample_size": 1200
+      }
+    ],
+    "n_cells": 72,
+    "totals": {
+      "k_joint_recovered": 1201,
+      "n_attempts_executed": 2160,
+      "n_eligible": 2160,
+      "n_failed_or_missing": 0,
+      "n_planned": 2160,
+      "n_success": 2160
+    }
+  },
+  "mapper_constructions_generated": 0,
+  "scope": {
+    "c8": "run-level outcomes from the shipped C8 construction ledger",
+    "iii2b": "cell-level only from III2B_RECOVERY_SUMMARY.csv; run-level III-2B construction journals are not reconstructed"
+  },
+  "source": {
+    "c8_accounting_sha256": "229962d8c72d49426914a9b1661be7a0d9870d40ab1fef0f8f3232fe09c43816",
+    "c8_ledger_sha256": "d8c8f3cd67bd6a6c6774d06d06f53f40b2d199173bc4f32349a950a1a416e163",
+    "iii2b_sha256": "99a0aa44209452e7a45a863a83d5946278a1c8ee366950e327ccc71f9095cf00"
+  }
+}
